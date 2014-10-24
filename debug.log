@@ -1,0 +1,34 @@
+date: "2014-10-24 13:30:32.273"
+argv: "node C:\\Users\\h\\AppData\\Roaming\\npm\\node_modules\\hexo\\bin\\hexo g"
+os: Windows_NT 6.2.9200 win32 x64
+versions:
+  http_parser: "1.0"
+  node: 0.10.32
+  v8: 3.14.5.9
+  ares: 1.9.0-DEV
+  uv: 0.10.28
+  zlib: 1.2.3
+  modules: "11"
+  openssl: 1.0.1i
+  hexo: 2.8.3
+---
+[debug] 13:30:30.802 Config file loaded from G:\hexo\_config.yml[debug] 13:30:30.808 Version info checked successfully[debug] 13:30:30.964 Processed: draft.md (4ms)[debug] 13:30:30.964 Processed: page.md (3ms)[debug] 13:30:30.964 Processed: photo.md (3ms)[debug] 13:30:30.964 Processed: post.md (2ms)[debug] 13:30:31.010 Plugin loaded successfully: hexo-renderer-ejs[debug] 13:30:31.053 Plugin loaded successfully: hexo-renderer-marked[debug] 13:30:31.482 Plugin loaded successfully: hexo-renderer-stylus[debug] 13:30:31.547 Processed: source/css/animate.css (2ms)[debug] 13:30:31.548 Processed: source/css/global.css (1ms)[debug] 13:30:31.548 Processed: source/css/uno.css (0ms)[debug] 13:30:31.548 Processed: source/fancybox/blank.gif (0ms)[debug] 13:30:31.549 Processed: source/fancybox/fancybox_loading.gif (1ms)[debug] 13:30:31.550 Processed: source/fancybox/fancybox_overlay.png (0ms)[debug] 13:30:31.550 Processed: source/fancybox/fancybox_sprite.png (0ms)[debug] 13:30:31.551 Processed: source/fancybox/jquery.fancybox.css (1ms)[debug] 13:30:31.551 Processed: source/fancybox/jquery.fancybox.pack.js (0ms)[debug] 13:30:31.552 Processed: source/images/background-cover.jpg (1ms)[debug] 13:30:31.553 Processed: source/images/totop.png (1ms)[debug] 13:30:31.553 Processed: source/js/gallery.js (0ms)[debug] 13:30:31.556 Processed: source/js/highlight.js (3ms)[debug] 13:30:31.556 Processed: source/js/highlight2.js (0ms)[debug] 13:30:31.557 Processed: source/js/jquery.githubRepoWidget.min.js (1ms)[debug] 13:30:31.557 Processed: source/js/jquery.imagesloaded.min.js (0ms)[debug] 13:30:31.557 Processed: source/js/jquery.min.js (0ms)[debug] 13:30:31.558 Processed: source/js/main.js (1ms)[debug] 13:30:31.559 Processed: source/js/moment.min.js (1ms)[debug] 13:30:31.559 Processed: source/js/scale.fix.js (0ms)[debug] 13:30:31.559 Processed: source/fonts/foundation-icons/foundation-icons.css (0ms)[debug] 13:30:31.560 Processed: source/fonts/foundation-icons/foundation-icons.eot (1ms)[debug] 13:30:31.560 Processed: source/fonts/foundation-icons/foundation-icons.svg (0ms)[debug] 13:30:31.561 Processed: source/fonts/foundation-icons/foundation-icons.ttf (1ms)[debug] 13:30:31.562 Processed: source/fonts/foundation-icons/foundation-icons.woff (1ms)[debug] 13:30:31.584 Processed: layout/archive.ejs (43ms)[debug] 13:30:31.584 Processed: layout/category.ejs (42ms)[debug] 13:30:31.584 Processed: layout/index.ejs (42ms)[debug] 13:30:31.584 Processed: layout/layout.ejs (42ms)[debug] 13:30:31.585 Processed: layout/page.ejs (43ms)[debug] 13:30:31.585 Processed: layout/post.ejs (42ms)[debug] 13:30:31.585 Processed: layout/tag.ejs (42ms)[debug] 13:30:31.585 Processed: layout/partials/archive.ejs (42ms)[debug] 13:30:31.585 Processed: layout/partials/article.ejs (42ms)[debug] 13:30:31.585 Processed: layout/partials/footer.ejs (41ms)[debug] 13:30:31.585 Processed: layout/partials/comments.ejs (41ms)[debug] 13:30:31.585 Processed: layout/partials/pagination.ejs (40ms)[debug] 13:30:31.586 Processed: layout/partials/list-posts.ejs (42ms)[debug] 13:30:31.586 Processed: layout/partials/side-panel.ejs (41ms)[debug] 13:30:31.588 Processed: layout/partials/social.ejs (43ms)[debug] 13:30:32.070 Theme config loaded[debug] 13:30:32.070 Processed: _config.yml (531ms)[debug] 13:30:32.071 Processed: languages/default.yml (531ms)[debug] 13:30:32.071 Processed: _posts/hello-world.md (568ms)[debug] 13:30:32.072 Processed: languages/zh-CN.yml (532ms)[debug] 13:30:32.096 Generator: archive (12ms)[debug] 13:30:32.096 Generator: category (0ms)[debug] 13:30:32.098 Generator: home (2ms)[debug] 13:30:32.098 Generator: page (0ms)[debug] 13:30:32.101 Generator: post (3ms)[debug] 13:30:32.102 Generator: tag (1ms)[debug] 13:30:32.109 Generator: asset (7ms)[info] 13:30:32.110 Files loaded in 0.624s[debug] 13:30:32.118 Render archive: archives/[create] 13:30:32.199 Generated: archives/index.html (81ms)[debug] 13:30:32.201 Render archive: archives/2014/[create] 13:30:32.219 Generated: archives/2014/index.html (18ms)[debug] 13:30:32.220 Render archive: archives/2014/10/[create] 13:30:32.235 Generated: archives/2014/10/index.html (15ms)[debug] 13:30:32.236 Render index: [error] 13:30:32.255 HexoError: Render failed: index.html
+TypeError: G:\hexo\themes\huno\layout\layout.ejs:7
+    5|     <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    6| 
+ >> 7|     <%
+    8|     var title = page.title;
+    9|     var description = page.description || '';
+    10| 
+
+Cannot call method 'substring' of null
+    at eval (eval at <anonymous> (G:\hexo\node_modules\hexo-renderer-ejs\node_modules\ejs\lib\ejs.js:242:14), <anonymous>:65:31)
+    at eval (eval at <anonymous> (G:\hexo\node_modules\hexo-renderer-ejs\node_modules\ejs\lib\ejs.js:242:14), <anonymous>:66:4294)
+    at G:\hexo\node_modules\hexo-renderer-ejs\node_modules\ejs\lib\ejs.js:255:15
+    at Object.exports.render (G:\hexo\node_modules\hexo-renderer-ejs\node_modules\ejs\lib\ejs.js:293:13)
+    at G:\hexo\node_modules\hexo-renderer-ejs\index.js:5:14
+    at C:\Users\h\AppData\Roaming\npm\node_modules\hexo\lib\extend\renderer.js:78:38
+    at b (domain.js:183:18)
+    at Domain.run (domain.js:123:23)
+    at store.(anonymous function) (C:\Users\h\AppData\Roaming\npm\node_modules\hexo\lib\extend\renderer.js:77:9)
+    at C:\Users\h\AppData\Roaming\npm\node_modules\hexo\lib\core\render.js:96:9

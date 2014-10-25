@@ -2,9 +2,9 @@
 menu:
   首页: /
   归档: /archives
-  博客园: http://www.cnblogs.com/zhanglun/
-  Page: http://zhanglun.github.io/
-  关于我: http://ncuey.sinaapp.com/CrispElite/
+#  博客园: http://www.cnblogs.com/zhanglun/
+  Page: http://thddaniel.github.io/
+  关于我: #http://ncuey.sinaapp.com/CrispElite/
 ## you can create `tags` and `categories` folders in `../source`.
 ## And create a `index.md` file in each of them.
 ## set `front-matter`as
@@ -15,7 +15,7 @@ menu:
 #### site-header profile link
 profile:
   enable: true
-  href: http://zhanglun.github.io/
+  href: http://thddaniel.github.io/
 
 
 #### Widgets
@@ -82,9 +82,9 @@ author:
   google_plus:    ## eg:116338260303228776998 for https://plus.google.com/u/0/116338260303228776998
   intro_line1: '人穷志短愿望多'    ## eg: "Hello ,I'm Larry Page in Google."
   intro_line2:    ## eg: "This is my blog,believe it or not."
-  weibo: '2671026564'         ## e.g. 436062867 for http://weibo.com/436062867
+  weibo:          ## e.g. 436062867 for http://weibo.com/436062867
   twitter:        ## e.g. yangjiansky for https://twitter.com/yangjiansky
-  github: 'zhanglun'      ## e.g. A-limon for https://github.com/A-limon
+  github: 'thddaniel'      ## e.g. A-limon for https://github.com/A-limon
   facebook:       ## e.g. yangjian for https://favebook.com/yangjian
   tsina:          ## e.g. 1664838973  Your weibo ID,It will be used in share button.
 

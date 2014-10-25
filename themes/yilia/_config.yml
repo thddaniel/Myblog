@@ -32,3 +32,5 @@ share: true
 duoshuo: true
 #是否开启云标签
 tagcloud: true
+
+#search: true

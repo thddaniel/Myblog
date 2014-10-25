@@ -5,7 +5,7 @@
 # Site
 title: 唐昊的博客
 subtitle:
-description: 唐昊的博客
+description: 唐昊的博客 | tanghao's blog |
 author: TANG Hao
 email: thddaniel92@gmail.com
 language: zh-CN
@@ -84,6 +84,9 @@ disqus_shortname:
 #theme: hexo-theme/Tinny
 theme: yilia
 exclude_generator:
+plugins:
+- hexo-generator-feed
+- hexo-generator-sitemap
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html

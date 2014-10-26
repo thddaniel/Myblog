@@ -34,3 +34,5 @@ duoshuo: true
 tagcloud: true
 
 #search: true
+#widgets:
+#- search

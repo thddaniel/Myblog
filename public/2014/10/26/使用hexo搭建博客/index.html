@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用hexo搭建博客 | 唐昊的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.Hexo安装
+Hexo的作者是tommy351，根据官方介绍，Hexo是一个简单、快速、强大的博客发布工具，支持Markdown格式。Hexo是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。参考官方文档
+安装Node.js
+在 Windows 环境下安装 Node.js非常简单，仅须下载安装">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用hexo搭建博客">
+<meta property="og:url" content="tanghaoblog.me/2014/10/26/使用hexo搭建博客/">
+<meta property="og:site_name" content="唐昊的博客">
+<meta property="og:description" content="1.Hexo安装
+Hexo的作者是tommy351，根据官方介绍，Hexo是一个简单、快速、强大的博客发布工具，支持Markdown格式。Hexo是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。参考官方文档
+安装Node.js
+在 Windows 环境下安装 Node.js非常简单，仅须下载安装">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用hexo搭建博客">
+<meta name="twitter:description" content="1.Hexo安装
+Hexo的作者是tommy351，根据官方介绍，Hexo是一个简单、快速、强大的博客发布工具，支持Markdown格式。Hexo是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。参考官方文档
+安装Node.js
+在 Windows 环境下安装 Node.js非常简单，仅须下载安装">
+
+  
+    <link rel="alternative" href="/atom.xml" title="唐昊的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://raw.githubusercontent.com/thddaniel/thddaniel.github.io/master/img/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://raw.githubusercontent.com/thddaniel/thddaniel.github.io/master/img/anonymous.jpg">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">TANG Hao</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="onoffswitch">
+			    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+			    <label class="onoffswitch-label" for="myonoffswitch">
+			        <span class="onoffswitch-inner"></span>
+			        <span class="onoffswitch-switch"></span>
+			    </label>
+			</div>
+		
+
+		<div class="switch-area">
+			<section class="first-part">
+				<nav class="header-menu">
+					<ul>
+					
+						<li><a href="/">主页</a></li>
+			        
+						<li><a href="/archives">所有文章</a></li>
+			        
+					</ul>
+				</nav>
+				<nav class="header-nav">
+					<div class="social">
+						
+							<a class="github" target="_blank" href="https://github.com/thddaniel" title="github">github</a>
+				        
+							<a class="quora" target="_blank" href="http://www.quora.com/Daniel-Hao-2" title="quora">quora</a>
+				        
+							<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+				        
+							<a class="email" target="_blank" href="mailto:thddaniel92@gmail.com" title="email">email</a>
+				        
+					</div>
+				</nav>
+			</section>
+			
+			
+			<section class="second-part">
+				<div class="widget tagcloud">
+					<a href="/tags/hexo/" style="font-size: NaNpx;">hexo</a><a href="/tags/markdown/" style="font-size: NaNpx;">markdown</a>
+				</div>
+			</section>
+			
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://raw.githubusercontent.com/thddaniel/thddaniel.github.io/master/img/anonymous.jpg">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">TANG Hao</a></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/thddaniel" title="github">github</a>
+			        
+						<a class="quora" target="_blank" href="http://www.quora.com/Daniel-Hao-2" title="quora">quora</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="email" target="_blank" href="mailto:thddaniel92@gmail.com" title="email">email</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-使用hexo搭建博客" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/10/26/使用hexo搭建博客/" class="article-date">
+  	<time datetime="2014-10-26T11:18:00.000Z" itemprop="datePublished">Oct 26</time>
+</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用hexo搭建博客
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-Hexo安装"><strong>1.Hexo安装</strong></h1>
+<p>Hexo的作者是<a href="https://twitter.com/tommy351" target="_blank" rel="external">tommy351</a>，根据官方介绍，Hexo是一个简单、快速、强大的博客发布工具，支持Markdown格式。Hexo是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。<br>参考<a href="http://hexo.io/docs/index.html" target="_blank" rel="external">官方文档</a></p>
+<h3 id="安装Node-js"><strong>安装Node.js</strong></h3>
+<p>在 Windows 环境下安装 Node.js非常简单，仅须<a href="http://nodejs.org/" target="_blank" rel="external">下载</a>安装文件并执行即可完成安装。</p>
+<h3 id="安装Hexo"><strong>安装Hexo</strong></h3>
+<p>打开git。利用 <code>npm</code> 命令即可安装。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span> -g hexo</span></div></pre></td></tr></table></figure>
+
+<p><a id="more"></a></p>
+<h3 id="创建hexo文件夹"><strong>创建hexo文件夹</strong></h3>
+<p>安装完成后，在你喜爱的文件夹下（如H:\hexo），执行以下指令(在H:\hexo内点击鼠标右键，选择Git bash)，Hexo 即会自动在目标文件夹建立网站所需要的所有文件。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">init</span></div></pre></td></tr></table></figure>
+
+<h3 id="安装依赖包"><strong>安装依赖包</strong></h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span></span></div></pre></td></tr></table></figure>
+
+<p>本地查看</p>
+<p>现在我们已经搭建起本地的hexo博客了，执行以下命令(在H:\hexo)，然后到浏览器输入localhost:4000看看。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate <span class="preprocessor">#生成静态页面至public目录</span></div><div class="line">hexo <span class="keyword">server</span> <span class="preprocessor">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div></pre></td></tr></table></figure>
+
+<p>出现了默认的网页界面。至此，本地博客已经搭建起来了。<br><br></p>
+<h1 id="2-Hexo的使用"><strong>2.Hexo的使用</strong></h1>
+<p>首先大致了解下默认生成了一些文件。</p>
+<ul>
+<li><code>scaffolds</code>   layout模板文件目录，其中的md文件可以添加编辑</li>
+<li><code>scripts</code> 写文件的js，扩展hexo的功能</li>
+<li><code>source/_posts</code> 存放博客正文内容</li>
+<li><code>node_modules</code> 插件的目录</li>
+<li><code>themes</code> 存放皮肤的目录</li>
+<li><code>themes/landscape</code> 默认的主题</li>
+<li><code>_config.yml</code> 全局的配置文件，大多数的设置都在这里</li>
+<li><code>db.json</code> 静态常量</li>
+</ul>
+<p>_posts目录：Hexo是一个静态博客框架，因此没有数据库。文章内容都是以文本文件方式进行存储的，直接存储在_posts的目录。Hexo天生集成了markdown，我们可以直接使用markdown语法格式写博客，例如:hello-world.md。新增加一篇文章，就在_posts目录，新建一个xxx.md的文件。</p>
+<p>themes目录：是存放主题的，包括一套Javascript+CSS样式和基于EJS的模板设置。通过在themes目录下，新建一个子目录，就可以创建一套新的皮肤，当然我们也可以直接在landscape上面修改。</p>
+<h3 id="安装插件和主题"><strong>安装插件和主题</strong></h3>
+<p>Hexo提供丰富<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">主题</a>的以及<a href="https://github.com/hexojs/hexo/wiki/Plugins" target="_blank" rel="external">插件</a>。安装方法都是一样的。</p>
+<ul>
+<li>主题</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="input"><span class="prompt">$ git clone &lt;repository&gt;</span> themes/&lt;theme-name&gt;</span></div></pre></td></tr></table></figure>
+
+<p>无论是插件还是主题在安装后都需要在根目录下_config.yml中修改plugins和theme的值以启用他们。<br>主题目录里也有个_config.yml文件，不同主题配置方法不同。<br>我的博客左边一栏里的社交链接。图标来源设置在main.style里。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">├── layout <span class="preprocessor">#布局，根目录下的*.ejs文件是对主页，分页，存档等的控制</span></div><div class="line"><span class="string">|   ├── _partial   #局部的布局，此目录下的*.ejs是对头尾等局部的控制</span></div><div class="line"><span class="string">|   </span></div><div class="line">├── source <span class="preprocessor">#源码</span></div><div class="line"><span class="string">|   ├── css#css源码 </span></div><div class="line"><span class="string">|   |   ├── _base  #*.styl基础css</span></div><div class="line"><span class="string">|   |   ├── _partial   #*.styl局部css</span></div><div class="line"><span class="string">|   |   ├── fonts  #字体</span></div><div class="line"><span class="string">|   |   ├── style.styl #*.styl引入需要的css源码</span></div><div class="line"><span class="string">|   ├── images #图片fancybox   </span></div><div class="line"><span class="string">|   |—— fancybox效果源码</span></div><div class="line"><span class="string">|   └── js #javascript源代码</span></div><div class="line">├── _config.yml<span class="preprocessor">#主题配置文件</span></div><div class="line">└── README.md  <span class="preprocessor">#用GitHub的都知道</span></div></pre></td></tr></table></figure>
+
+<ul>
+<li>插件</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="input"><span class="prompt">npm install &lt;plugin-name&gt;</span> --save</span></div></pre></td></tr></table></figure>
+
+
+
+<p>启用插件：在根目录\ _config.yml文件添加：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="input"><span class="prompt">plugins:</span></span></div><div class="line">- &lt;plugin-name&gt;  <span class="comment">#插件名</span></div></pre></td></tr></table></figure>
+
+<p>升级插件：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">update</span></div></pre></td></tr></table></figure>
+
+<p>卸载插件：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">uninstall</span> &lt;<span class="keyword">plugin</span>-name&gt;</span></div></pre></td></tr></table></figure>
+
+<p><strong>示例</strong>：</p>
+<ul>
+<li>添加RSS</li>
+</ul>
+<p>hexo提供了RSS的生成插件，需要手动安装和设置。步骤如下：<br>安装RSS插件到本地：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span> hexo-generator-feed</span></div></pre></td></tr></table></figure>
+
+<p>开启RSS功能：编辑hexo/_config.yml，添加如下代码：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plugin<span class="variable">s:</span></div><div class="line">- hexo-generator-feed</div></pre></td></tr></table></figure>
+
+<p>在站点添加链接：<br>在themes/light/_config.yml中，编辑 rss: /atom.xml</p>
+<ul>
+<li>添加sitemap</li>
+</ul>
+<p>同样的，我们使用hexo提供的插件，方法与添加RSS类似。<br>安装sitemap到本地：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span> hexo-generator-sitemap</span></div></pre></td></tr></table></figure>
+
+<p>开启sitemap功能：编辑<code>hexo/_config.yml</code>，添加如下代码：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plugin<span class="variable">s:</span></div><div class="line">- hexo-generator-sitemap</div></pre></td></tr></table></figure>
+
+<p><br></p>
+<h1 id="3-部署到github上"><strong>3.部署到github上</strong></h1>
+<p>部署到Github前需要配置<code>_config.yml</code>文件。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: github</div><div class="line">  repository: git@github.com:thddaniel/thddaniel.github.<span class="built_in">io</span>.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+
+<p>执行下列指令即可完成部署。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="title">hexo</span> clean</div><div class="line">hexo generate <span class="comment">#生成静态页面至public目录</span></div><div class="line">hexo deploy  <span class="comment">#将.deploy目录部署到GitHub</span></div></pre></td></tr></table></figure>
+
+<p>每次修改本地文件后，需要<code>hexo generate</code>才能保存。<br>有的时候当你修改页面或更改配置后发现并没有立即生效，可以执行<code>hexo clean</code></p>
+<p>Github的版本库通常建议同时附上README.md说明文件，但是hexo默认情况下会把所有md文件解析成html文件，所以即使你在线生成了README.md，它也会在你下一次部署时被删去。怎么解决呢？</p>
+<p>在执行hexo deploy前把在本地写好的README.md文件复制到.deploy文件夹中，再去执行hexo deploy。<br>注：之前修改过branch: gh-pages，但是一直显示404.不填默认为master<br><br></p>
+<h1 id="4-写文章"><strong>4.写文章</strong></h1>
+<ul>
+<li><strong>开头加信息</strong></li>
+</ul>
+<p>示例：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">---</span></div><div class="line">layout: post</div><div class="line">title: "使用hexo搭建博客"</div><div class="line">date: 2014-10-26 19:18</div><div class="line">comments: true</div><div class="line">tags: </div><div class="line"><span class="code">	- hexo</span></div><div class="line"><span class="header">description：</span></div><div class="line">---</div></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>关于摘要</strong></li>
+</ul>
+<p>在文档中插入<code>&lt;!--more--&gt;</code>就可以将文章分隔，more以上的部分会已摘要的形式显示，当查看全文时more以下的部分才会显示出来。也可以在Markdown文件中定义description。</p>
+<ul>
+<li><strong>嵌入图片、音乐、视频</strong></li>
+</ul>
+<p>实际上，在hexo中，markdown支持html标签，md文件解析为html时原有的html部分会保留。有基于此，我们只要在文中插入符合html规范的代码即可。</p>
+<p><strong>图片：</strong><br>同样放到source目中下。建议大家建立一个image文件夹，把文章中使用到的图片丢到这里来（当然可以按照你的习惯进行分类），之后在Markdown文件中按照这样的语法进行插入图片的操作。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![<span class="link_label">图片名称</span>](<span class="link_url">image/图片名称.jpg</span>)</div></pre></td></tr></table></figure>
+
+<p><strong>音乐：</strong><br>以『虾米音乐』为例，歌曲页面有个『转帖』选项，将html代码或javascript代码复制到文中即可。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;embed <span class="variable">src=</span><span class="string">"http://www.xiami.com/widget/0_168498_235_346_FF8719_494949/albumPlayer.swf"</span> <span class="variable">type=</span><span class="string">"application/x-shockwave-flash"</span> <span class="variable">width=</span><span class="string">"235"</span> <span class="variable">height=</span><span class="string">"346"</span> <span class="variable">wmode=</span><span class="string">"transparent"</span>&gt;&lt;/embed&gt;</div></pre></td></tr></table></figure>
+
+<embed src="http://www.xiami.com/widget/0_168498_235_346_FF8719_494949/albumPlayer.swf" type="application/x-shockwave-flash" width="235" height="346" wmode="transparent">
+
+<p><strong>视频：</strong><br>嵌入视频的方法和音乐类似，视频网站每个视频页面都会有一个『分享』或『转帖』按钮，点击可以查看代码。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2014/10/26/Markdown笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Markdown笔记</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="使用hexo搭建博客" data-title="使用hexo搭建博客" data-url="tanghaoblog.me/2014/10/26/使用hexo搭建博客/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2014 TANG Hao
+            <a href="mailto:thddaniel92@gmail.com" >发邮件</a>
+            
+         
+            
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Code <a href="https://github.com/thddaniel/Myblog" target="_blank">Theme</a> by Tanghao
+      	</div>
+    
+        <div>
+        <form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+         搜索:<input type="search" name="q" id="search" autocomplete="off" autocorrect="off" autocapitalize="off" maxlength="18" placeholder="关键字" />
+         <input type="hidden" name="q" value="site:tanghaoblog.me">
+        </form>
+        </div>
+        
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+  <script src="/js/main.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

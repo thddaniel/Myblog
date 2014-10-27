@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="tanghaoblog.me/"/>
-  <updated>2014-10-26T02:20:16.966Z</updated>
+  <updated>2014-10-26T14:41:07.507Z</updated>
   <id>tanghaoblog.me/</id>
   
   <author>
@@ -13,6 +13,146 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[使用hexo搭建博客]]></title>
+    <link href="tanghaoblog.me/2014/10/26/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>tanghaoblog.me/2014/10/26/使用hexo搭建博客/</id>
+    <published>2014-10-26T11:18:00.000Z</published>
+    <updated>2014-10-26T14:40:59.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="1-Hexo安装"><strong>1.Hexo安装</strong></h1>
+<p>Hexo的作者是<a href="https://twitter.com/tommy351" target="_blank" rel="external">tommy351</a>，根据官方介绍，Hexo是一个简单、快速、强大的博客发布工具，支持Markdown格式。Hexo是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。<br>参考<a href="http://hexo.io/docs/index.html" target="_blank" rel="external">官方文档</a></p>
+<h3 id="安装Node-js"><strong>安装Node.js</strong></h3>
+<p>在 Windows 环境下安装 Node.js非常简单，仅须<a href="http://nodejs.org/" target="_blank" rel="external">下载</a>安装文件并执行即可完成安装。</p>
+<h3 id="安装Hexo"><strong>安装Hexo</strong></h3>
+<p>打开git。利用 <code>npm</code> 命令即可安装。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span> -g hexo</span></div></pre></td></tr></table></figure>
+
+<p><a id="more"></a></p>
+<h3 id="创建hexo文件夹"><strong>创建hexo文件夹</strong></h3>
+<p>安装完成后，在你喜爱的文件夹下（如H:\hexo），执行以下指令(在H:\hexo内点击鼠标右键，选择Git bash)，Hexo 即会自动在目标文件夹建立网站所需要的所有文件。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo <span class="keyword">init</span></div></pre></td></tr></table></figure>
+
+<h3 id="安装依赖包"><strong>安装依赖包</strong></h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span></span></div></pre></td></tr></table></figure>
+
+<p>本地查看</p>
+<p>现在我们已经搭建起本地的hexo博客了，执行以下命令(在H:\hexo)，然后到浏览器输入localhost:4000看看。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate <span class="preprocessor">#生成静态页面至public目录</span></div><div class="line">hexo <span class="keyword">server</span> <span class="preprocessor">#开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span></div></pre></td></tr></table></figure>
+
+<p>出现了默认的网页界面。至此，本地博客已经搭建起来了。<br><br></p>
+<h1 id="2-Hexo的使用"><strong>2.Hexo的使用</strong></h1>
+<p>首先大致了解下默认生成了一些文件。</p>
+<ul>
+<li><code>scaffolds</code>   layout模板文件目录，其中的md文件可以添加编辑</li>
+<li><code>scripts</code> 写文件的js，扩展hexo的功能</li>
+<li><code>source/_posts</code> 存放博客正文内容</li>
+<li><code>node_modules</code> 插件的目录</li>
+<li><code>themes</code> 存放皮肤的目录</li>
+<li><code>themes/landscape</code> 默认的主题</li>
+<li><code>_config.yml</code> 全局的配置文件，大多数的设置都在这里</li>
+<li><code>db.json</code> 静态常量</li>
+</ul>
+<p>_posts目录：Hexo是一个静态博客框架，因此没有数据库。文章内容都是以文本文件方式进行存储的，直接存储在_posts的目录。Hexo天生集成了markdown，我们可以直接使用markdown语法格式写博客，例如:hello-world.md。新增加一篇文章，就在_posts目录，新建一个xxx.md的文件。</p>
+<p>themes目录：是存放主题的，包括一套Javascript+CSS样式和基于EJS的模板设置。通过在themes目录下，新建一个子目录，就可以创建一套新的皮肤，当然我们也可以直接在landscape上面修改。</p>
+<h3 id="安装插件和主题"><strong>安装插件和主题</strong></h3>
+<p>Hexo提供丰富<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">主题</a>的以及<a href="https://github.com/hexojs/hexo/wiki/Plugins" target="_blank" rel="external">插件</a>。安装方法都是一样的。</p>
+<ul>
+<li>主题</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="input"><span class="prompt">$ git clone &lt;repository&gt;</span> themes/&lt;theme-name&gt;</span></div></pre></td></tr></table></figure>
+
+<p>无论是插件还是主题在安装后都需要在根目录下_config.yml中修改plugins和theme的值以启用他们。<br>主题目录里也有个_config.yml文件，不同主题配置方法不同。<br>我的博客左边一栏里的社交链接。图标来源设置在main.style里。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">├── layout <span class="preprocessor">#布局，根目录下的*.ejs文件是对主页，分页，存档等的控制</span></div><div class="line"><span class="string">|   ├── _partial   #局部的布局，此目录下的*.ejs是对头尾等局部的控制</span></div><div class="line"><span class="string">|   </span></div><div class="line">├── source <span class="preprocessor">#源码</span></div><div class="line"><span class="string">|   ├── css#css源码 </span></div><div class="line"><span class="string">|   |   ├── _base  #*.styl基础css</span></div><div class="line"><span class="string">|   |   ├── _partial   #*.styl局部css</span></div><div class="line"><span class="string">|   |   ├── fonts  #字体</span></div><div class="line"><span class="string">|   |   ├── style.styl #*.styl引入需要的css源码</span></div><div class="line"><span class="string">|   ├── images #图片fancybox   </span></div><div class="line"><span class="string">|   |—— fancybox效果源码</span></div><div class="line"><span class="string">|   └── js #javascript源代码</span></div><div class="line">├── _config.yml<span class="preprocessor">#主题配置文件</span></div><div class="line">└── README.md  <span class="preprocessor">#用GitHub的都知道</span></div></pre></td></tr></table></figure>
+
+<ul>
+<li>插件</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="input"><span class="prompt">npm install &lt;plugin-name&gt;</span> --save</span></div></pre></td></tr></table></figure>
+
+
+
+<p>启用插件：在根目录\ _config.yml文件添加：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="input"><span class="prompt">plugins:</span></span></div><div class="line">- &lt;plugin-name&gt;  <span class="comment">#插件名</span></div></pre></td></tr></table></figure>
+
+<p>升级插件：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">update</span></div></pre></td></tr></table></figure>
+
+<p>卸载插件：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">uninstall</span> &lt;<span class="keyword">plugin</span>-name&gt;</span></div></pre></td></tr></table></figure>
+
+<p><strong>示例</strong>：</p>
+<ul>
+<li>添加RSS</li>
+</ul>
+<p>hexo提供了RSS的生成插件，需要手动安装和设置。步骤如下：<br>安装RSS插件到本地：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span> hexo-generator-feed</span></div></pre></td></tr></table></figure>
+
+<p>开启RSS功能：编辑hexo/_config.yml，添加如下代码：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plugin<span class="variable">s:</span></div><div class="line">- hexo-generator-feed</div></pre></td></tr></table></figure>
+
+<p>在站点添加链接：<br>在themes/light/_config.yml中，编辑 rss: /atom.xml</p>
+<ul>
+<li>添加sitemap</li>
+</ul>
+<p>同样的，我们使用hexo提供的插件，方法与添加RSS类似。<br>安装sitemap到本地：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span> hexo-generator-sitemap</span></div></pre></td></tr></table></figure>
+
+<p>开启sitemap功能：编辑<code>hexo/_config.yml</code>，添加如下代码：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plugin<span class="variable">s:</span></div><div class="line">- hexo-generator-sitemap</div></pre></td></tr></table></figure>
+
+<p><br></p>
+<h1 id="3-部署到github上"><strong>3.部署到github上</strong></h1>
+<p>部署到Github前需要配置<code>_config.yml</code>文件。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: github</div><div class="line">  repository: git@github.com:thddaniel/thddaniel.github.<span class="built_in">io</span>.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+
+<p>执行下列指令即可完成部署。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="title">hexo</span> clean</div><div class="line">hexo generate <span class="comment">#生成静态页面至public目录</span></div><div class="line">hexo deploy  <span class="comment">#将.deploy目录部署到GitHub</span></div></pre></td></tr></table></figure>
+
+<p>每次修改本地文件后，需要<code>hexo generate</code>才能保存。<br>有的时候当你修改页面或更改配置后发现并没有立即生效，可以执行<code>hexo clean</code></p>
+<p>Github的版本库通常建议同时附上README.md说明文件，但是hexo默认情况下会把所有md文件解析成html文件，所以即使你在线生成了README.md，它也会在你下一次部署时被删去。怎么解决呢？</p>
+<p>在执行hexo deploy前把在本地写好的README.md文件复制到.deploy文件夹中，再去执行hexo deploy。<br>注：之前修改过branch: gh-pages，但是一直显示404.不填默认为master<br><br></p>
+<h1 id="4-写文章"><strong>4.写文章</strong></h1>
+<ul>
+<li><strong>开头加信息</strong></li>
+</ul>
+<p>示例：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">---</span></div><div class="line">layout: post</div><div class="line">title: "使用hexo搭建博客"</div><div class="line">date: 2014-10-26 19:18</div><div class="line">comments: true</div><div class="line">tags: </div><div class="line"><span class="code">	- hexo</span></div><div class="line"><span class="header">description：</span></div><div class="line">---</div></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>关于摘要</strong></li>
+</ul>
+<p>在文档中插入<code>&lt;!--more--&gt;</code>就可以将文章分隔，more以上的部分会已摘要的形式显示，当查看全文时more以下的部分才会显示出来。也可以在Markdown文件中定义description。</p>
+<ul>
+<li><strong>嵌入图片、音乐、视频</strong></li>
+</ul>
+<p>实际上，在hexo中，markdown支持html标签，md文件解析为html时原有的html部分会保留。有基于此，我们只要在文中插入符合html规范的代码即可。</p>
+<p><strong>图片：</strong><br>同样放到source目中下。建议大家建立一个image文件夹，把文章中使用到的图片丢到这里来（当然可以按照你的习惯进行分类），之后在Markdown文件中按照这样的语法进行插入图片的操作。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">![<span class="link_label">图片名称</span>](<span class="link_url">image/图片名称.jpg</span>)</div></pre></td></tr></table></figure>
+
+<p><strong>音乐：</strong><br>以『虾米音乐』为例，歌曲页面有个『转帖』选项，将html代码或javascript代码复制到文中即可。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;embed <span class="variable">src=</span><span class="string">"http://www.xiami.com/widget/0_168498_235_346_FF8719_494949/albumPlayer.swf"</span> <span class="variable">type=</span><span class="string">"application/x-shockwave-flash"</span> <span class="variable">width=</span><span class="string">"235"</span> <span class="variable">height=</span><span class="string">"346"</span> <span class="variable">wmode=</span><span class="string">"transparent"</span>&gt;&lt;/embed&gt;</div></pre></td></tr></table></figure>
+
+<embed src="http://www.xiami.com/widget/0_168498_235_346_FF8719_494949/albumPlayer.swf" type="application/x-shockwave-flash" width="235" height="346" wmode="transparent">
+
+<p><strong>视频：</strong><br>嵌入视频的方法和音乐类似，视频网站每个视频页面都会有一个『分享』或『转帖』按钮，点击可以查看代码。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="1-Hexo安装"><strong>1.Hexo安装</strong></h1>
+<p>Hexo的作者是<a href="https://twitter.com/tommy351" target="_blank" rel="external">tommy351</a>，根据官方介绍，Hexo是一个简单、快速、强大的博客发布工具，支持Markdown格式。Hexo是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。<br>参考<a href="http://hexo.io/docs/index.html" target="_blank" rel="external">官方文档</a></p>
+<h3 id="安装Node-js"><strong>安装Node.js</strong></h3>
+<p>在 Windows 环境下安装 Node.js非常简单，仅须<a href="http://nodejs.org/" target="_blank" rel="external">下载</a>安装文件并执行即可完成安装。</p>
+<h3 id="安装Hexo"><strong>安装Hexo</strong></h3>
+<p>打开git。利用 <code>npm</code> 命令即可安装。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span> -g hexo</span></div></pre></td></tr></table></figure>
+
+<p>]]>
+    
+    </summary>
+    
+      <category term="hexo" scheme="tanghaoblog.me/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Markdown笔记]]></title>

@@ -16,10 +16,10 @@ tags:
 - Having a smart budget plan can prepare us for unexpected emergency
 - Planning for emergency is as important as planning for investment
 - Diversify income source is the key way to make a good budget plan
- ![managing money](https://raw.githubusercontent.com/thddaniel/Myblog/master/source/image/Managing%20time,money%20and%20career/1.managing%20money.jpg)
-
-<br>
+ ![managing money](https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Managing%20time,money%20and%20career/1.managing%20money.jpg)
 <!--more-->
+<br>
+
 ###**How to create a budget:**###
 
 - The basic model to start building a budget:
@@ -31,7 +31,7 @@ tags:
     -Investments
 
 A budget plan would look like this:
-![money flow](https://raw.githubusercontent.com/thddaniel/Myblog/master/source/image/Managing%20time,money%20and%20career/2.money%20flow.jpg)
+![money flow](https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Managing%20time,money%20and%20career/2.money%20flow.jpg)
 Discretionary fund is the extra money you have, after paying all your expense. You can spend all of it for current fun, or you can save it/ invest for future.
 <br>
 ###**How to start a budget plan:**###

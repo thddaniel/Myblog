@@ -3,9 +3,9 @@
   <title><![CDATA[唐昊的博客]]></title>
   
   <link href="/atom.xml" rel="self"/>
-  <link href="tanghaoblog.me/"/>
-  <updated>2014-10-26T14:41:07.507Z</updated>
-  <id>tanghaoblog.me/</id>
+  <link href="http://tanghaoblog.me/"/>
+  <updated>2014-10-28T03:30:28.917Z</updated>
+  <id>http://tanghaoblog.me/</id>
   
   <author>
     <name><![CDATA[TANG Hao]]></name>
@@ -15,9 +15,64 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Managing Money]]></title>
+    <link href="http://tanghaoblog.me/2014/10/27/Managing%20Money/"/>
+    <id>http://tanghaoblog.me/2014/10/27/Managing Money/</id>
+    <published>2014-10-27T04:18:00.000Z</published>
+    <updated>2014-10-27T03:44:46.000Z</updated>
+    <content type="html"><![CDATA[<p>今天在cousera上看到这门课<a href="https://www.coursera.org/course/managingmoney" target="_blank" rel="external">Managing Your Time, Money, and Career: MBA Insights for Undergraduates</a><br>走向社会后，如何理财是一门学问。感觉这门课不难，但是挺实用的。顺便还可以学习下英语，练习下听力。以下是笔记。</p>
+<h1 id="1-_What’s_In_Your_Budget?"><strong>1. What’s In Your Budget?</strong></h1>
+<h3 id="Theme_of_this_class:"><strong>Theme of this class:</strong></h3>
+<ul>
+<li>Having a smart budget plan can prepare us for unexpected emergency</li>
+<li>Planning for emergency is as important as planning for investment</li>
+<li>Diversify income source is the key way to make a good budget plan<br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/source/image/Managing%20time,money%20and%20career/1.managing%20money.jpg" alt="managing money"></li>
+</ul>
+<p><br><br><a id="more"></a></p>
+<h3 id="How_to_create_a_budget:"><strong>How to create a budget:</strong></h3>
+<ul>
+<li>The basic model to start building a budget:<br>  -Money in<br>  -Money out</li>
+<li>Between the two we have discretionary funds:<br>  -Cash<br>  -Savings<br>  -Investments</li>
+</ul>
+<p>A budget plan would look like this:<br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/source/image/Managing%20time,money%20and%20career/2.money%20flow.jpg" alt="money flow"><br>Discretionary fund is the extra money you have, after paying all your expense. You can spend all of it for current fun, or you can save it/ invest for future.<br><br></p>
+<h3 id="How_to_start_a_budget_plan:"><strong>How to start a budget plan:</strong></h3>
+<ul>
+<li>First step:Creating a saving account in your local bank, it can be the cash reserves for emergency, or funds for buying a house, etc. It earns more interests than checking account.</li>
+<li>College might have credit union, which charges lower fees and have higher interest rates.Also, not every bank is the same; some might have higher fees, fewer transaction times, and other different policies.</li>
+</ul>
+<p><br></p>
+<p>Some other key points in managing budgeting and spending your money:</p>
+<ul>
+<li>Money are meant to be spend-wisely. How you spend it will determine whether your wealth will increase or shrink.</li>
+<li>Fixed expenses are the point to start counting, but they can also be adjusted. E.g. you can choose which kind of house you want to live in, and therefore how much rent you will pay.</li>
+<li>You can use spreadsheet to plan budget, and there are also tools online.</li>
+<li>The more important work is not creating a budget, but sticking to it.</li>
+</ul>
+<p><br><br><br><br><br><br><br><br><code>To be continued</code></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>今天在cousera上看到这门课<a href="https://www.coursera.org/course/managingmoney" target="_blank" rel="external">Managing Your Time, Money, and Career: MBA Insights for Undergraduates</a><br>走向社会后，如何理财是一门学问。感觉这门课不难，但是挺实用的。顺便还可以学习下英语，练习下听力。以下是笔记。</p>
+<h1 id="1-_What’s_In_Your_Budget?"><strong>1. What’s In Your Budget?</strong></h1>
+<h3 id="Theme_of_this_class:"><strong>Theme of this class:</strong></h3>
+<ul>
+<li>Having a smart budget plan can prepare us for unexpected emergency</li>
+<li>Planning for emergency is as important as planning for investment</li>
+<li>Diversify income source is the key way to make a good budget plan<br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/source/image/Managing%20time,money%20and%20career/1.managing%20money.jpg" alt="managing money"></li>
+</ul>
+<p><br><br>]]>
+    
+    </summary>
+    
+      <category term="理财" scheme="http://tanghaoblog.me/tags/%E7%90%86%E8%B4%A2/"/>
+    
+      <category term="Open Courses" scheme="http://tanghaoblog.me/tags/Open-Courses/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[使用hexo搭建博客]]></title>
-    <link href="tanghaoblog.me/2014/10/26/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
-    <id>tanghaoblog.me/2014/10/26/使用hexo搭建博客/</id>
+    <link href="http://tanghaoblog.me/2014/10/26/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
+    <id>http://tanghaoblog.me/2014/10/26/使用hexo搭建博客/</id>
     <published>2014-10-26T11:18:00.000Z</published>
     <updated>2014-10-26T14:40:59.000Z</updated>
     <content type="html"><![CDATA[<h1 id="1-Hexo安装"><strong>1.Hexo安装</strong></h1>
@@ -150,14 +205,14 @@
     
     </summary>
     
-      <category term="hexo" scheme="tanghaoblog.me/tags/hexo/"/>
+      <category term="hexo" scheme="http://tanghaoblog.me/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Markdown笔记]]></title>
-    <link href="tanghaoblog.me/2014/10/26/Markdown%E7%AC%94%E8%AE%B0/"/>
-    <id>tanghaoblog.me/2014/10/26/Markdown笔记/</id>
+    <link href="http://tanghaoblog.me/2014/10/26/Markdown%E7%AC%94%E8%AE%B0/"/>
+    <id>http://tanghaoblog.me/2014/10/26/Markdown笔记/</id>
     <published>2014-10-26T01:18:00.000Z</published>
     <updated>2014-10-26T02:19:16.000Z</updated>
     <content type="html"><![CDATA[<h3 id="1-_斜体和粗体"><strong>1. 斜体和粗体</strong></h3>
@@ -274,7 +329,7 @@ hello world.
     
     </summary>
     
-      <category term="markdown" scheme="tanghaoblog.me/tags/markdown/"/>
+      <category term="markdown" scheme="http://tanghaoblog.me/tags/markdown/"/>
     
   </entry>
   

@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://tanghaoblog.me/"/>
-  <updated>2014-10-28T04:15:48.944Z</updated>
+  <updated>2014-10-29T01:57:28.662Z</updated>
   <id>http://tanghaoblog.me/</id>
   
   <author>
@@ -15,13 +15,82 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Learning how to learn]]></title>
+    <link href="http://tanghaoblog.me/2014/10/28/Learning%20how%20to%20learn/"/>
+    <id>http://tanghaoblog.me/2014/10/28/Learning how to learn/</id>
+    <published>2014-10-28T14:18:00.000Z</published>
+    <updated>2014-10-29T01:01:01.000Z</updated>
+    <content type="html"><![CDATA[<p>cousera课:<a href="https://class.coursera.org/learning-002" target="_blank" rel="external">learning how to learn</a>笔记</p>
+<h2 id="1-Focused_versus_Diffuse_Thinking"><strong>1.Focused versus Diffuse Thinking</strong></h2>
+<h3 id="专注模式和发散模式"><strong>专注模式和发散模式</strong></h3>
+<p>我们人类有两种最基本的思考模式：</p>
+<ul>
+<li>专注模式(focused)： 解决简单的 熟悉的问题时，很快就能找到熟悉的思路，将问题一一拆分，并逐步解决。</li>
+<li>发散模式(diffuse)：解决一些从未接触过的想法，概念时，不知道怎样开始解决，不知道正确的方向，所以思绪天马行空，是发散的，直到碰到一个障碍又折回来继续思考，直到解决问题。在这种思维模式下，你的思维更广阔，全面。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Learning%20How%20to%20Learn/1.jpg" alt="思考模式"><br><a id="more"></a><br>这两种思考模式就像硬币的两个面，人类不能同时使用两种思考模式。以现代神经学的知识，我们不能同时处在集中模式和发散模式下进行思考，就像一枚硬币不能同时正面和反面朝上一样。但这并不意味着我们不能同时交替使用他们来解决问题，当学习新的比较难懂的东西时，思维需要在两种完全不同的模式中转换，这能帮助我们更有效地学习。</p>
+<p>Eg： Dali and Edison，他们放松自己让思绪漫游，考虑他们之前专注的内容，一旦要睡着，钥匙 or钢球将他们惊醒，然后带着在发散模式下得到的灵感，转而进入专注模式，将这些灵感变成现实。当然这些需要每天的练习。</p>
+<p>要想有强健的体魄，需要每天运动，让肌肉增长；同样地，想建立神经结构，也需要每天练习，这是关键。</p>
+<h3 id="拖延症"><strong>拖延症</strong></h3>
+<ul>
+<li>拖延症的产生：当你不想去做一件事的时候，大脑中相关区域的痛苦会被激发出来，为了避免这种痛苦，大脑将注意力转向其他地方。结果是，你只是感到暂时的愉悦，但是事情被拖延了。</li>
+<li>如何克服拖延症： <strong>立即去做</strong>！！研究发现，当人们开始做不喜欢的事不久，大脑中痛苦的感觉就消失了！</li>
+</ul>
+<h3 id="熟能生巧"><strong>熟能生巧</strong></h3>
+<p>当我们学习一些具体事物的时候，只要将它和现实中的事物进行“链接”，我们就能掌握这个知识。但如果我们要学习的内容是抽象的数学概念和情感感觉或者其他事物的时候，由于现实生活中没有这种具体或者类比事物，我们很难对其进行学习和掌握。因此在学习这类概念的时候，我们需要人为地创建“思维模式”（PATTERN），并通过练习，不断增强这种思维模式。<br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Learning%20How%20to%20Learn/2.jpg" alt=""></p>
+<p>在理解一些抽象概念时，在思考过程中创建的思维模式是具体而真实的，都是从起点开始一个神经元通过轴突、突触、树突传递到另一个神经元。当你不断地运用某一种思维模式的时候，他在你的脑海中就不断地根深蒂固（颜色越来越深）。</p>
+<p>第一次形成的思考模式是用“发散模式”发现问题解决路径之后，大脑将切换到“集中模式”，并记录该模式，在之后解决同样问题的时候，便直接调用这个模式，从而其在大脑中的路径颜色就越来越深，越来越牢固</p>
+<h3 id="关于记忆"><strong>关于记忆</strong></h3>
+<p>记忆分为工作记忆和长期记忆。</p>
+<ul>
+<li>工作记忆：与要立即处理的问题相关的记忆，位于大脑前额皮质层（prefrontal cortex），现在广泛认为工作记忆能记住4个信息块。工作记忆就像一块黑板，并不是很好用，为了将要记忆的东西储存到工作记忆中，需要经常重复。当我们集中精力记忆一些东西时，会闭上眼睛，避免再摄入其他的新信息进入工作性记忆中，所以短期性记忆的效果很差。</li>
+<li>长期记忆：类似于仓库，有巨大的存储空间，但需要多次练习才能在众多信息中找到你想要的信息。不同的长期记忆储存在大脑的不同区域。研究发现，当第一次将工作记忆转化成长期记忆储存时，需要不断重复这个过程几次，这样能提高日后在你需要的时候找到他的几率。要将记忆转化为长期记忆，用间隔时间重复练习效果更好（类似艾宾浩斯曲线）。</li>
+</ul>
+<h3 id="睡眠的重要性"><strong>睡眠的重要性</strong></h3>
+<p>在醒着的时候，大脑会产生有害物质（toxic），当睡着的时候，脑细胞与脑细胞之间的间距增大，通过脑中的液体将有害物质从脑细胞的间隙冲走，从而清理掉有害物质。所以睡眠不足意味着你的大脑毒素没有清理干净，毒素会导致你不能清晰地思考。长期睡眠不足还会导致头痛、抑郁、心脏病。糖尿病等。</p>
+<p>在睡觉的时候：</p>
+<ul>
+<li>大脑将你正在学习和思考的一些内容和概念更紧密地结合在一起。</li>
+<li>将记忆中不太重要的部分抹去，同时将你想要记住的部分进行强化。</li>
+<li>大脑会反复练习学习内容中比较难的部分，这样新的神经元模式会不断加深和强化</li>
+<li>增强理解和解决复杂问题的能力。睡觉时，大脑前额皮质层的意识钝化，这使得大脑的其他部分更容易交流，从而将正在学习的内容进行有序的整合，以利于理解和记忆。</li>
+</ul>
+<p><strong>所以在睡前复习今天所学的知识，能在睡梦中更好地理解和强化这些内容。</strong><br><br><br><br><br><br><br><br><br><code>To be continued</code></p>
+<p>Reference:</p>
+<ol>
+<li>MOOC学院  <a href="http://mooc.guokr.com/course/1484/Learning-How-to-Learn--Powerful-mental-tools-to-help-you-master-tough-subjects/note/" target="_blank" rel="external">learning how to learn 笔记</a></li>
+<li>cousera Reading</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>cousera课:<a href="https://class.coursera.org/learning-002" target="_blank" rel="external">learning how to learn</a>笔记</p>
+<h2 id="1-Focused_versus_Diffuse_Thinking"><strong>1.Focused versus Diffuse Thinking</strong></h2>
+<h3 id="专注模式和发散模式"><strong>专注模式和发散模式</strong></h3>
+<p>我们人类有两种最基本的思考模式：</p>
+<ul>
+<li>专注模式(focused)： 解决简单的 熟悉的问题时，很快就能找到熟悉的思路，将问题一一拆分，并逐步解决。</li>
+<li>发散模式(diffuse)：解决一些从未接触过的想法，概念时，不知道怎样开始解决，不知道正确的方向，所以思绪天马行空，是发散的，直到碰到一个障碍又折回来继续思考，直到解决问题。在这种思维模式下，你的思维更广阔，全面。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Learning%20How%20to%20Learn/1.jpg" alt="思考模式"><br>]]>
+    
+    </summary>
+    
+      <category term="思维" scheme="http://tanghaoblog.me/tags/%E6%80%9D%E7%BB%B4/"/>
+    
+      <category term="记忆力" scheme="http://tanghaoblog.me/tags/%E8%AE%B0%E5%BF%86%E5%8A%9B/"/>
+    
+      <category term="Open Courses" scheme="http://tanghaoblog.me/tags/Open-Courses/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Managing Money]]></title>
     <link href="http://tanghaoblog.me/2014/10/27/Managing%20Money/"/>
     <id>http://tanghaoblog.me/2014/10/27/Managing Money/</id>
     <published>2014-10-27T04:18:00.000Z</published>
-    <updated>2014-10-28T04:15:24.000Z</updated>
+    <updated>2014-10-29T01:57:14.000Z</updated>
     <content type="html"><![CDATA[<p>今天在cousera上看到这门课<a href="https://www.coursera.org/course/managingmoney" target="_blank" rel="external">Managing Your Time, Money, and Career: MBA Insights for Undergraduates</a><br>走向社会后，如何理财是一门学问。感觉这门课不难，但是挺实用的。顺便还可以学习下英语，练习下听力。以下是笔记。</p>
-<h1 id="1-_What’s_In_Your_Budget?"><strong>1. What’s In Your Budget?</strong></h1>
+<h2 id="1-_What’s_In_Your_Budget?"><strong>1. What’s In Your Budget?</strong></h2>
 <h3 id="Theme_of_this_class:"><strong>Theme of this class:</strong></h3>
 <ul>
 <li>Having a smart budget plan can prepare us for unexpected emergency</li>
@@ -45,13 +114,52 @@
 <li>Money are meant to be spend-wisely. How you spend it will determine whether your wealth will increase or shrink.</li>
 <li>Fixed expenses are the point to start counting, but they can also be adjusted. E.g. you can choose which kind of house you want to live in, and therefore how much rent you will pay.</li>
 <li>You can use spreadsheet to plan budget, and there are also tools online.</li>
-<li>The more important work is not creating a budget, but sticking to it.</li>
+<li>The more important work is not creating a budget, but sticking to it.<br><br><h2 id="2-_To_Credit_or_Debit_Card?"><strong>2. To Credit or Debit Card?</strong></h2>
+<h3 id="Theme:"><strong>Theme:</strong></h3>
+</li>
+<li>Differences between credit card and debit card</li>
+<li>The benefits and risk of credit card</li>
+</ul>
+<h3 id="Debit_card:"><strong>Debit card:</strong></h3>
+<ul>
+<li>Draws directly from your account</li>
+<li>No monthly bill to pay</li>
+<li>Account “debited”</li>
+<li>Transactions easy to track</li>
+<li>Online features to monitor account</li>
+</ul>
+<p>You put money inside the bank first, and only spend what you already have. Therefore the account is “debited”.</p>
+<p>With debit card, you don’t have to bring so much cash every day.Also, debit card is convenient for tracking, because you can only spend what you have. Therefore, it’s easier for budgeting because you would never overspend.</p>
+<h3 id="Credit_Card:"><strong>Credit Card:</strong></h3>
+<ul>
+<li>Bank temporarily lends you the money.</li>
+<li>You pay balance end of month</li>
+<li>If you can’t pay all,you pay interest!</li>
+<li>Rate = “APR”:annual percentage rate</li>
+<li>APR = combined interest &amp; fees over 1 year</li>
+</ul>
+<p>You spend money first, which creates a debt, and you pay the bank back later. Therefore you “credit” is important.</p>
+<p>Credit institution will record your “credit score”: whether you had pay back on time, and how much you could probably afford each time.</p>
+<p>With higher credit score, you would pay less interest and your APR might be low. Bank would evaluate lending money to you as a lower risk.</p>
+<h3 id="Different_type_of_credit_cards:"><strong>Different type of credit cards:</strong></h3>
+<p>There are two types of credit card: </p>
+<ul>
+<li>Unsecured cards are often offered by banks. You do not need to provide collateral.</li>
+<li>Secured cards require collateral for people with poor credit history. Collateral could be cars, boats, etc. If you fail to pay your bill, you might lose your collateral.</li>
+</ul>
+<h3 id="Reward_Cards:"><strong>Reward Cards:</strong></h3>
+<p>Some credit cards are reward cards, which are always only given to people with good credit history. You can get points for the money you spent, and rewards include cash back, gas savings,travel rewards, etc.</p>
+<p>But reward cards often come with additional fees. Pay your balance quickly could help.</p>
+<h3 id="Key_Points:"><strong>Key Points:</strong></h3>
+<ul>
+<li>Debit cards great for small expenditures,not emergencies or large stuff.</li>
+<li>Credit Cards good for large purchases:can spread the cost out.</li>
 </ul>
 <p><br><br><br><br><br><br><br><br><code>To be continued</code></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>今天在cousera上看到这门课<a href="https://www.coursera.org/course/managingmoney" target="_blank" rel="external">Managing Your Time, Money, and Career: MBA Insights for Undergraduates</a><br>走向社会后，如何理财是一门学问。感觉这门课不难，但是挺实用的。顺便还可以学习下英语，练习下听力。以下是笔记。</p>
-<h1 id="1-_What’s_In_Your_Budget?"><strong>1. What’s In Your Budget?</strong></h1>
+<h2 id="1-_What’s_In_Your_Budget?"><strong>1. What’s In Your Budget?</strong></h2>
 <h3 id="Theme_of_this_class:"><strong>Theme of this class:</strong></h3>
 <ul>
 <li>Having a smart budget plan can prepare us for unexpected emergency</li>

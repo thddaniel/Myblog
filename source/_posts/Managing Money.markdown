@@ -10,7 +10,7 @@ tags:
 ---
 今天在cousera上看到这门课[Managing Your Time, Money, and Career: MBA Insights for Undergraduates](https://www.coursera.org/course/managingmoney)
 走向社会后，如何理财是一门学问。感觉这门课不难，但是挺实用的。顺便还可以学习下英语，练习下听力。以下是笔记。
-#**1. What's In Your Budget?**
+##**1. What's In Your Budget?**##
 ###**Theme of this class:**###
 
 - Having a smart budget plan can prepare us for unexpected emergency
@@ -47,7 +47,53 @@ Some other key points in managing budgeting and spending your money:
 - Fixed expenses are the point to start counting, but they can also be adjusted. E.g. you can choose which kind of house you want to live in, and therefore how much rent you will pay.
 - You can use spreadsheet to plan budget, and there are also tools online.
 - The more important work is not creating a budget, but sticking to it.
+<br>
+##**2. To Credit or Debit Card?**##
+###**Theme:**###
+- Differences between credit card and debit card
+- The benefits and risk of credit card
 
+###**Debit card:**###
+
+- Draws directly from your account
+- No monthly bill to pay
+- Account "debited"
+- Transactions easy to track
+- Online features to monitor account
+
+You put money inside the bank first, and only spend what you already have. Therefore the account is “debited”.
+
+With debit card, you don’t have to bring so much cash every day.Also, debit card is convenient for tracking, because you can only spend what you have. Therefore, it’s easier for budgeting because you would never overspend.
+
+###**Credit Card:**###
+
+- Bank temporarily lends you the money.
+- You pay balance end of month
+- If you can't pay all,you pay interest!
+- Rate = "APR":annual percentage rate
+- APR = combined interest & fees over 1 year
+
+You spend money first, which creates a debt, and you pay the bank back later. Therefore you “credit” is important.
+
+Credit institution will record your “credit score”: whether you had pay back on time, and how much you could probably afford each time.
+
+With higher credit score, you would pay less interest and your APR might be low. Bank would evaluate lending money to you as a lower risk.
+
+
+###**Different type of credit cards:**###
+There are two types of credit card: 
+
+- Unsecured cards are often offered by banks. You do not need to provide collateral.
+- Secured cards require collateral for people with poor credit history. Collateral could be cars, boats, etc. If you fail to pay your bill, you might lose your collateral.
+
+###**Reward Cards:**###
+Some credit cards are reward cards, which are always only given to people with good credit history. You can get points for the money you spent, and rewards include cash back, gas savings,travel rewards, etc.
+
+But reward cards often come with additional fees. Pay your balance quickly could help.
+
+###**Key Points:**###
+- Debit cards great for small expenditures,not emergencies or large stuff.
+- Credit Cards good for large purchases:can spread the cost out.
 
 <br>
 <br>

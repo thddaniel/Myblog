@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://tanghaoblog.me/"/>
-  <updated>2014-10-29T01:57:28.662Z</updated>
+  <updated>2014-10-31T07:12:38.214Z</updated>
   <id>http://tanghaoblog.me/</id>
   
   <author>
@@ -13,6 +13,58 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[How to start a startup]]></title>
+    <link href="http://tanghaoblog.me/2014/10/31/How%20to%20start%20a%20startup/"/>
+    <id>http://tanghaoblog.me/2014/10/31/How to start a startup/</id>
+    <published>2014-10-31T04:18:00.000Z</published>
+    <updated>2014-10-31T07:11:33.000Z</updated>
+    <content type="html"><![CDATA[<p>网易公开课：<a href="http://v.163.com/special/opencourse/startup.html" target="_blank" rel="external">如何创业</a> Stanford CS183B</p>
+<p><strong>Outcome</strong> =<code>Idea</code> x <code>Product</code> x <code>Teams</code> x <code>Execution</code> x <code>Luck</code>(random # between 0 and 10,000)</p>
+<h3 id="Four_critical_parts:"><strong>Four critical parts:</strong></h3>
+<p><strong>1. A Great Idea</strong><br>It includes the size and growth of the market,the growth strategy for company,the defensibility strategy and so on.</p>
+<ul>
+<li>Even though plans themselves are worthless,to exercise a planning is really valuable.</li>
+<li>You need to build a business that is difficult to replicate.</li>
+<li>Startup should feel like an important mission.</li>
+<li>You want an idea that turns into a monopoly,but you can’t get monopoly in a big market right away.You have to find a small market in which you can get a monopoly, and then quickly expand.<br><a id="more"></a><br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/startup/1.jpg" alt=""></li>
+<li>This is why the best ideas often look terrible at the beginning.</li>
+<li>You need a market that’s going to be big in ten years.</li>
+<li>More important than starting any particular startup is getting to know a lot of potential co-founders.</li>
+<li>The importance of thinking about what customers want, and thinking about the demands of the market.<br><br></li>
+</ul>
+<p><strong>2. Building a Great Product</strong><br>Broad definition: It includes customer support and copyright explaining the product.Anything involved in your customers interaction with what you build for them. </p>
+<ul>
+<li>Great Ideas turn to great product. A great product is the secret to long term growth hacking.</li>
+<li>Build something users love.Its better to build something that a small number of users love, than to build something that a large number of users like. </li>
+<li>Start with something simple. Its much much easier to make a great product if you have something simple.</li>
+<li>Talk to users. You need some users to help with the feedback cycle.The way to get those users is manually.You should go recruit them by hand. Don’t do things like buy google ads in the early days to get initial users.</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/startup/2a.jpg" alt=""></p>
+<ul>
+<li>You should make this feedback loop as tight as possible.The best companies usually have the tightest feedback loops.</li>
+</ul>
+<p><br><br><strong>3. Team</strong><br><strong>4. Execution</strong><br><br><br><br><br><br><br><br><br><code>To be continued</code></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>网易公开课：<a href="http://v.163.com/special/opencourse/startup.html" target="_blank" rel="external">如何创业</a> Stanford CS183B</p>
+<p><strong>Outcome</strong> =<code>Idea</code> x <code>Product</code> x <code>Teams</code> x <code>Execution</code> x <code>Luck</code>(random # between 0 and 10,000)</p>
+<h3 id="Four_critical_parts:"><strong>Four critical parts:</strong></h3>
+<p><strong>1. A Great Idea</strong><br>It includes the size and growth of the market,the growth strategy for company,the defensibility strategy and so on.</p>
+<ul>
+<li>Even though plans themselves are worthless,to exercise a planning is really valuable.</li>
+<li>You need to build a business that is difficult to replicate.</li>
+<li>Startup should feel like an important mission.</li>
+<li>You want an idea that turns into a monopoly,but you can’t get monopoly in a big market right away.You have to find a small market in which you can get a monopoly, and then quickly expand.<br>]]>
+    
+    </summary>
+    
+      <category term="创业" scheme="http://tanghaoblog.me/tags/%E5%88%9B%E4%B8%9A/"/>
+    
+      <category term="Open Courses" scheme="http://tanghaoblog.me/tags/Open-Courses/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Learning how to learn]]></title>

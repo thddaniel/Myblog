@@ -61,6 +61,36 @@ Eg： Dali and Edison，他们放松自己让思绪漫游，考虑他们之前�
 
 **所以在睡前复习今天所学的知识，能在睡梦中更好地理解和强化这些内容。**
 <br>
+##**2.Chunking**##
+###**What is a chunk?**###
+- Chunking is the mental leap that helps you unite bits of information together through meaning.
+- A chunk means a network of neurons that are used to firing together so you can think a thought or perform an action smoothly and effectively.
+
+When you're focusing your attention on something it's almost as if you have an octopus.
+![octopus](https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Learning%20How%20to%20Learn/3.jpg)
+The octopus of attention that slips it's tentacles through those four slots of working memory when necessary to help you make connections to information that you might have in various parts of your brain.
+
+
+###**How to form a chunk?**
+Chunks are best built with focused, undivided attention, understanding of the basic idea.
+> 
+1. The first step on chunking is simply to focus your undivided attention on the information you want to chunk.
+2. The second step in chunking is to understand the basic idea you're trying to chunk, whether it's understanding a concept. Understanding is like a superglue that helps hold the underlying memory traces together. It creates broad encompassing traces that can link to other memory traces.
+3. The third step to chunking is gaining context, so you can see not just how, but also when to use this chunk. Context means going beyond the initial problem and seeing more broadly, repeating and practicing with both related and unrelated problems, so that you can see not only when to use the chunk, but when not to use it. This helps you see how your newly formed chunk fits into the bigger picture.
+
+---
+- Focused practice and repetition, the creation of strong memory traces, helps you to create chunks.
+- Doing a rapid two-minute picture walk through a chapter in a book before you begin studying it, glancing at pictures and section headings, can allow you to gain a sense of the big picture.
+- Simple recall, trying to remember the key points without looking at the page, is one of the best ways to help the chunking process along, rather than passive rereading, will make your study time more focused and effective.
+- Test yourself frequently. Mistakes are a good thing to make when you're learning.
+- Try to avoid depending too much on highlighting, which can fool you into thinking that the material is going into your brain when it actually isn't.
+
+![](https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Learning%20How%20to%20Learn/4.jpg)
+
+
+**When you're trying to figure something out, if you have a good library of these chunks, you can more easily skip to the right solution by metaphorically speaking, listening to whispers from your diffuse mode. Your diffuse mode can help you connect two or more chunks together in new ways to solve novel problems.**
+
+
 <br>
 <br>
 <br>

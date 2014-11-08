@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://tanghaoblog.me/"/>
-  <updated>2014-11-05T12:51:54.047Z</updated>
+  <updated>2014-11-08T09:40:34.482Z</updated>
   <id>http://tanghaoblog.me/</id>
   
   <author>
@@ -13,6 +13,164 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Git Real]]></title>
+    <link href="http://tanghaoblog.me/2014/10/31/Git%20Real/"/>
+    <id>http://tanghaoblog.me/2014/10/31/Git Real/</id>
+    <published>2014-10-31T04:18:00.000Z</published>
+    <updated>2014-11-08T09:40:23.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="Level_1:STAGING_&amp;_REMOTES"><strong>Level 1:STAGING &amp; REMOTES</strong></h1>
+<h3 id="1-_UNSTAGED_DIFFERENCES"><strong>1. UNSTAGED DIFFERENCES</strong></h3>
+<blockquote>
+<p>A new file has been added to the site. Run the command to see what all has changed since your last commit.</p>
+</blockquote>
+<p><code>git status</code> will list out which files have changed. If we want to see the actual changes:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> diff</div></pre></td></tr></table></figure>
+
+<h3 id="2-_STAGE_NEW_FILE"><strong>2. STAGE NEW FILE</strong></h3>
+<blockquote>
+<p>There it is: <code>ostrich.html</code>. Stage it to be committed.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">add</span> ostrich.html</div></pre></td></tr></table></figure>
+
+<p><a id="more"></a></p>
+<h3 id="3-_STAGED_DIFFERENCES"><strong>3. STAGED DIFFERENCES</strong></h3>
+<blockquote>
+<p>We’ve added <code>ostrich.html</code> to the staging area, but your co-worker has stopped by and asked to see the new page first. Run a <code>diff</code> on the staged changes.</p>
+</blockquote>
+<p><code>git diff</code> is great for seeing <strong>unstaged differences</strong> since last commit, but you need the <code>--staged</code> option in order to see staged changes.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">git</span> <span class="comment">diff</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">staged</span></div></pre></td></tr></table></figure>
+
+<h3 id="4-_UNSTAGE_FILES"><strong>4. UNSTAGE FILES</strong></h3>
+<blockquote>
+<p>“Wait,” says the co-worker. “They didn’t tell you? The client “wants the ostrich section pulled - they couldn’t get a license to “sell them.” Better unstage <code>ostrich.html</code>.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="operator"><span class="keyword">reset</span> HEAD ostrich.html</span></div></pre></td></tr></table></figure>
+
+<h3 id="5-_SKIP_STAGING"><strong>5. SKIP STAGING</strong></h3>
+<blockquote>
+<p>We’ve modified the <code>index.html</code> file, adding a link to the cats section. Since that file is already tracked, you can just skip staging and commit it with one command.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit <span class="operator">-a</span> -m <span class="string">"index.html adding a link"</span></div></pre></td></tr></table></figure>
+
+<p><code>-a</code>: Add changes from all tracked files. Doesn’t add new(untracked) files.</p>
+<h3 id="6-_ADD_TO_COMMIT"><strong>6. ADD TO COMMIT</strong></h3>
+<blockquote>
+<p>Whoops! We forgot to add the <code>cats.html</code> page that <code>index.html</code> links to, and it should really be <code>amended</code> on the same commit. To do this, let’s first stage <code>cats.html</code>.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">add</span> cats.html</div></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Second, let’s add <code>cats.html</code> to the prior commit and change the commit message in one step. </p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="operator"><span class="keyword">commit</span> <span class="comment">--amend -m "modified index.html & add cats.html"</span></span></div></pre></td></tr></table></figure>
+
+<p>You don’t want to make a new commit, you want to amend the previous one, so what I’m trying to say is: Use the amend option(<strong>add to the last commit</strong>)<br>Whatever has been staged is added to last commit!</p>
+<h3 id="7-_ROLL_BACK_COMMIT"><strong>7. ROLL BACK COMMIT</strong></h3>
+<blockquote>
+<p>Wait, you’re getting word that the cats section might be cancelled. <strong>Undo the commit, and put the files back in staging.</strong></p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="operator"><span class="keyword">reset</span> <span class="comment">--soft HEAD^</span></span></div></pre></td></tr></table></figure>
+
+<p><code>soft</code>: Reset into staging<br><code>HEAD^</code>: Move to commit before ‘HEAD’<br>Now I can make changes, and re-commit</p>
+<h3 id="8-_DISCARD_CHANGES"><strong>8. DISCARD CHANGES</strong></h3>
+<blockquote>
+<p>Forget the whole thing - the client’s license to sell cats is suspended during some kind of “investigation”. Discard your changes to <code>cats.html</code> and <code>index.html</code>.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout -- cats.html <span class="built_in">index</span>.html</div></pre></td></tr></table></figure>
+
+<p>Blow away all changes since last commit.</p>
+<h3 id="9-_REMOVE_COMMIT"><strong>9. REMOVE COMMIT</strong></h3>
+<blockquote>
+<p>1.The next feature is a banner on the main page, saying the pet shop will soon be offering badgers. Add and commit <code>index.html</code> in one step, skipping the staging area.<br>2.Your co-worker is back, looking sheepish. “Never mind the badgers ad. The client’s legal department said that was a liability risk.” <strong>You’ll need to remove the most recent commit, and all its changes.</strong></p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git <span class="operator"><span class="keyword">commit</span> -am <span class="string">"add index.html"</span></span></div><div class="line">git <span class="keyword">reset</span> <span class="comment">--hard HEAD^</span></div></pre></td></tr></table></figure>
+
+<h3 id="10-_NEW_REMOTE_REPOS_AND_PUSH"><strong>10. NEW REMOTE REPOS AND PUSH</strong></h3>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git remote add <span class="variable">&lt;name&gt;</span> <span class="variable">&lt;address&gt;</span> /<span class="keyword">*</span>To add new remotes<span class="keyword">*</span>/</div><div class="line">git remote rm <span class="variable">&lt;name&gt;</span> /<span class="keyword">*</span>To remove remotes<span class="keyword">*</span>/</div><div class="line">git remote -v /<span class="keyword">*</span>show remote repositories<span class="keyword">*</span>/</div><div class="line">git push -u <span class="variable">&lt;name&gt;</span> <span class="variable">&lt;branch&gt;</span> /<span class="keyword">*</span>To push to remotes. The -u tells Git to remember the parameters, so that next time we can simply run git push <span class="keyword">*</span>/</div></pre></td></tr></table></figure>
+
+<p><br></p>
+<h1 id="Level_2:CLONING_&amp;_BRANCHING"><strong>Level 2:CLONING &amp; BRANCHING</strong></h1>
+<h3 id="1-_CLONE_A_REPO"><strong>1. CLONE A REPO</strong></h3>
+<blockquote>
+<p>The IT department installed an OS update on your workstation - and wiped the hard drive in the process. Clone the Pet Shop repo from <code>git@example.com:example/petshop.git</code> so you can resume work.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> clone git<span class="variable">@example</span>.com:example/petshop.git</div></pre></td></tr></table></figure>
+
+<h3 id="2-_LIST_REMOTES"><strong>2. LIST REMOTES</strong></h3>
+<blockquote>
+<p>Our repo is cloned locally, but how do we check to a list of our remotes? Lets get a list of all our remotes with a verbose output.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote -v /<span class="keyword">*</span>show remote repositories<span class="keyword">*</span>/</div></pre></td></tr></table></figure>
+
+<h3 id="3-_CREATE_A_BRANCH"><strong>3. CREATE A BRANCH</strong></h3>
+<blockquote>
+<p>We need to add a section for the pet grooming salon on the site. You want to isolate this new feature from your other work. Create a new branch named <code>grooming</code>.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> branch grooming</div></pre></td></tr></table></figure>
+
+<h3 id="4-_SWITCH_TO_BRANCH"><strong>4. SWITCH TO BRANCH</strong></h3>
+<blockquote>
+<p>You’ve made the new branch, but your commits are still going to the old one. Switch to the <code>grooming</code> branch.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> checkout grooming</div></pre></td></tr></table></figure>
+
+<h3 id="5-_COMBINE_BRANCH"><strong>5. COMBINE BRANCH</strong></h3>
+<blockquote>
+<p>You’ve finished work on the <code>grooming</code> branch and are ready to bring your work back into <code>master</code>. First, check out the master branch…<br>Then,bring your changes from the grooming branch into the …master branch.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git checkout master</div><div class="line">git merge grooming</div><div class="line">git branch -d grooming /<span class="keyword">*</span>remove it<span class="keyword">*</span>/</div></pre></td></tr></table></figure>
+
+<h3 id="6-_BRANCH_SHORTCUTS"><strong>6. BRANCH SHORTCUTS</strong></h3>
+<blockquote>
+<p>The pet shop wants to try selling yet another product line! Let’s do this one in a branch in case it gets cancelled like the others. Using a single command, create and check out an <code>octopus</code> branch.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> checkout -b octopus</div></pre></td></tr></table></figure>
+
+<p><br></p>
+<h1 id="Level_3:COLLABORATION_BASICS"><strong>Level 3:COLLABORATION BASICS</strong></h1>
+<h3 id="1-_SEND_CHANGES"><strong>1. SEND CHANGES</strong></h3>
+<blockquote>
+<p>You’ve committed some work so now it’s time to share! Push it out for your co-workers to see.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="keyword">push</span></div></pre></td></tr></table></figure>
+
+<h3 id="2-_GET_CHANGES"><strong>2. GET CHANGES</strong></h3>
+<blockquote>
+<p>Looks like your co-worker pushed some changes before you did! Your push was rejected. Retrieve the latest changes, and merge them into your branch in one step.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> pull</div></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/1.pull.jpg" alt="1.pull"></p>
+<h3 id="3-_FIX_CONFLICTS"><strong>3. FIX CONFLICTS</strong></h3>
+<blockquote>
+<p>Git is reporting a conflict with your co-worker’s changes in “readme”. Just discard his changes, and keep your own (the HEAD).</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/2.jpg" alt="2"><br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/3.jpg" alt="3"><br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/4.jpg" alt="4"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="Level_1:STAGING_&amp;_REMOTES"><strong>Level 1:STAGING &amp; REMOTES</strong></h1>
+<h3 id="1-_UNSTAGED_DIFFERENCES"><strong>1. UNSTAGED DIFFERENCES</strong></h3>
+<blockquote>
+<p>A new file has been added to the site. Run the command to see what all has changed since your last commit.</p>
+</blockquote>
+<p><code>git status</code> will list out which files have changed. If we want to see the actual changes:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> diff</div></pre></td></tr></table></figure>
+
+<h3 id="2-_STAGE_NEW_FILE"><strong>2. STAGE NEW FILE</strong></h3>
+<blockquote>
+<p>There it is: <code>ostrich.html</code>. Stage it to be committed.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">add</span> ostrich.html</div></pre></td></tr></table></figure>
+
+<p>]]>
+    
+    </summary>
+    
+      <category term="git" scheme="http://tanghaoblog.me/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[How to start a startup]]></title>

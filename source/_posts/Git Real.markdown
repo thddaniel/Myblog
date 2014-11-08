@@ -8,7 +8,7 @@ tags:
 
 ---
 
-## **Level 1:STAGING & REMOTES** ##
+#**Level 1:STAGING & REMOTES**#
 ###**1. UNSTAGED DIFFERENCES**###
 > A new file has been added to the site. Run the command to see what all has changed since your last commit.
 
@@ -23,7 +23,7 @@ git diff
 ```
 git add ostrich.html
 ```
-
+<!--more-->
 ###**3. STAGED DIFFERENCES**###
 > We've added `ostrich.html` to the staging area, but your co-worker has stopped by and asked to see the new page first. Run a `diff` on the staged changes.
 
@@ -95,7 +95,7 @@ git push -u <name> <branch> /*To push to remotes. The -u tells Git to remember t
 ```
 
 <br>
-## **Level 2:CLONING & BRANCHING** ##
+#**Level 2:CLONING & BRANCHING**#
 ###**1. CLONE A REPO**###
 > The IT department installed an OS update on your workstation - and wiped the hard drive in the process. Clone the Pet Shop repo from `git@example.com:example/petshop.git` so you can resume work.
 
@@ -141,7 +141,7 @@ git checkout -b octopus
 ```
 
 <br>
-## **Level 3:COLLABORATION BASICS** ##
+#**Level 3:COLLABORATION BASICS**#
 ###**1. SEND CHANGES**###
 > You've committed some work so now it's time to share! Push it out for your co-workers to see.
 
@@ -154,11 +154,12 @@ git push
 ```
 git pull
 ```
-![1.pull]()
+![1.pull](https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/1.pull.jpg)
 ###**3. FIX CONFLICTS**###
 > Git is reporting a conflict with your co-worker's changes in "readme". Just discard his changes, and keep your own (the HEAD).
 
-![2]()
-![3]()
-![4]()
+![2](https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/2.jpg)
+![3](https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/3.jpg)
+![4](https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/4.jpg)
+
 

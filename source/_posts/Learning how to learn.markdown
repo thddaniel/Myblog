@@ -89,9 +89,24 @@ Chunks are best built with focused, undivided attention, understanding of the ba
 
 
 **When you're trying to figure something out, if you have a good library of these chunks, you can more easily skip to the right solution by metaphorically speaking, listening to whispers from your diffuse mode. Your diffuse mode can help you connect two or more chunks together in new ways to solve novel problems.**
-
-
 <br>
+
+###**如何阅读**###
+最有效的办法是读完一遍后马上再读一遍，共两遍。
+
+- 第一遍是正常通读，不要追求快，需要时不时停下来思考。
+- 读第二遍时同时写下**读书笔记**，书中作为例子的故事可以跳过。要专注于思想脉络。读一章，记一章笔记，直至读完。回顾笔记，整理思路。
+> ①清晰地表现每一章的逻辑脉络。
+  ②带走书中所有的亮点（小故事、想法等）。
+  ③有大量的自己的看法和心得。
+  ④发现这本书和你脑中知识的联系。
+
+**总结：**
+1. 只在“`学习区`”练习；
+![](https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Learning%20How%20to%20Learn/5.jpg)
+2. 把要训练的内容分成有针对性的`小块`, 对每一个小块进行`重复练习`；
+3. 在整个练习过程中， 随时能获得有效的`反馈`；
+4. 练习时注意力必须`高度集中`。
 <br>
 <br>
 `To be continued`

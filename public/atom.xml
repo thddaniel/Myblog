@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://tanghaoblog.me/"/>
-  <updated>2014-11-04T10:12:34.087Z</updated>
+  <updated>2014-11-05T12:51:54.047Z</updated>
   <id>http://tanghaoblog.me/</id>
   
   <author>
@@ -126,7 +126,7 @@
     <link href="http://tanghaoblog.me/2014/10/28/Learning%20how%20to%20learn/"/>
     <id>http://tanghaoblog.me/2014/10/28/Learning how to learn/</id>
     <published>2014-10-28T14:18:00.000Z</published>
-    <updated>2014-11-04T10:12:15.000Z</updated>
+    <updated>2014-11-05T12:50:54.000Z</updated>
     <content type="html"><![CDATA[<p>cousera课:<a href="https://class.coursera.org/learning-002" target="_blank" rel="external">learning how to learn</a>笔记</p>
 <h2 id="1-Focused_versus_Diffuse_Thinking"><strong>1.Focused versus Diffuse Thinking</strong></h2>
 <h3 id="专注模式和发散模式"><strong>专注模式和发散模式</strong></h3>
@@ -188,8 +188,23 @@
 <li>Try to avoid depending too much on highlighting, which can fool you into thinking that the material is going into your brain when it actually isn’t.</li>
 </ul>
 <p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Learning%20How%20to%20Learn/4.jpg" alt=""></p>
-<p><strong>When you’re trying to figure something out, if you have a good library of these chunks, you can more easily skip to the right solution by metaphorically speaking, listening to whispers from your diffuse mode. Your diffuse mode can help you connect two or more chunks together in new ways to solve novel problems.</strong></p>
-<p><br><br><br><br><br><br><code>To be continued</code></p>
+<p><strong>When you’re trying to figure something out, if you have a good library of these chunks, you can more easily skip to the right solution by metaphorically speaking, listening to whispers from your diffuse mode. Your diffuse mode can help you connect two or more chunks together in new ways to solve novel problems.</strong><br><br></p>
+<h3 id="如何阅读"><strong>如何阅读</strong></h3>
+<p>最有效的办法是读完一遍后马上再读一遍，共两遍。</p>
+<ul>
+<li>第一遍是正常通读，不要追求快，需要时不时停下来思考。</li>
+<li>读第二遍时同时写下<strong>读书笔记</strong>，书中作为例子的故事可以跳过。要专注于思想脉络。读一章，记一章笔记，直至读完。回顾笔记，整理思路。<blockquote>
+<p>①清晰地表现每一章的逻辑脉络。<br>②带走书中所有的亮点（小故事、想法等）。<br>③有大量的自己的看法和心得。<br>④发现这本书和你脑中知识的联系。</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>总结：</strong></p>
+<ol>
+<li>只在“<code>学习区</code>”练习；<br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Learning%20How%20to%20Learn/5.jpg" alt=""></li>
+<li>把要训练的内容分成有针对性的<code>小块</code>, 对每一个小块进行<code>重复练习</code>；</li>
+<li>在整个练习过程中， 随时能获得有效的<code>反馈</code>；</li>
+<li>练习时注意力必须<code>高度集中</code>。<br><br><br><br><br><code>To be continued</code></li>
+</ol>
 <p>Reference:</p>
 <ol>
 <li>MOOC学院  <a href="http://mooc.guokr.com/course/1484/Learning-How-to-Learn--Powerful-mental-tools-to-help-you-master-tough-subjects/note/" target="_blank" rel="external">learning how to learn 笔记</a></li>

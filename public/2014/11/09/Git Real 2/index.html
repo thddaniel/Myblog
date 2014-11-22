@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Git Real 2 | 唐昊的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="INTERACTIVE REBASE
+REBASE RECAP
+
+So you’ve been working on your feature branch for a couple days and you realize you need to bring commits back in from master. Now you could just merge in the branch">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git Real 2">
+<meta property="og:url" content="http://tanghaoblog.me/2014/11/09/Git Real 2/">
+<meta property="og:site_name" content="唐昊的博客">
+<meta property="og:description" content="INTERACTIVE REBASE
+REBASE RECAP
+
+So you’ve been working on your feature branch for a couple days and you realize you need to bring commits back in from master. Now you could just merge in the branch">
+<meta property="og:image" content="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/0.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/17.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/18.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/19.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/20.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/21.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/22.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/23.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/24.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/25.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/26.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/27.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git Real 2">
+<meta name="twitter:description" content="INTERACTIVE REBASE
+REBASE RECAP
+
+So you’ve been working on your feature branch for a couple days and you realize you need to bring commits back in from master. Now you could just merge in the branch">
+
+  
+    <link rel="alternative" href="/atom.xml" title="唐昊的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://raw.githubusercontent.com/thddaniel/thddaniel.github.io/master/img/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://raw.githubusercontent.com/thddaniel/thddaniel.github.io/master/img/anonymous.jpg">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">TANG Hao</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="onoffswitch">
+			    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+			    <label class="onoffswitch-label" for="myonoffswitch">
+			        <span class="onoffswitch-inner"></span>
+			        <span class="onoffswitch-switch"></span>
+			    </label>
+			</div>
+		
+
+		<div class="switch-area">
+			<section class="first-part">
+				<nav class="header-menu">
+					<ul>
+					
+						<li><a href="/">主页</a></li>
+			        
+						<li><a href="/archives">所有文章</a></li>
+			        
+					</ul>
+				</nav>
+				<nav class="header-nav">
+					<div class="social">
+						
+							<a class="github" target="_blank" href="https://github.com/thddaniel" title="github">github</a>
+				        
+							<a class="quora" target="_blank" href="http://www.quora.com/Daniel-Hao-2" title="quora">quora</a>
+				        
+							<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+				        
+							<a class="email" target="_blank" href="mailto:thddaniel92@gmail.com" title="email">email</a>
+				        
+					</div>
+				</nav>
+			</section>
+			
+			
+			<section class="second-part">
+				<div class="widget tagcloud">
+					<a href="/tags/Open-Courses/" style="font-size: 20.00px;">Open Courses</a><a href="/tags/git/" style="font-size: 15.00px;">git</a><a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/markdown/" style="font-size: 10.00px;">markdown</a><a href="/tags/创业/" style="font-size: 10.00px;">创业</a><a href="/tags/思维/" style="font-size: 15.00px;">思维</a><a href="/tags/理财/" style="font-size: 10.00px;">理财</a><a href="/tags/记忆力/" style="font-size: 15.00px;">记忆力</a>
+				</div>
+			</section>
+			
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://raw.githubusercontent.com/thddaniel/thddaniel.github.io/master/img/anonymous.jpg">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">TANG Hao</a></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/thddaniel" title="github">github</a>
+			        
+						<a class="quora" target="_blank" href="http://www.quora.com/Daniel-Hao-2" title="quora">quora</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="email" target="_blank" href="mailto:thddaniel92@gmail.com" title="email">email</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-Git Real 2" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/11/09/Git Real 2/" class="article-date">
+  	<time datetime="2014-11-09T04:18:00.000Z" itemprop="datePublished">Nov 9</time>
+</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Git Real 2
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#INTERACTIVE_REBASE"><span class="toc-number">1.</span> <span class="toc-text">INTERACTIVE REBASE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#REBASE_RECAP"><span class="toc-number">1.0.1.</span> <span class="toc-text">REBASE RECAP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#INTERACTIVE_REBASE-1"><span class="toc-number">1.0.2.</span> <span class="toc-text">INTERACTIVE REBASE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#COMMIT_ORDERING"><span class="toc-number">1.0.3.</span> <span class="toc-text">COMMIT ORDERING</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#REWORDING_A_COMMIT"><span class="toc-number">1.0.4.</span> <span class="toc-text">REWORDING A COMMIT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SPLIT_COMMITS"><span class="toc-number">1.0.5.</span> <span class="toc-text">SPLIT COMMITS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQUASHING_COMMITS"><span class="toc-number">1.0.6.</span> <span class="toc-text">SQUASHING COMMITS</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#STASHING"><span class="toc-number">2.</span> <span class="toc-text">STASHING</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GIT_STASH"><span class="toc-number">2.0.1.</span> <span class="toc-text">GIT STASH</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GIT_STASH_LIST"><span class="toc-number">2.0.2.</span> <span class="toc-text">GIT STASH LIST</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GIT_STASH_APPLY"><span class="toc-number">2.0.3.</span> <span class="toc-text">GIT STASH APPLY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GIT_STASH_DROP"><span class="toc-number">2.0.4.</span> <span class="toc-text">GIT STASH DROP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CONFLICTS"><span class="toc-number">2.0.5.</span> <span class="toc-text">CONFLICTS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GIT_STASH_POP"><span class="toc-number">2.0.6.</span> <span class="toc-text">GIT STASH POP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KEEPING_THE_INDEX"><span class="toc-number">2.0.7.</span> <span class="toc-text">KEEPING THE INDEX</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#INCLUDE_UNTRACKED"><span class="toc-number">2.0.8.</span> <span class="toc-text">INCLUDE UNTRACKED</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LIST_OPTIONS"><span class="toc-number">2.0.9.</span> <span class="toc-text">LIST OPTIONS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#STASH_DETAILS"><span class="toc-number">2.0.10.</span> <span class="toc-text">STASH DETAILS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#STASH_MESSAGE"><span class="toc-number">2.0.11.</span> <span class="toc-text">STASH MESSAGE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#STASH_BRANCHING"><span class="toc-number">2.0.12.</span> <span class="toc-text">STASH BRANCHING</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#PURGING_HISTORY"><span class="toc-number">3.</span> <span class="toc-text">PURGING HISTORY</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#REPO_COPY"><span class="toc-number">3.0.1.</span> <span class="toc-text">REPO COPY</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TREE_FILTER"><span class="toc-number">3.0.2.</span> <span class="toc-text">TREE FILTER</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#INDEX_FILTER"><span class="toc-number">3.0.3.</span> <span class="toc-text">INDEX FILTER</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FORCE"><span class="toc-number">3.0.4.</span> <span class="toc-text">FORCE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PRUNING"><span class="toc-number">3.0.5.</span> <span class="toc-text">PRUNING</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#WORKING_TOGETHER"><span class="toc-number">4.</span> <span class="toc-text">WORKING TOGETHER</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LINE_ENDINGS"><span class="toc-number">4.0.1.</span> <span class="toc-text">LINE ENDINGS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CHERRY_PICKING"><span class="toc-number">4.0.2.</span> <span class="toc-text">CHERRY PICKING</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EDIT_A_CHERRY_PICK"><span class="toc-number">4.0.3.</span> <span class="toc-text">EDIT A CHERRY PICK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CHERRY_PICK_SQUASH"><span class="toc-number">4.0.4.</span> <span class="toc-text">CHERRY PICK SQUASH</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TRACKING_CHERRY_PICKS"><span class="toc-number">4.0.5.</span> <span class="toc-text">TRACKING CHERRY PICKS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SIGNING_OFF"><span class="toc-number">4.0.6.</span> <span class="toc-text">SIGNING OFF</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SUBMODULES"><span class="toc-number">5.</span> <span class="toc-text">SUBMODULES</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#BAD_WAYS_TO_SHARE_LIBRARIES"><span class="toc-number">5.0.1.</span> <span class="toc-text">BAD WAYS TO SHARE LIBRARIES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GIT_SUBMODULES"><span class="toc-number">5.0.2.</span> <span class="toc-text">GIT SUBMODULES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SUBMODULE"><span class="toc-number">5.0.3.</span> <span class="toc-text">SUBMODULE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#STAGING_A_SUBMODULE"><span class="toc-number">5.0.4.</span> <span class="toc-text">STAGING A SUBMODULE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#COMMITTING_A_SUBMODULE"><span class="toc-number">5.0.5.</span> <span class="toc-text">COMMITTING A SUBMODULE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#INIT_SUBMODULE"><span class="toc-number">5.0.6.</span> <span class="toc-text">INIT SUBMODULE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UPDATE_SUBMODULES"><span class="toc-number">5.0.7.</span> <span class="toc-text">UPDATE SUBMODULES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DETACHED_HEAD"><span class="toc-number">5.0.8.</span> <span class="toc-text">DETACHED HEAD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BRANCH_MERGE"><span class="toc-number">5.0.9.</span> <span class="toc-text">BRANCH MERGE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PUSH_CHECK"><span class="toc-number">5.0.10.</span> <span class="toc-text">PUSH CHECK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ON_DEMAND_PUSH"><span class="toc-number">5.0.11.</span> <span class="toc-text">ON DEMAND PUSH</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ON_DEMAND_ALIAS"><span class="toc-number">5.0.12.</span> <span class="toc-text">ON DEMAND ALIAS</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#REFLOG"><span class="toc-number">6.</span> <span class="toc-text">REFLOG</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#THE_MISTAKE"><span class="toc-number">6.0.1.</span> <span class="toc-text">THE MISTAKE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#REFLOG-1"><span class="toc-number">6.0.2.</span> <span class="toc-text">REFLOG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RESETTING_THE_REFLOG"><span class="toc-number">6.0.3.</span> <span class="toc-text">RESETTING THE REFLOG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DELETING_A_BRANCH"><span class="toc-number">6.0.4.</span> <span class="toc-text">DELETING A BRANCH</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WALKING_REFLOGS"><span class="toc-number">6.0.5.</span> <span class="toc-text">WALKING REFLOGS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BRANCH_RECOVERY"><span class="toc-number">6.0.6.</span> <span class="toc-text">BRANCH RECOVERY</span></a></li></ol></li></ol></li></ol>
+        <p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/0.jpg" alt="0"></p>
+<h1 id="INTERACTIVE_REBASE"><strong>INTERACTIVE REBASE</strong></h1>
+<h3 id="REBASE_RECAP"><strong>REBASE RECAP</strong></h3>
+<blockquote>
+<p>So you’ve been working on your feature branch for a couple days and you realize you need to bring commits back in from master. Now you could just merge in the branch but that would create an ugly merge commit. Use rebase to bring those changes into your branch without the merge commit.<br><a id="more"></a></p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> rebase master</div></pre></td></tr></table></figure>
+
+<h3 id="INTERACTIVE_REBASE-1"><strong>INTERACTIVE REBASE</strong></h3>
+<blockquote>
+<p>You’re getting ready to merge in your feature branch, but first you want to clean up your commits a bit. Go ahead and use interactive rebase to edit your last 4 commits.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git rebase -i HEAD~<span class="number">4</span>  <span class="comment">/*alter commits in the same branch*/</span></div></pre></td></tr></table></figure>
+
+<p>We want to re-order these four commits.</p>
+<h3 id="COMMIT_ORDERING"><strong>COMMIT ORDERING</strong></h3>
+<blockquote>
+<p>You notice a critical error on your part. The commit where you wrote tests comes after the commit where you made the actual changes. Let’s swap these 2 commits so that it looks like you wrote the tests first. Swap the ‘Add tests’ commit so that it comes before the ‘Implement poodles’ commit.</p>
+</blockquote>
+<p><code>editor:</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">pick b3f1649 Add unicorn</div><div class="line">pick f239187 Implement poodles  //<span class="operator"><span class="keyword">change</span> <span class="keyword">to</span> pick <span class="number">4</span>b65a5a <span class="keyword">Add</span> tests </span></div><div class="line">pick <span class="number">4</span>b65a5a <span class="keyword">Add</span> tests          //<span class="keyword">change</span> <span class="keyword">to</span> pick f239187 Implement poodles</div><div class="line">pick c3f863f Added a title <span class="keyword">to</span> the homepage</div></pre></td></tr></table></figure>
+
+<p>Swap the order,save and close the editor.Commits get replayed in new order.</p>
+<h3 id="REWORDING_A_COMMIT"><strong>REWORDING A COMMIT</strong></h3>
+<blockquote>
+<p>1.As you’re editing your commits, you notice that the commit that says ‘Add tests’ is a little vague, maybe you should change it to something more specific. Use the reword command to change the message of this commit.</p>
+</blockquote>
+<p><code>editor:</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">pick b3f1649 Add unicorn</div><div class="line">pick <span class="number">4</span>b65a5a Add tests<span class="comment"> // reword 4b65a5a Add tests</span></div><div class="line">pick f239187 Implement poodles</div><div class="line">pick c3f863f Added <span class="operator">a</span> title <span class="built_in">to</span> <span class="operator">the</span> homepage</div></pre></td></tr></table></figure>
+
+<p>Commands:<br>p, pick = use commit<br>r, reword = use commit, but edit the commit message<br>e, edit = use commit, but stop for amending<br>s, squash = use commit, but meld into previous commit<br>f, fixup = like “squash”, but discard this commit’s log message<br>x, exec = run command (the rest of the line) using shell</p>
+<blockquote>
+<p>2.After setting the <code>reword</code> command in the interactive rebase editor <strong>another editor window has opened up</strong>. This is where you actually change the commit message. Go ahead and change the commit message to: <code>Add tests for poodles</code> to be more descriptive.</p>
+</blockquote>
+<p><code>editor:</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Add</span> tests //<span class="keyword">Add</span> tests for poodles</div></pre></td></tr></table></figure>
+
+<h3 id="SPLIT_COMMITS"><strong>SPLIT COMMITS</strong></h3>
+<blockquote>
+<p>1.You remember that the ‘Add unicorn’ commit also contains the testing changes. Since we have separate commits for adding tests for poodles it makes sense to split out the test changes into a separate commit. Tell git to stop at this commit so we can reorganize it a bit.</p>
+</blockquote>
+<p><code>editor:</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">pick b3f1649 Add unicorn  <span class="comment"> //edit b3f1649 Add unicorn</span></div><div class="line">pick <span class="number">4</span>b65a5a Added tests <span class="keyword">for</span> poodles</div><div class="line">pick f239187 Implement poodles</div><div class="line">pick c3f863f Added <span class="operator">a</span> title <span class="built_in">to</span> <span class="operator">the</span> homepage</div></pre></td></tr></table></figure>
+
+<blockquote>
+<p>2.After saving the interactive rebase text file, git has stopped at the ‘Add unicorn’ commit. The first thing we need to do is to reset back to the previous commit, so the changes in the most recent commit are back in the file and unstaged.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="operator"><span class="keyword">reset</span> HEAD^</span></div></pre></td></tr></table></figure>
+
+<blockquote>
+<p>3.Great! You’ve already re-committed the changes needed in 2 different commits. All that’s left to do is to resume the rebase with the continue option.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git rebase --<span class="keyword">continue</span></div></pre></td></tr></table></figure>
+
+<p>One commit is now two.</p>
+<h3 id="SQUASHING_COMMITS"><strong>SQUASHING COMMITS</strong></h3>
+<blockquote>
+<p>1.You noticed another bug with those pesky poodles, so you’ve gone ahead and fixed it, making another commit in the process. Now you have 2 commits that both affect the poodles page. You should squash them into one commit to simplify your git logs.</p>
+</blockquote>
+<p><code>editor:</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">pick b3f1649 <span class="keyword">Add</span> unicorn</div><div class="line">pick <span class="number">4</span>b65a5a <span class="keyword">Add</span> tests</div><div class="line">pick f239187 Implement poodles</div><div class="line">pick c3f863f <span class="keyword">Add</span> title <span class="keyword">to</span> poodle page <span class="comment">//squash c3f863f Add title to poodle page</span></div></pre></td></tr></table></figure>
+
+<blockquote>
+<p>2.After designating a commit to be squashed, another editor pops up enabling you to set a commit message for the resulting commit. Go ahead and set to: <code>squashed some poodles</code>.</p>
+</blockquote>
+<p><code>editor:</code></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor"># This is a combination of 2 commits.</span></div><div class="line"><span class="preprocessor"># The first commit's message is:</span></div><div class="line"></div><div class="line">Implement poodles <span class="comment">//注释掉</span></div><div class="line"></div><div class="line"><span class="preprocessor"># This is the 2nd commit message:</span></div><div class="line"></div><div class="line">Add title to poodle page <span class="comment">//注释掉</span></div><div class="line"></div><div class="line"><span class="preprocessor">#合并成你想的名字：</span></div><div class="line">squashed some poodles</div></pre></td></tr></table></figure>
+
+<p>The content of two commits is replayed, but only one commit is made.<br><br></p>
+<h1 id="STASHING"><strong>STASHING</strong></h1>
+<h3 id="GIT_STASH"><strong>GIT STASH</strong></h3>
+<blockquote>
+<p>You’re not quite ready to commit what you’re working on, but need to make a quick fix to master. Fear not, just stash your current changes so you can switch to master quick.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">git stash save  // </span>=<span class="string"> git stash</span></div></pre></td></tr></table></figure>
+
+<h3 id="GIT_STASH_LIST"><strong>GIT STASH LIST</strong></h3>
+<blockquote>
+<p>You just finished making those quick changes to master. You’re now ready to resume your work on the feature you had started on before you had to fix master. Let’s first list all the stashes to make sure we get the right one.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash <span class="keyword">list</span>   <span class="comment">//stash names are shown in the list</span></div></pre></td></tr></table></figure>
+
+<h3 id="GIT_STASH_APPLY"><strong>GIT STASH APPLY</strong></h3>
+<blockquote>
+<p>Great! As you can see, your stash is in the stash list. Let’s apply the stash so you can get back to work.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash apply stash<span class="variable">@{0}</span> <span class="comment">// = git stash apply</span></div></pre></td></tr></table></figure>
+
+<p><code>stash@{0}</code> is the default.<br>stash has been applied but it’s still here.</p>
+<h3 id="GIT_STASH_DROP"><strong>GIT STASH DROP</strong></h3>
+<blockquote>
+<p>Ok, so now that you have all your stashed changes back, let’s clean up the stash list. There’s only one stash; go ahead and drop it.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git stash <span class="operator"><span class="keyword">drop</span>  //<span class="keyword">Delete</span> stash@{<span class="number">0</span>} <span class="keyword">from</span> list</span></div><div class="line">git stash clear //Clear <span class="keyword">all</span> <span class="keyword">of</span> them <span class="keyword">at</span> once</div></pre></td></tr></table></figure>
+
+<h3 id="CONFLICTS"><strong>CONFLICTS</strong></h3>
+<blockquote>
+<p>1.You came back from master and resumed working on your feature, when you realize that you forgot to apply your saved stash. Go ahead and apply it now.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> stash apply</div></pre></td></tr></table></figure>
+
+<blockquote>
+<p>2.Uh oh! There was a conflict when trying to apply your previous stash. It’s no problem, you were just trying things anyway. Go ahead and do a hard reset back to the last commit.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git <span class="operator"><span class="keyword">reset</span> <span class="comment">--hard HEAD</span></span></div><div class="line">git stash apply</div></pre></td></tr></table></figure>
+
+<h3 id="GIT_STASH_POP"><strong>GIT STASH POP</strong></h3>
+<blockquote>
+<p>Now that you have the file reset, use the <code>pop</code> command to <strong>apply and delete the stash at the same time</strong>. </p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash <span class="keyword">pop</span></div></pre></td></tr></table></figure>
+
+<h3 id="KEEPING_THE_INDEX"><strong>KEEPING THE INDEX</strong></h3>
+<blockquote>
+<p>You need to swap branches again, but this time some of your changes are ready to be committed. Stash all the unstaged changes, but leave the staged changes intact so they can be committed afterwards.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash save --keep-<span class="built_in">index</span> //cause the staging area not <span class="keyword">to</span> <span class="keyword">be</span> stashed</div></pre></td></tr></table></figure>
+
+<h3 id="INCLUDE_UNTRACKED"><strong>INCLUDE UNTRACKED</strong></h3>
+<blockquote>
+<p>Wow, there are so many small fixes on master today! You really need to stash some more changes, but it doesn’t seem to be working on these untracked files you just created. Try using the <code>--include-untracked</code> option to stash all those new files.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash save --include-untracked //cause untracked <span class="keyword">files</span> <span class="keyword">to</span> <span class="keyword">be</span> stashed,too</div></pre></td></tr></table></figure>
+
+<h3 id="LIST_OPTIONS"><strong>LIST OPTIONS</strong></h3>
+<blockquote>
+<p>You’ve been stashing stuff all day since you keep having to make small quick fixes to master. Now you have a bunch of stashed changes and you’re not sure which one you need to apply. You could look through them all one by one, or you could use the <code>--stat</code> option to list information about each stash. Give that a try.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash <span class="keyword">list</span> --stat //summarizes <span class="keyword">file</span> <span class="keyword">changes</span></div></pre></td></tr></table></figure>
+
+<h3 id="STASH_DETAILS"><strong>STASH DETAILS</strong></h3>
+<blockquote>
+<p>You now have a list of stashes that are showing you more information, and you think you may have spotted the stash that you need. Take a more detailed look at the stash@{2} stash with the <code>--patch</code> option.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git stash <span class="literal">show</span> stash@{<span class="number">2</span>} --patch //<span class="literal">show</span> file differents</div></pre></td></tr></table></figure>
+
+<h3 id="STASH_MESSAGE"><strong>STASH MESSAGE</strong></h3>
+<blockquote>
+<p>You’re halfway through a large feature. Your team has decided that they want you to deploy what you have so far, but you have a smaller unfinished feature that isn’t ready to be committed yet. Go ahead and stash your current changes with the <strong>message <code>Added groom method</code></strong>, so you know which stash has your changes.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> stash save <span class="string">"Added groom method"</span></div></pre></td></tr></table></figure>
+
+<h3 id="STASH_BRANCHING"><strong>STASH BRANCHING</strong></h3>
+<blockquote>
+<p>Now that you’ve deployed the main part of your feature, you need to finish up what is left. Create a new branch named <code>poodle</code> and apply your most current stash all in one command.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">git</span> <span class="tag">stash</span> <span class="tag">branch</span> <span class="tag">poodle</span> <span class="tag">stash</span><span class="at_rule">@<span class="keyword">{0}</span></span></div></pre></td></tr></table></figure>
+
+<p><code>git stash branch</code>checks a new branch out automatically, and drops the stash automatically.<br><br></p>
+<h1 id="PURGING_HISTORY"><strong>PURGING HISTORY</strong></h1>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/17.jpg" alt="17"></p>
+<h3 id="REPO_COPY"><strong>REPO COPY</strong></h3>
+<blockquote>
+<p>Now you’ve done it. You accidentally put the company’s master password into one of your files. You’re beginning to panic because you know that it’s pretty hard to delete something forever in git. That’s what you really need to do, though, or you’re in big trouble. You’re going to need to purge the history. First, though, make a copy of your repo in case you mess it up. Make a copy of the <code>poodles</code> repository, and name it whatever you want.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="keyword">clone</span> poodles poodles_copy</div></pre></td></tr></table></figure>
+
+<h3 id="TREE_FILTER"><strong>TREE FILTER</strong></h3>
+<blockquote>
+<p>Luckily for you, the password you accidentally committed was in the <code>master_password.txt</code> file. Use the <code>filter-branch</code> command and remove this file from all of your commits.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//git filter-branch --tree-filter &lt;command&gt; <span class="keyword">...</span> </div><div class="line">//specify any shell commend</div><div class="line">git filter-branch --tree-filter <span class="string">'rm -f master_password.txt'</span></div></pre></td></tr></table></figure>
+
+<p><code>...</code>: </p>
+<ul>
+<li><code>--all</code> option filter all commits in all branches.</li>
+<li><code>HEAD</code> filter only current branch.</li>
+</ul>
+<p>Git will check each commit out into <strong>working directory</strong>, run your command, and re-commit.</p>
+<h3 id="INDEX_FILTER"><strong>INDEX FILTER</strong></h3>
+<blockquote>
+<p>This repository is so large, using <code>--tree-filter</code> is going to take all day. Use <code>--index-filter</code> to remove <code>master_password.txt</code> instead. Remember, <code>--index-filte</code>r will need a command that works on the staging area, which is going to be some sort of git command.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//git filter-branch --index-filter &lt;command&gt; <span class="keyword">...</span></div><div class="line">//command must operate on staging area.</div><div class="line">git filter-branch --index-filter <span class="string">'git rm --cached --ignore-unmatch master_password.txt'</span></div></pre></td></tr></table></figure>
+
+<p>It operates on <strong>staging area</strong>.<br><code>--ignore-unmatch</code>: succeeds even if file isn’t present.<br>Git will run your command against each commit, but without checking it out first(so it’s faster).</p>
+<h3 id="FORCE"><strong>FORCE</strong></h3>
+<blockquote>
+<p>You just realized that you also have a <code>master_username.txt</code> file that should probably be removed too, just to be safe. Use either technique you have learned to remove this file. Don’t forget, you have a history backup from the first time you used <code>filter-branch</code>. Use the correct option to force git to overwrite it.</p>
+</blockquote>
+<p>After you run filter-branch, Git leaves a backup of your tree in the “.git” directory.By default, you can’t run filter-branch again because it won’t overwrite the backup.You can force it with the -f option.</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">filter</span>-branch -<span class="keyword">f</span> --tree-<span class="built_in">filter</span> <span class="string">'git rm --cached --ignore-unmatch master_username.txt'</span></div></pre></td></tr></table></figure>
+
+<h3 id="PRUNING"><strong>PRUNING</strong></h3>
+<blockquote>
+<p>Great! Now we’re getting somewhere. There is one more problem though, you realize that some of the commits don’t contain anything anymore, since you removed the password file that they referenced. You should probably use the <code>--prune-empty</code> option do something to clean these out.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">filter</span>-branch -<span class="keyword">f</span> --prune-<span class="built_in">empty</span></div></pre></td></tr></table></figure>
+
+<p><code>--prune-empty</code> option drops commits that don’t alter any files.</p>
+<p><br></p>
+<h1 id="WORKING_TOGETHER"><strong>WORKING TOGETHER</strong></h1>
+<h3 id="LINE_ENDINGS"><strong>LINE ENDINGS</strong></h3>
+<blockquote>
+<p>1.Your company just hired a new developer who works on a Windows computer, and you notice that some files seem to be missing line separators. You realize that the Windows machine is saving files with a different line separator character than the Unix stations. Here on your Unix machine, set your ‘git config’ variable to convert line endings to the Unix way on commit.</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/18.jpg" alt="18"></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --<span class="keyword">global</span> core.autocrlf <span class="built_in">input</span></div></pre></td></tr></table></figure>
+
+<blockquote>
+<p>2.Because you’re a nice person, you decide to go help the new developer convert line endings to work on his windows computer. Set the <code>git config</code> variable to convert line endings from Unix to Windows formats on checkout.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --<span class="keyword">global</span> core.autocrlf <span class="keyword">true</span></div></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/19.jpg" alt="19"></p>
+<blockquote>
+<p>3.After helping a 3rd Windows developer set up their workstation, you’ve decided enough is enough. It’s time to add a <code>.gitattributes</code> file to handle all these line ending problems. Finish adding the options to the <code>*.bat</code> and <code>*.sh files</code>. Remember, <code>*.bat</code> is a windows file, while <code>*.sh</code> is a unix file.</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/20.jpg" alt="20"></p>
+<p><code>text=auto</code> Choose conversion automatically<br><code>text</code> Treat files as text -convert to OS’s line endings back to LF on commit<br><code>text eol = crlf</code> <code>text eol = lf</code> Convert to specified format on checkout back to LF commit<br><code>binary</code> Treat files as binary - do no conversion</p>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/21.jpg" alt="21"></p>
+<h3 id="CHERRY_PICKING"><strong>CHERRY PICKING</strong></h3>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/22.jpg" alt="22"></p>
+<blockquote>
+<p>You were working on a new feature for the Unicorn class, when you happened to find a fix for a bug that was causing Unicorns to stop sparkling on occasion. You really want this commit in master ASAP. Cherry-pick the commit with a sha of <code>3fbd473</code> to the master branch.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git cherry-pick <span class="number">3f</span>bd473 <span class="comment">//specify commit you want</span></div></pre></td></tr></table></figure>
+
+<p>We copied a single commit a single commit to the current branch</p>
+<h3 id="EDIT_A_CHERRY_PICK"><strong>EDIT A CHERRY PICK</strong></h3>
+<blockquote>
+<p>You’ve realized that this commit <code>3fbd473</code>, which you need to cherry pick, has a rather vague message. Do another cherry-pick, but edit the commit message this time.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git cherry-pick --<span class="keyword">edit</span> <span class="number">3</span>fbd473</div></pre></td></tr></table></figure>
+
+<p>Then enter your message, save ,and quit.</p>
+<h3 id="CHERRY_PICK_SQUASH"><strong>CHERRY PICK SQUASH</strong></h3>
+<blockquote>
+<p>1.You’ve fixed another bug that was causing the unicorn horn to be blunt instead of nice and sharp, but you had to make an extra commit to remove some debugging code. We want to convert these two commits to a single commit on the master branch. Cherry-pick commits <code>b447335</code>“ and <code>b59d285</code>, without committing them to the current branch.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> cherry-pick --<span class="built_in">no</span>-commit b447335 b59d285</div></pre></td></tr></table></figure>
+
+<p><code>--no-commit</code> pulls in changes and stages them, but doesn’t commit</p>
+<blockquote>
+<p>2.The changes from both cherry picked commits are now on master, and all that’s left to do is to commit these changes. (Don’t forget the commit message!)</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="operator"><span class="keyword">commit</span> -m <span class="string">"add both"</span></span></div></pre></td></tr></table></figure>
+
+<h3 id="TRACKING_CHERRY_PICKS"><strong>TRACKING CHERRY PICKS</strong></h3>
+<blockquote>
+<p>There has been a lot of cherry picking lately, so the decision has been made to keep track of where these commits are coming from. Cherry pick the “bug fix” commit with a sha of <code>bdf9578</code>. Use the option which keeps a record of where the commit was cherry picked.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> cherry-pick -x bdf9578</div></pre></td></tr></table></figure>
+
+<p><code>-x</code> adds source SHA to commit message.<br>Only useful with public branches; don’t use for local branches</p>
+<h3 id="SIGNING_OFF"><strong>SIGNING OFF</strong></h3>
+<blockquote>
+<p>You’ve decided that it is probably a good idea to put your name on these commits you’re cherry picking. Go ahead and get started by cherry picking the commit with a sha of <code>bdf9578</code>. Don’t forget to use the option which will sign off on the cherry pick!</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">git</span> <span class="comment">cherry</span><span class="literal">-</span><span class="comment">pick</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">signoff</span> <span class="comment">bdf9578</span></div></pre></td></tr></table></figure>
+
+<p><code>--signoff</code> adds current user’s name to commit message.</p>
+<p><br></p>
+<h1 id="SUBMODULES"><strong>SUBMODULES</strong></h1>
+<h3 id="BAD_WAYS_TO_SHARE_LIBRARIES"><strong>BAD WAYS TO SHARE LIBRARIES</strong></h3>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/23.jpg" alt="23"></p>
+<h3 id="GIT_SUBMODULES"><strong>GIT SUBMODULES</strong></h3>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/24.jpg" alt="24"></p>
+<h3 id="SUBMODULE"><strong>SUBMODULE</strong></h3>
+<blockquote>
+<p>You’re in the process of putting together two websites. One is for the Mythical Wildlife Fund: <code>MWF.com</code>. The other site is an adoption site for stray unicorns called <code>unicornrescues.com</code>. Both sites will share code for a JavaScript image gallery along with the associated css. Let’s get started by adding a submodule containing the JavaScript at <code>&quot;git@petstore.com:gallery_js.git&quot;</code>.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> submodule add git<span class="variable">@petstore</span>.com:gallery_js.git</div></pre></td></tr></table></figure>
+
+<h3 id="STAGING_A_SUBMODULE"><strong>STAGING A SUBMODULE</strong></h3>
+<blockquote>
+<p>All that’s left to do is to commit your submodule so that other collaborators can use it. Using a single git command, stage the current changes to <code>.gitmodules</code> and <code>gallery_js</code>.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">add</span> -A</div></pre></td></tr></table></figure>
+
+<h3 id="COMMITTING_A_SUBMODULE"><strong>COMMITTING A SUBMODULE</strong></h3>
+<blockquote>
+<p>Great! Now go ahead and commit the submodule. Don’t forget the commit message!</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="operator"><span class="keyword">commit</span> -m <span class="string">"Add submodule"</span></span></div></pre></td></tr></table></figure>
+
+<h3 id="INIT_SUBMODULE"><strong>INIT SUBMODULE</strong></h3>
+<blockquote>
+<p>You’re helping a co worker get set up to work on unicornrescues.com. You’ve already cloned the repo. Next, initialize the submodules so they download their own contents.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git submodule <span class="keyword">init</span></div></pre></td></tr></table></figure>
+
+<h3 id="UPDATE_SUBMODULES"><strong>UPDATE SUBMODULES</strong></h3>
+<blockquote>
+<p>Now that you have the submodules initialized, you need to check for updates and make sure they have the correct commits checked out. Run the submodule command that does this.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git submodule <span class="keyword">update</span></div></pre></td></tr></table></figure>
+
+<h3 id="DETACHED_HEAD"><strong>DETACHED HEAD</strong></h3>
+<blockquote>
+<p>You’ve just committed a few changes to the <code>gallery_css</code> submodule. When you go to push, you realize that you’re in a detached head state. Don’t panic, though! We can fix it. Let’s start out by creating a new branch with your most recent commit: “a7eded4”. Name the branch <code>temp_changes</code>.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> branch temp_changes a7eded4</div></pre></td></tr></table></figure>
+
+<h3 id="BRANCH_MERGE"><strong>BRANCH MERGE</strong></h3>
+<blockquote>
+<p>Your seemingly lost changes now reside on the <code>temp_changes</code> branch. Go ahead and merge the <code>temp_changes</code> branch back into master.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="operator"><span class="keyword">merge</span> temp_changes</span></div></pre></td></tr></table></figure>
+
+<h3 id="PUSH_CHECK"><strong>PUSH CHECK</strong></h3>
+<blockquote>
+<p>After finishing up a bunch of changes, you want to push them up to the remote so you can share it with your other co-workers that are working on the project. Since you’re using submodules, you should make sure to use the option which checks whether you have un-pushed submodules.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">git push --recurse-submodules</span>=<span class="string">check</span></div></pre></td></tr></table></figure>
+
+<h3 id="ON_DEMAND_PUSH"><strong>ON DEMAND PUSH</strong></h3>
+<blockquote>
+<p>We need to push submodule changes again. But this time, instead of going into the submodule to push it, just use the <code>on-demand</code> option for the <code>--recurse-submodules</code> option. This way submodules that need it will be pushed automatically.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> push --recurse-submodules=<span class="built_in">on</span>-demand</div></pre></td></tr></table></figure>
+
+<h3 id="ON_DEMAND_ALIAS"><strong>ON DEMAND ALIAS</strong></h3>
+<blockquote>
+<p>Wouldn’t it be nice if you didn’t have to type that long line out every time you wanted to push this project? Let’s make the command easier to use. Create an alias which will run the git push <code>--recurse-submodules=on-demand</code> command. Name the alias anything you want.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config <span class="keyword">alias</span>.pushall <span class="string">"push --recurse-submodules=on-demand"</span></div><div class="line">git pushall</div></pre></td></tr></table></figure>
+
+<p><br></p>
+<h1 id="REFLOG"><strong>REFLOG</strong></h1>
+<h3 id="THE_MISTAKE"><strong>THE MISTAKE</strong></h3>
+<blockquote>
+<p>You decided that unicorns should leave a rainbow trail when they jump. You made the upgrade, and committed the changes. There is a problem, though: this change caused a bug which prevents the unicorns from jumping at all. You panic! Hurry, do a “hard reset” back to the commit before the rainbow jumping was added: <code>&quot;ab27026&quot;</code>.<br>$ git log —oneline<br>8791492 Rainbow trail when jumping.<br>ab27026 Implement unicorn jumping.<br>…..</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="operator"><span class="keyword">reset</span> <span class="comment">--hard ab27026</span></span></div></pre></td></tr></table></figure>
+
+<h3 id="REFLOG-1"><strong>REFLOG</strong></h3>
+<blockquote>
+<p>You realize after the fact that maybe the hard reset was a bit overkill. You still wanted your code used to add rainbow jumps. It’s a good thing git never really gets rid of commits. Let’s look at the reflog to see if there is anything we can do.</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/25.jpg" alt="25"></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git reflog <span class="comment">//查看</span></div></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/26.jpg" alt="26"></p>
+<h3 id="RESETTING_THE_REFLOG"><strong>RESETTING THE REFLOG</strong></h3>
+<blockquote>
+<p>Great, we can see that there is a log of the reset! Take note of the reflog entry right before your earlier reset. Then do a “hard reset” to that commit to get your work back.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="keyword">reset</span> --hard <span class="number">8791492</span> // git <span class="keyword">reset</span> --hard HEAD<span class="variable">@{1}</span></div></pre></td></tr></table></figure>
+
+<h3 id="DELETING_A_BRANCH"><strong>DELETING A BRANCH</strong></h3>
+<blockquote>
+<p>You decide to clean house a bit. You know that all branches have either been merged or abandoned, so you’re going to delete them to keep a tidy repository. Go ahead and get started by deleting the <code>fluffy_poodle</code> branch.</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -<span class="keyword">D</span> fluffy_poodle</div></pre></td></tr></table></figure>
+
+<h3 id="WALKING_REFLOGS"><strong>WALKING REFLOGS</strong></h3>
+<blockquote>
+<p>Then you realize that you needed the styles menu from that <code>fluffy_poodle</code> branch you just deleted. Good thing git never really gets rid of anything. List all commits in the reflog by using the <code>--walk-reflogs</code> option of git log.</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/27.jpg" alt="27"></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">log</span> --walk-reflogs <span class="comment">//查看</span></div></pre></td></tr></table></figure>
+
+<h3 id="BRANCH_RECOVERY"><strong>BRANCH RECOVERY</strong></h3>
+<blockquote>
+<p>Now that you know what the last commit was on the deleted branch, you can create a new branch and attach the commit to it. Create a new branch named <code>fluffy_poodle</code> using the most recent commit from the deleted branch.<br>$ git log —walk-reflogs —oneline<br>b8ec575 HEAD@{0}: checkout: moving from fluffy_poodle to master<br>aaafb5e HEAD@{1}: commit: Fluff poodle.<br>….</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch fluffy_poodle HEAD<span class="variable">@{1}</span> <span class="comment">//git branch fluffy_poodle aaafb5e</span></div></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/11/11/Holistic Learning/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          Holistic Learning
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/11/08/Git Real/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git Real</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Git Real 2" data-title="Git Real 2" data-url="http://tanghaoblog.me/2014/11/09/Git Real 2/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2014 TANG Hao
+            <a href="mailto:thddaniel92@gmail.com" >发邮件</a>
+            
+         
+            
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Code <a href="https://github.com/thddaniel/Myblog" target="_blank">Theme</a> by Tanghao
+      	</div>
+    
+        <div>
+        <form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+         搜索:<input type="search" name="q" id="search" autocomplete="off" autocorrect="off" autocapitalize="off" maxlength="18" placeholder="关键字" />
+         <input type="hidden" name="q" value="site:tanghaoblog.me">
+        </form>
+        </div>
+        
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+  <script src="/js/main.js" type="text/javascript"></script>
+
+
+  </div>
+</body>
+</html>

@@ -10,7 +10,7 @@ tags:
 
 ---
 cousera课:[learning how to learn](https://class.coursera.org/learning-002)笔记
-##**1.Focused versus Diffuse Thinking**##
+##**Focused versus Diffuse Thinking**##
 ###**专注模式和发散模式**###
 
 我们人类有两种最基本的思考模式：
@@ -61,7 +61,7 @@ Eg： Dali and Edison，他们放松自己让思绪漫游，考虑他们之前�
 
 **所以在睡前复习今天所学的知识，能在睡梦中更好地理解和强化这些内容。**
 <br>
-##**2.Chunking**##
+##**Chunking**##
 ###**What is a chunk?**###
 - Chunking is the mental leap that helps you unite bits of information together through meaning.
 - A chunk means a network of neurons that are used to firing together so you can think a thought or perform an action smoothly and effectively.

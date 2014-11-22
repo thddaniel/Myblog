@@ -12,9 +12,9 @@ tags:
 
 **Outcome** =`Idea` x `Product` x `Teams` x `Execution` x `Luck`(random # between 0 and 10,000)
 
-###**Four critical parts:**###
+**Four critical parts:**
 
-###**1. A Great Idea**
+###**A Great Idea**
 It includes the size and growth of the market,the growth strategy for company,the defensibility strategy and so on.
 
 - Even though plans themselves are worthless,to exercise a planning is really valuable.
@@ -29,7 +29,7 @@ It includes the size and growth of the market,the growth strategy for company,th
 - The importance of thinking about what customers want, and thinking about the demands of the market.
 <br>
 
-###**2. Building a Great Product**
+###**Building a Great Product**
 Broad definition: It includes customer support and copyright explaining the product.Anything involved in your customers interaction with what you build for them. 
 
 - Great Ideas turn to great product. A great product is the secret to long term growth hacking.
@@ -42,7 +42,7 @@ Broad definition: It includes customer support and copyright explaining the prod
 - You should make this feedback loop as tight as possible.The best companies usually have the tightest feedback loops.
 
 <br>
-###**3. Team**
+###**Team**
 Cofounder relationships are among the most important in the entire company. The number one cause of early death for startups is cofounder blowups.
 
 -  It's better to have no cofounder than to have a bad cofounder, but it's still bad to be a solo founder. Two or three cofounders seems to be about perfect. 
@@ -73,7 +73,7 @@ You have to make sure your employees are happy and feel valued.
 
 Firing people fast when it's not working.
 <br>
-###**4. Execution**
+###**Execution**
 ![](https://raw.githubusercontent.com/thddaniel/Myblog/master/image/startup/3.jpg)
 
 Execution gets divided into two key questions. 

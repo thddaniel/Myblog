@@ -2,33 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://tanghaoblog.me/2014/11/08/Git%20Real/</loc>
-    <lastmod>2014-11-08T14:55:35.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tanghaoblog.me/2014/10/28/Learning%20how%20to%20learn/</loc>
-    <lastmod>2014-11-05T12:50:54.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tanghaoblog.me/2014/10/31/How%20to%20start%20a%20startup/</loc>
-    <lastmod>2014-11-02T03:32:56.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://tanghaoblog.me/2014/10/27/Managing%20Money/</loc>
-    <lastmod>2014-10-29T01:57:14.000Z</lastmod>
+    <loc>http://tanghaoblog.me/2014/11/11/Holistic%20Learning/</loc>
+    <lastmod>2014-11-12T01:51:23.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://tanghaoblog.me/2014/10/26/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2014-10-26T14:40:59.000Z</lastmod>
+    <lastmod>2014-11-11T09:43:07.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://tanghaoblog.me/2014/10/26/Markdown%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2014-10-26T02:19:16.000Z</lastmod>
+    <lastmod>2014-11-11T09:42:23.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanghaoblog.me/2014/10/27/Managing%20Money/</loc>
+    <lastmod>2014-11-11T09:39:49.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanghaoblog.me/2014/10/28/Learning%20how%20to%20learn/</loc>
+    <lastmod>2014-11-11T09:39:04.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanghaoblog.me/2014/10/31/How%20to%20start%20a%20startup/</loc>
+    <lastmod>2014-11-11T09:38:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanghaoblog.me/2014/11/08/Git%20Real/</loc>
+    <lastmod>2014-11-11T09:36:32.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://tanghaoblog.me/2014/11/09/Git%20Real%202/</loc>
+    <lastmod>2014-11-11T09:29:48.000Z</lastmod>
   </url>
   
 </urlset>

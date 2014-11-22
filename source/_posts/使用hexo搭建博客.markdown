@@ -7,7 +7,7 @@ tags:
 	- hexo
 
 ---
-#**1.Hexo安装**
+#**Hexo安装**
 Hexo的作者是[tommy351](https://twitter.com/tommy351)，根据官方介绍，Hexo是一个简单、快速、强大的博客发布工具，支持Markdown格式。Hexo是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。
 参考[官方文档](http://hexo.io/docs/index.html)
 
@@ -38,7 +38,7 @@ hexo server #开启预览访问端口（默认端口4000，'ctrl + c'关闭serve
 ```
 出现了默认的网页界面。至此，本地博客已经搭建起来了。
 <br>
-#**2.Hexo的使用**
+#**Hexo的使用**
 首先大致了解下默认生成了一些文件。
 
 - `scaffolds`   layout模板文件目录，其中的md文件可以添加编辑

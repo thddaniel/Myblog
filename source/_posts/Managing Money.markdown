@@ -10,7 +10,7 @@ tags:
 ---
 今天在cousera上看到这门课[Managing Your Time, Money, and Career: MBA Insights for Undergraduates](https://www.coursera.org/course/managingmoney)
 走向社会后，如何理财是一门学问。感觉这门课不难，但是挺实用的。顺便还可以学习下英语，练习下听力。以下是笔记。
-##**1. What's In Your Budget?**##
+##**What's In Your Budget?**##
 ###**Theme of this class:**###
 
 - Having a smart budget plan can prepare us for unexpected emergency
@@ -48,7 +48,7 @@ Some other key points in managing budgeting and spending your money:
 - You can use spreadsheet to plan budget, and there are also tools online.
 - The more important work is not creating a budget, but sticking to it.
 <br>
-##**2. To Credit or Debit Card?**##
+##**To Credit or Debit Card?**##
 ###**Theme:**###
 - Differences between credit card and debit card
 - The benefits and risk of credit card

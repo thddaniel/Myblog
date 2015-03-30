@@ -9,7 +9,7 @@ tags:
     
 ---
 Resource : [scotthyoung](http://www.scotthyoung.com/blog/Programs/HolisticLearningEBook.pdf)
-##**Holistic Learning VS Rote Memorization**
+#**Holistic Learning VS Rote Memorization**
 Holistic learning is the opposite of rote memorization.  Instead of learning through force, your goal is to create webs of information that link together.
 <!--more-->
 `Rote Memorization`
@@ -29,7 +29,7 @@ Holistic learning is the opposite of rote memorization.  Instead of learning thr
 - Aims to Learn by Relating
 
 
-##**Creating a Construct**
+#**Creating a Construct**
 Your goal when learning anything is to create a **construct** or an underlying understanding.
 
 When you are being taught a subject or you are learning it on your own, you are getting bricks fed to you one by one.  If your lucky you might have a rough blueprint of how to organize the bricks, but if there aren’t enough linkages or they are assembled improperly the result is confusion.
@@ -44,7 +44,7 @@ You don’t need every brick to maintain the structural integrity of a house.  *
 
 **As long as you have a relatively stable construct, you can find ways around the missing information.** When one path gets shut down you take a different route.  When I take a test I can usually find a way to solve the problem even if I forget the method I was taught.
 
-##**Start With a Model**
+#**Start With a Model**
 Constructs are formed from **models**, chunks of understanding that aren't completely 
 accurate but can be used to solve problems.
 
@@ -62,13 +62,13 @@ A model is a quick representation of the idea you are trying to relate or unders
 
 Constructs that become islands are worthless when there is a problem that exists between them.  Interlinking your constructs helps funnel problems outside of their influence zone into realms of understanding.  
 
-##**How to Learn Holistically**
+#**How to Learn Holistically**
 
 **When I need a model, I find one.  When I have enough models I form a construct.When I learn information I try to link it within and outside my constructs.When I learn information I try to link it within and outside my constructs.**
 
 You create webs of information, constructs and models by **visceralizing**, **metaphor** and **exploring**
 
-###**Visceralization**
+##**Visceralization**
 A model isn’t a grouping of ideas, it’s an experience.
 
 The best “visceralizations” are combinations of images, sounds, feelings and textures.  Depending on your learning preference you may see, hear or feel ideas.  More than just a picture, you want an experience.
@@ -80,7 +80,7 @@ Ask yourself what the concept would look, sound or feel like?  How would it func
 
 As you get better you should be able to do this without a pencil and paper.  Your imagination is far faster than your hand, so once you begin to understand the process you can start visceralizing how different concepts interact.  You can see how they squish and respond to stimuli.  Boring ideas translate into a bizarre and otherworldly scene.
 
-###**Metaphor**
+##**Metaphor**
 To interlink constructs you need to use metaphor.
 Metaphor is a literary term used **when you want to relate two things that aren’t actually related.**
 
@@ -94,7 +94,7 @@ If you already understand sports, then you can use sports as a metaphor when try
 
 > When I read Nicollo Machiavelli’s, The Prince, I started linking his ideas about statecraft (which were a rather weak construct for myself) and built them into ideas about business and social settings (which were strong constructs).
 
-###**Explore**
+##**Explore**
 Exploration is the process of going through your constructs, models and metaphors and finding errors. 
 
 Holes and errors will only come up when you actually go back and test them. Until you  actually review the information involved, they will be hidden from your awareness.  This happens when you go to write an exam and you realize you don’t know how to solve a specific problem or you don’t have the right formula.  A strong enough network may mean you don’t need that formula to solve the problem, but you may have to take a few detours to get there.
@@ -102,5 +102,5 @@ Holes and errors will only come up when you actually go back and test them. Unti
 **The best way to explore is to actually face problems.**
 Usually the idea is already reinforced inside my web, but sometimes I missed it entirely.  Studying isn’t as good as testing but it can fix a few broken paths
 
-##**Summary of Holistic Learning**
+#**Summary of Holistic Learning**
 Holistic learning works with highly conceptual information where there is an underlying system.  It doesn't work well with arbitrary information or skills.

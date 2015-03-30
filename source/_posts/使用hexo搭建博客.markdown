@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "使用hexo搭建博客"
 date: 2014-10-26 19:18
 comments: true
@@ -11,21 +10,21 @@ tags:
 Hexo的作者是[tommy351](https://twitter.com/tommy351)，根据官方介绍，Hexo是一个简单、快速、强大的博客发布工具，支持Markdown格式。Hexo是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。
 参考[官方文档](http://hexo.io/docs/index.html)
 
-###**安装Node.js**
+##**安装Node.js**
 在 Windows 环境下安装 Node.js非常简单，仅须[下载](http://nodejs.org/)安装文件并执行即可完成安装。
 
-###**安装Hexo**
+##**安装Hexo**
 打开git。利用 `npm` 命令即可安装。
 ```
 npm install -g hexo
 ```
 <!--more-->
-###**创建hexo文件夹**
+##**创建hexo文件夹**
 安装完成后，在你喜爱的文件夹下（如H:\hexo），执行以下指令(在H:\hexo内点击鼠标右键，选择Git bash)，Hexo 即会自动在目标文件夹建立网站所需要的所有文件。
 ```
 hexo init
 ```
-###**安装依赖包**
+##**安装依赖包**
 ```
 npm install
 ```
@@ -54,7 +53,7 @@ _posts目录：Hexo是一个静态博客框架，因此没有数据库。文章�
 
 themes目录：是存放主题的，包括一套Javascript+CSS样式和基于EJS的模板设置。通过在themes目录下，新建一个子目录，就可以创建一套新的皮肤，当然我们也可以直接在landscape上面修改。
 
-###**安装插件和主题**
+##**安装插件和主题**
 
 Hexo提供丰富[主题](https://github.com/hexojs/hexo/wiki/Themes)的以及[插件](https://github.com/hexojs/hexo/wiki/Plugins)。安装方法都是一样的。
 
@@ -131,7 +130,7 @@ plugins:
 - hexo-generator-sitemap
 ```
 <br>
-#**3.部署到github上**
+#**部署到github上**
 
 部署到Github前需要配置`_config.yml`文件。
 ```
@@ -154,7 +153,7 @@ Github的版本库通常建议同时附上README.md说明文件，但是hexo默�
 在执行hexo deploy前把在本地写好的README.md文件复制到.deploy文件夹中，再去执行hexo deploy。
 注：之前修改过branch: gh-pages，但是一直显示404.不填默认为master 
 <br>
-#**4.写文章**
+#**写文章**
 
 - **开头加信息**
 

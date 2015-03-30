@@ -24,7 +24,17 @@
           </p>
         <% } %>
       <% } else { %>
-        <%- toc(post.content) %>
+              
+              <!-- 文章目录开始 -->
+                <% if (!index){ %>
+                  <div id="toc" class="toc-article">
+                      <strong class="toc-title"><%= __('目录Contents') %></strong>
+                  <%- toc(page.content) %>
+                  </div>
+                <% } %>
+             <!-- 文章目录结束 -->
+ 
+        
         <%- post.content %>
       <% } %>
     </div>

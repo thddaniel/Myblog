@@ -1,16 +1,16 @@
 ---
 layout: post
-title: "链表"
+title: "数据结构"
 date: 2014-12-05 9:18
 comments: true
 tags: 
 	- 数据结构
 ---
 打算重新学下数据结构和算法。
-**时间**：12月底初步完成。
+**时间**：2月底初步完成。
 **目标**：当面临数据结构和算法时，能立马想到特定的行为或者操作以及一些属性。例如，链表,立马想到插入、移除、遍历和计算元素个数等操作，和指针域、数据域等属性。
 **资源**：书籍《算法精解》,《leetcode-C++》 网站：[hackerRank](https://www.hackerrank.com/)
-
+<!--more-->
 最常用的**数据结构**有：链表、栈、队列、集合、哈希表、树、堆、优先级队列和图。
 **算法**分类：
 1. 随机法：依赖于随机数的统计特性。例如：快速排序。
@@ -42,6 +42,7 @@ typedef struct List_
 	
 	/*封装之后传递给list_init函数的析构函数,如果链表包含采用malloc动态分配的数据，当链表被销毁时，destroy应该设置为free 用来释放数据。*/
 	void (*destroy)(void *data);
+	int (*match)(const void *key1, const void *key2);//用来判断两个成员是否匹配。
 }List;
 ```
 
@@ -127,3 +128,48 @@ void list_destroy(List *list)
 }
 
 ```
+
+##栈和队列##
+**栈**：按**后进先出（LIFO）**的顺序存储和检索数据的高效数据结构。可以想象成一筒网球。
+**队列**：按照**先进先出（FIFO）**的顺序存储和检索数据的高效数据结构。可以想象成排队的一队人。
+
+**应用**：信号量（队列）、事件处理（队列）、函数调用（栈）等。
+
+以下的栈和队列是用链表实现的，具有一定的多态能力。
+栈：
+```c
+int stack_push(Stack *stack, const void *data) {
+    //压栈，插入链表中的头结点。
+    return list_ins_next(stack, NULL, data);
+}
+
+int stack_push(Stack *stack, const void *data) {
+    //出栈，删除链表的头结点。
+    return list_ins_next(stack, NULL, data);
+}
+```
+队列：
+```c
+int queue_enqueue(Queue *queue, const void *data) {
+    //入队，在链表的尾部添加新的元素。
+    return list_ins_next(queue,queue->tail, data);
+}
+
+int queue_dequeue(Queue *queue, void **data) {
+    //出队，删除链表的头结点。
+    return list_rem_next(queue, NULL, data);
+
+}
+
+```
+
+##集合##
+集合是不同对象（称为成员）的无序聚集。
+**特点**：1.成员是无序的。 2.每个成员都只在集合中出现一次。
+**应用**：数据关联、集合覆盖、图、图算法、关系代数等。
+
+实现集合的一种好的方式是采用链表。
+
+```c
+```
+

@@ -10,8 +10,8 @@ tags:
 
 ---
 cousera课:[learning how to learn](https://class.coursera.org/learning-002)笔记
-##**Focused versus Diffuse Thinking**##
-###**专注模式和发散模式**###
+#**Focused versus Diffuse Thinking**##
+##**专注模式和发散模式**###
 
 我们人类有两种最基本的思考模式：
 
@@ -26,12 +26,12 @@ Eg： Dali and Edison，他们放松自己让思绪漫游，考虑他们之前�
 
 要想有强健的体魄，需要每天运动，让肌肉增长；同样地，想建立神经结构，也需要每天练习，这是关键。
 
-###**拖延症**###
+##**拖延症**###
 
 - 拖延症的产生：当你不想去做一件事的时候，大脑中相关区域的痛苦会被激发出来，为了避免这种痛苦，大脑将注意力转向其他地方。结果是，你只是感到暂时的愉悦，但是事情被拖延了。
 - 如何克服拖延症： **立即去做**！！研究发现，当人们开始做不喜欢的事不久，大脑中痛苦的感觉就消失了！
 
-###**熟能生巧**###
+##**熟能生巧**###
 
 当我们学习一些具体事物的时候，只要将它和现实中的事物进行“链接”，我们就能掌握这个知识。但如果我们要学习的内容是抽象的数学概念和情感感觉或者其他事物的时候，由于现实生活中没有这种具体或者类比事物，我们很难对其进行学习和掌握。因此在学习这类概念的时候，我们需要人为地创建“思维模式”（PATTERN），并通过练习，不断增强这种思维模式。
 ![](https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Learning%20How%20to%20Learn/2.jpg)
@@ -40,7 +40,7 @@ Eg： Dali and Edison，他们放松自己让思绪漫游，考虑他们之前�
 
 第一次形成的思考模式是用“发散模式”发现问题解决路径之后，大脑将切换到“集中模式”，并记录该模式，在之后解决同样问题的时候，便直接调用这个模式，从而其在大脑中的路径颜色就越来越深，越来越牢固
 
-###**关于记忆**###
+##**关于记忆**###
 
 记忆分为工作记忆和长期记忆。
 
@@ -48,7 +48,7 @@ Eg： Dali and Edison，他们放松自己让思绪漫游，考虑他们之前�
 - 长期记忆：类似于仓库，有巨大的存储空间，但需要多次练习才能在众多信息中找到你想要的信息。不同的长期记忆储存在大脑的不同区域。研究发现，当第一次将工作记忆转化成长期记忆储存时，需要不断重复这个过程几次，这样能提高日后在你需要的时候找到他的几率。要将记忆转化为长期记忆，用间隔时间重复练习效果更好（类似艾宾浩斯曲线）。
 
 
-###**睡眠的重要性**###
+##**睡眠的重要性**###
 
 在醒着的时候，大脑会产生有害物质（toxic），当睡着的时候，脑细胞与脑细胞之间的间距增大，通过脑中的液体将有害物质从脑细胞的间隙冲走，从而清理掉有害物质。所以睡眠不足意味着你的大脑毒素没有清理干净，毒素会导致你不能清晰地思考。长期睡眠不足还会导致头痛、抑郁、心脏病。糖尿病等。
 
@@ -61,8 +61,8 @@ Eg： Dali and Edison，他们放松自己让思绪漫游，考虑他们之前�
 
 **所以在睡前复习今天所学的知识，能在睡梦中更好地理解和强化这些内容。**
 <br>
-##**Chunking**##
-###**What is a chunk?**###
+#**Chunking**##
+##**What is a chunk?**###
 - Chunking is the mental leap that helps you unite bits of information together through meaning.
 - A chunk means a network of neurons that are used to firing together so you can think a thought or perform an action smoothly and effectively.
 
@@ -71,7 +71,7 @@ When you're focusing your attention on something it's almost as if you have an o
 The octopus of attention that slips it's tentacles through those four slots of working memory when necessary to help you make connections to information that you might have in various parts of your brain.
 
 
-###**How to form a chunk?**
+##**How to form a chunk?**
 Chunks are best built with focused, undivided attention, understanding of the basic idea.
 > 
 1. The first step on chunking is simply to focus your undivided attention on the information you want to chunk.
@@ -91,7 +91,7 @@ Chunks are best built with focused, undivided attention, understanding of the ba
 **When you're trying to figure something out, if you have a good library of these chunks, you can more easily skip to the right solution by metaphorically speaking, listening to whispers from your diffuse mode. Your diffuse mode can help you connect two or more chunks together in new ways to solve novel problems.**
 <br>
 
-###**如何阅读**###
+##**如何阅读**###
 最有效的办法是读完一遍后马上再读一遍，共两遍。
 
 - 第一遍是正常通读，不要追求快，需要时不时停下来思考。
@@ -113,4 +113,3 @@ Chunks are best built with focused, undivided attention, understanding of the ba
 
 Reference:
 1. MOOC学院  [learning how to learn 笔记](http://mooc.guokr.com/course/1484/Learning-How-to-Learn--Powerful-mental-tools-to-help-you-master-tough-subjects/note/)
-2. cousera Reading

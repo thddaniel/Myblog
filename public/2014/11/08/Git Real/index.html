@@ -111,7 +111,7 @@ git status will list out which files have change">
 			
 			<section class="second-part">
 				<div class="widget tagcloud">
-					<a href="/tags/Open-Courses/" style="font-size: 20.00px;">Open Courses</a><a href="/tags/git/" style="font-size: 15.00px;">git</a><a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/markdown/" style="font-size: 10.00px;">markdown</a><a href="/tags/创业/" style="font-size: 10.00px;">创业</a><a href="/tags/思维/" style="font-size: 15.00px;">思维</a><a href="/tags/理财/" style="font-size: 10.00px;">理财</a><a href="/tags/记忆力/" style="font-size: 15.00px;">记忆力</a>
+					<a href="/tags/LaTex/" style="font-size: 10.00px;">LaTex</a><a href="/tags/Open-Courses/" style="font-size: 20.00px;">Open Courses</a><a href="/tags/git/" style="font-size: 15.00px;">git</a><a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/markdown/" style="font-size: 10.00px;">markdown</a><a href="/tags/sublime-text/" style="font-size: 15.00px;">sublime text</a><a href="/tags/创业/" style="font-size: 10.00px;">创业</a><a href="/tags/思维/" style="font-size: 15.00px;">思维</a><a href="/tags/数据结构/" style="font-size: 10.00px;">数据结构</a><a href="/tags/理财/" style="font-size: 10.00px;">理财</a><a href="/tags/记忆力/" style="font-size: 15.00px;">记忆力</a>
 				</div>
 			</section>
 			
@@ -187,43 +187,53 @@ git status will list out which files have change">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#STAGING_&_REMOTES"><span class="toc-number">1.</span> <span class="toc-text">STAGING & REMOTES</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#UNSTAGED_DIFFERENCES"><span class="toc-number">1.0.1.</span> <span class="toc-text">UNSTAGED DIFFERENCES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#STAGE_NEW_FILE"><span class="toc-number">1.0.2.</span> <span class="toc-text">STAGE NEW FILE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#STAGED_DIFFERENCES"><span class="toc-number">1.0.3.</span> <span class="toc-text">STAGED DIFFERENCES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UNSTAGE_FILES"><span class="toc-number">1.0.4.</span> <span class="toc-text">UNSTAGE FILES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SKIP_STAGING"><span class="toc-number">1.0.5.</span> <span class="toc-text">SKIP STAGING</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ADD_TO_COMMIT"><span class="toc-number">1.0.6.</span> <span class="toc-text">ADD TO COMMIT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ROLL_BACK_COMMIT"><span class="toc-number">1.0.7.</span> <span class="toc-text">ROLL BACK COMMIT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DISCARD_CHANGES"><span class="toc-number">1.0.8.</span> <span class="toc-text">DISCARD CHANGES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#REMOVE_COMMIT"><span class="toc-number">1.0.9.</span> <span class="toc-text">REMOVE COMMIT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NEW_REMOTE_REPOS_AND_PUSH"><span class="toc-number">1.0.10.</span> <span class="toc-text">NEW REMOTE REPOS AND PUSH</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CLONING_&_BRANCHING"><span class="toc-number">2.</span> <span class="toc-text">CLONING & BRANCHING</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CLONE_A_REPO"><span class="toc-number">2.0.1.</span> <span class="toc-text">CLONE A REPO</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LIST_REMOTES"><span class="toc-number">2.0.2.</span> <span class="toc-text">LIST REMOTES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CREATE_A_BRANCH"><span class="toc-number">2.0.3.</span> <span class="toc-text">CREATE A BRANCH</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SWITCH_TO_BRANCH"><span class="toc-number">2.0.4.</span> <span class="toc-text">SWITCH TO BRANCH</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#COMBINE_BRANCH"><span class="toc-number">2.0.5.</span> <span class="toc-text">COMBINE BRANCH</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BRANCH_SHORTCUTS"><span class="toc-number">2.0.6.</span> <span class="toc-text">BRANCH SHORTCUTS</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#COLLABORATION_BASICS"><span class="toc-number">3.</span> <span class="toc-text">COLLABORATION BASICS</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SEND_CHANGES"><span class="toc-number">3.0.1.</span> <span class="toc-text">SEND CHANGES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GET_CHANGES"><span class="toc-number">3.0.2.</span> <span class="toc-text">GET CHANGES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FIX_CONFLICTS"><span class="toc-number">3.0.3.</span> <span class="toc-text">FIX CONFLICTS</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BRANCHING"><span class="toc-number">4.</span> <span class="toc-text">BRANCHING</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PUSH_BRANCH"><span class="toc-number">4.0.1.</span> <span class="toc-text">PUSH BRANCH</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GET_REMOTE_BRANCH"><span class="toc-number">4.0.2.</span> <span class="toc-text">GET REMOTE BRANCH</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#REMOTE_BRANCHES"><span class="toc-number">4.0.3.</span> <span class="toc-text">REMOTE BRANCHES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DELETE_ON_REMOTE"><span class="toc-number">4.0.4.</span> <span class="toc-text">DELETE ON REMOTE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BRANCH_STATUS"><span class="toc-number">4.0.5.</span> <span class="toc-text">BRANCH STATUS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CLEAN_BRANCHES"><span class="toc-number">4.0.6.</span> <span class="toc-text">CLEAN BRANCHES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LIST_TAGS"><span class="toc-number">4.0.7.</span> <span class="toc-text">LIST TAGS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CREATE_TAG"><span class="toc-number">4.0.8.</span> <span class="toc-text">CREATE TAG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SEND_TAGS"><span class="toc-number">4.0.9.</span> <span class="toc-text">SEND TAGS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RETRIEVE_TAG"><span class="toc-number">4.0.10.</span> <span class="toc-text">RETRIEVE TAG</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#REBASE_BELONG_TO_US"><span class="toc-number">5.</span> <span class="toc-text">REBASE BELONG TO US</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#REBASE"><span class="toc-number">5.0.1.</span> <span class="toc-text">REBASE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#REMOTE"><span class="toc-number">5.0.2.</span> <span class="toc-text">REMOTE</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CONFLICT"><span class="toc-number">5.0.3.</span> <span class="toc-text">CONFLICT</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HISTORY_AND_CONFIGURATION"><span class="toc-number">6.</span> <span class="toc-text">HISTORY AND CONFIGURATION</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#EXCLUDING"><span class="toc-number">6.0.1.</span> <span class="toc-text">EXCLUDING</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#REMOVING"><span class="toc-number">6.0.2.</span> <span class="toc-text">REMOVING</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CONFIG"><span class="toc-number">6.0.3.</span> <span class="toc-text">CONFIG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ALIASES"><span class="toc-number">6.0.4.</span> <span class="toc-text">ALIASES</span></a></li></ol></li></ol></li></ol>
+              
+              <!-- 文章目录开始 -->
+                
+                  <div id="toc" class="toc-article">
+                      <strong class="toc-title">目录Contents</strong>
+                  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#STAGING_&_REMOTES"><span class="toc-number">1.</span> <span class="toc-text">STAGING & REMOTES</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#UNSTAGED_DIFFERENCES"><span class="toc-number">1.1.</span> <span class="toc-text">UNSTAGED DIFFERENCES</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STAGE_NEW_FILE"><span class="toc-number">1.2.</span> <span class="toc-text">STAGE NEW FILE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#STAGED_DIFFERENCES"><span class="toc-number">1.3.</span> <span class="toc-text">STAGED DIFFERENCES</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UNSTAGE_FILES"><span class="toc-number">1.4.</span> <span class="toc-text">UNSTAGE FILES</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SKIP_STAGING"><span class="toc-number">1.5.</span> <span class="toc-text">SKIP STAGING</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ADD_TO_COMMIT"><span class="toc-number">1.6.</span> <span class="toc-text">ADD TO COMMIT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ROLL_BACK_COMMIT"><span class="toc-number">1.7.</span> <span class="toc-text">ROLL BACK COMMIT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DISCARD_CHANGES"><span class="toc-number">1.8.</span> <span class="toc-text">DISCARD CHANGES</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#REMOVE_COMMIT"><span class="toc-number">1.9.</span> <span class="toc-text">REMOVE COMMIT</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NEW_REMOTE_REPOS_AND_PUSH"><span class="toc-number">1.10.</span> <span class="toc-text">NEW REMOTE REPOS AND PUSH</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CLONING_&_BRANCHING"><span class="toc-number">2.</span> <span class="toc-text">CLONING & BRANCHING</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CLONE_A_REPO"><span class="toc-number">2.1.</span> <span class="toc-text">CLONE A REPO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LIST_REMOTES"><span class="toc-number">2.2.</span> <span class="toc-text">LIST REMOTES</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CREATE_A_BRANCH"><span class="toc-number">2.3.</span> <span class="toc-text">CREATE A BRANCH</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SWITCH_TO_BRANCH"><span class="toc-number">2.4.</span> <span class="toc-text">SWITCH TO BRANCH</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#COMBINE_BRANCH"><span class="toc-number">2.5.</span> <span class="toc-text">COMBINE BRANCH</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BRANCH_SHORTCUTS"><span class="toc-number">2.6.</span> <span class="toc-text">BRANCH SHORTCUTS</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#COLLABORATION_BASICS"><span class="toc-number">3.</span> <span class="toc-text">COLLABORATION BASICS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SEND_CHANGES"><span class="toc-number">3.1.</span> <span class="toc-text">SEND CHANGES</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GET_CHANGES"><span class="toc-number">3.2.</span> <span class="toc-text">GET CHANGES</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FIX_CONFLICTS"><span class="toc-number">3.3.</span> <span class="toc-text">FIX CONFLICTS</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BRANCHING"><span class="toc-number">4.</span> <span class="toc-text">BRANCHING</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#PUSH_BRANCH"><span class="toc-number">4.1.</span> <span class="toc-text">PUSH BRANCH</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GET_REMOTE_BRANCH"><span class="toc-number">4.2.</span> <span class="toc-text">GET REMOTE BRANCH</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#REMOTE_BRANCHES"><span class="toc-number">4.3.</span> <span class="toc-text">REMOTE BRANCHES</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DELETE_ON_REMOTE"><span class="toc-number">4.4.</span> <span class="toc-text">DELETE ON REMOTE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BRANCH_STATUS"><span class="toc-number">4.5.</span> <span class="toc-text">BRANCH STATUS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CLEAN_BRANCHES"><span class="toc-number">4.6.</span> <span class="toc-text">CLEAN BRANCHES</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#LIST_TAGS"><span class="toc-number">4.7.</span> <span class="toc-text">LIST TAGS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CREATE_TAG"><span class="toc-number">4.8.</span> <span class="toc-text">CREATE TAG</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SEND_TAGS"><span class="toc-number">4.9.</span> <span class="toc-text">SEND TAGS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RETRIEVE_TAG"><span class="toc-number">4.10.</span> <span class="toc-text">RETRIEVE TAG</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#REBASE_BELONG_TO_US"><span class="toc-number">5.</span> <span class="toc-text">REBASE BELONG TO US</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#REBASE"><span class="toc-number">5.1.</span> <span class="toc-text">REBASE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#REMOTE"><span class="toc-number">5.2.</span> <span class="toc-text">REMOTE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CONFLICT"><span class="toc-number">5.3.</span> <span class="toc-text">CONFLICT</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HISTORY_AND_CONFIGURATION"><span class="toc-number">6.</span> <span class="toc-text">HISTORY AND CONFIGURATION</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#EXCLUDING"><span class="toc-number">6.1.</span> <span class="toc-text">EXCLUDING</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#REMOVING"><span class="toc-number">6.2.</span> <span class="toc-text">REMOVING</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CONFIG"><span class="toc-number">6.3.</span> <span class="toc-text">CONFIG</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ALIASES"><span class="toc-number">6.4.</span> <span class="toc-text">ALIASES</span></a></li></ol></li></ol>
+                  </div>
+                
+             <!-- 文章目录结束 -->
+ 
+        
         <h1 id="STAGING_&amp;_REMOTES"><strong>STAGING &amp; REMOTES</strong></h1>
-<h3 id="UNSTAGED_DIFFERENCES"><strong>UNSTAGED DIFFERENCES</strong></h3>
+<h2 id="UNSTAGED_DIFFERENCES"><strong>UNSTAGED DIFFERENCES</strong></h2>
 <blockquote>
 <p>A new file has been added to the site. Run the command to see what all has changed since your last commit.</p>
 </blockquote>
 <p><code>git status</code> will list out which files have changed. If we want to see the actual changes:</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> diff</div></pre></td></tr></table></figure>
 
-<h3 id="STAGE_NEW_FILE"><strong>STAGE NEW FILE</strong></h3>
+<h2 id="STAGE_NEW_FILE"><strong>STAGE NEW FILE</strong></h2>
 <blockquote>
 <p>There it is: <code>ostrich.html</code>. Stage it to be committed.</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">add</span> ostrich.html</div></pre></td></tr></table></figure>
 
 <p><a id="more"></a></p>
-<h3 id="STAGED_DIFFERENCES"><strong>STAGED DIFFERENCES</strong></h3>
+<h2 id="STAGED_DIFFERENCES"><strong>STAGED DIFFERENCES</strong></h2>
 <blockquote>
 <p>We’ve added <code>ostrich.html</code> to the staging area, but your co-worker has stopped by and asked to see the new page first. Run a <code>diff</code> on the staged changes.</p>
 </blockquote>
 <p><code>git diff</code> is great for seeing <strong>unstaged differences</strong> since last commit, but you need the <code>--staged</code> option in order to see staged changes.</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">git</span> <span class="comment">diff</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">staged</span></div></pre></td></tr></table></figure>
 
-<h3 id="UNSTAGE_FILES"><strong>UNSTAGE FILES</strong></h3>
+<h2 id="UNSTAGE_FILES"><strong>UNSTAGE FILES</strong></h2>
 <blockquote>
 <p>“Wait,” says the co-worker. “They didn’t tell you? The client “wants the ostrich section pulled - they couldn’t get a license to “sell them.” Better unstage <code>ostrich.html</code>.</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="operator"><span class="keyword">reset</span> HEAD ostrich.html</span></div></pre></td></tr></table></figure>
 
-<h3 id="SKIP_STAGING"><strong>SKIP STAGING</strong></h3>
+<h2 id="SKIP_STAGING"><strong>SKIP STAGING</strong></h2>
 <blockquote>
 <p>We’ve modified the <code>index.html</code> file, adding a link to the cats section. Since that file is already tracked, you can just skip staging and commit it with one command.</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git commit <span class="operator">-a</span> -m <span class="string">"index.html adding a link"</span></div></pre></td></tr></table></figure>
 
 <p><code>-a</code>: Add changes from all tracked files. Doesn’t add new(untracked) files.</p>
-<h3 id="ADD_TO_COMMIT"><strong>ADD TO COMMIT</strong></h3>
+<h2 id="ADD_TO_COMMIT"><strong>ADD TO COMMIT</strong></h2>
 <blockquote>
 <p>Whoops! We forgot to add the <code>cats.html</code> page that <code>index.html</code> links to, and it should really be <code>amended</code> on the same commit. To do this, let’s first stage <code>cats.html</code>.</p>
 </blockquote>
@@ -235,62 +245,62 @@ git status will list out which files have change">
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="operator"><span class="keyword">commit</span> <span class="comment">--amend -m "modified index.html & add cats.html"</span></span></div></pre></td></tr></table></figure>
 
 <p>You don’t want to make a new commit, you want to amend the previous one, so what I’m trying to say is: Use the amend option(<strong>add to the last commit</strong>)<br>Whatever has been staged is added to last commit!</p>
-<h3 id="ROLL_BACK_COMMIT"><strong>ROLL BACK COMMIT</strong></h3>
+<h2 id="ROLL_BACK_COMMIT"><strong>ROLL BACK COMMIT</strong></h2>
 <blockquote>
 <p>Wait, you’re getting word that the cats section might be cancelled. <strong>Undo the commit, and put the files back in staging.</strong></p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="operator"><span class="keyword">reset</span> <span class="comment">--soft HEAD^</span></span></div></pre></td></tr></table></figure>
 
 <p><code>soft</code>: Reset into staging<br><code>HEAD^</code>: Move to commit before ‘HEAD’<br>Now I can make changes, and re-commit</p>
-<h3 id="DISCARD_CHANGES"><strong>DISCARD CHANGES</strong></h3>
+<h2 id="DISCARD_CHANGES"><strong>DISCARD CHANGES</strong></h2>
 <blockquote>
 <p>Forget the whole thing - the client’s license to sell cats is suspended during some kind of “investigation”. Discard your changes to <code>cats.html</code> and <code>index.html</code>.</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git checkout -- cats.html <span class="built_in">index</span>.html</div></pre></td></tr></table></figure>
 
 <p>Blow away all changes since last commit.</p>
-<h3 id="REMOVE_COMMIT"><strong>REMOVE COMMIT</strong></h3>
+<h2 id="REMOVE_COMMIT"><strong>REMOVE COMMIT</strong></h2>
 <blockquote>
 <p>1.The next feature is a banner on the main page, saying the pet shop will soon be offering badgers. Add and commit <code>index.html</code> in one step, skipping the staging area.<br>2.Your co-worker is back, looking sheepish. “Never mind the badgers ad. The client’s legal department said that was a liability risk.” <strong>You’ll need to remove the most recent commit, and all its changes.</strong></p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git <span class="operator"><span class="keyword">commit</span> -am <span class="string">"add index.html"</span></span></div><div class="line">git <span class="keyword">reset</span> <span class="comment">--hard HEAD^</span></div></pre></td></tr></table></figure>
 
-<h3 id="NEW_REMOTE_REPOS_AND_PUSH"><strong>NEW REMOTE REPOS AND PUSH</strong></h3>
+<h2 id="NEW_REMOTE_REPOS_AND_PUSH"><strong>NEW REMOTE REPOS AND PUSH</strong></h2>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git remote add <span class="variable">&lt;name&gt;</span> <span class="variable">&lt;address&gt;</span> /<span class="keyword">*</span>To add new remotes<span class="keyword">*</span>/</div><div class="line">git remote rm <span class="variable">&lt;name&gt;</span> /<span class="keyword">*</span>To remove remotes<span class="keyword">*</span>/</div><div class="line">git remote -v /<span class="keyword">*</span>show remote repositories<span class="keyword">*</span>/</div><div class="line">git push -u <span class="variable">&lt;name&gt;</span> <span class="variable">&lt;branch&gt;</span> /<span class="keyword">*</span>To push to remotes. The -u tells Git to remember the parameters, so that next time we can simply run git push <span class="keyword">*</span>/</div></pre></td></tr></table></figure>
 
 <p><br></p>
 <h1 id="CLONING_&amp;_BRANCHING"><strong>CLONING &amp; BRANCHING</strong></h1>
-<h3 id="CLONE_A_REPO"><strong>CLONE A REPO</strong></h3>
+<h2 id="CLONE_A_REPO"><strong>CLONE A REPO</strong></h2>
 <blockquote>
 <p>The IT department installed an OS update on your workstation - and wiped the hard drive in the process. Clone the Pet Shop repo from <code>git@example.com:example/petshop.git</code> so you can resume work.</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> clone git<span class="variable">@example</span>.com:example/petshop.git</div></pre></td></tr></table></figure>
 
-<h3 id="LIST_REMOTES"><strong>LIST REMOTES</strong></h3>
+<h2 id="LIST_REMOTES"><strong>LIST REMOTES</strong></h2>
 <blockquote>
 <p>Our repo is cloned locally, but how do we check to a list of our remotes? Lets get a list of all our remotes with a verbose output.</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote -v /<span class="keyword">*</span>show remote repositories<span class="keyword">*</span>/</div></pre></td></tr></table></figure>
 
-<h3 id="CREATE_A_BRANCH"><strong>CREATE A BRANCH</strong></h3>
+<h2 id="CREATE_A_BRANCH"><strong>CREATE A BRANCH</strong></h2>
 <blockquote>
 <p>We need to add a section for the pet grooming salon on the site. You want to isolate this new feature from your other work. Create a new branch named <code>grooming</code>.</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> branch grooming</div></pre></td></tr></table></figure>
 
-<h3 id="SWITCH_TO_BRANCH"><strong>SWITCH TO BRANCH</strong></h3>
+<h2 id="SWITCH_TO_BRANCH"><strong>SWITCH TO BRANCH</strong></h2>
 <blockquote>
 <p>You’ve made the new branch, but your commits are still going to the old one. Switch to the <code>grooming</code> branch.</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> checkout grooming</div></pre></td></tr></table></figure>
 
-<h3 id="COMBINE_BRANCH"><strong>COMBINE BRANCH</strong></h3>
+<h2 id="COMBINE_BRANCH"><strong>COMBINE BRANCH</strong></h2>
 <blockquote>
 <p>You’ve finished work on the <code>grooming</code> branch and are ready to bring your work back into <code>master</code>. First, check out the master branch…<br>Then,bring your changes from the grooming branch into the …master branch.</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git checkout master</div><div class="line">git <span class="operator"><span class="keyword">merge</span> grooming</span></div><div class="line">git branch -d grooming <span class="comment">/*delete the local branch*/</span></div></pre></td></tr></table></figure>
 
-<h3 id="BRANCH_SHORTCUTS"><strong>BRANCH SHORTCUTS</strong></h3>
+<h2 id="BRANCH_SHORTCUTS"><strong>BRANCH SHORTCUTS</strong></h2>
 <blockquote>
 <p>The pet shop wants to try selling yet another product line! Let’s do this one in a branch in case it gets cancelled like the others. Using a single command, create and check out an <code>octopus</code> branch.</p>
 </blockquote>
@@ -298,84 +308,84 @@ git status will list out which files have change">
 
 <p><br></p>
 <h1 id="COLLABORATION_BASICS"><strong>COLLABORATION BASICS</strong></h1>
-<h3 id="SEND_CHANGES"><strong>SEND CHANGES</strong></h3>
+<h2 id="SEND_CHANGES"><strong>SEND CHANGES</strong></h2>
 <blockquote>
 <p>You’ve committed some work so now it’s time to share! Push it out for your co-workers to see.</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="keyword">push</span></div></pre></td></tr></table></figure>
 
-<h3 id="GET_CHANGES"><strong>GET CHANGES</strong></h3>
+<h2 id="GET_CHANGES"><strong>GET CHANGES</strong></h2>
 <blockquote>
 <p>Looks like your co-worker pushed some changes before you did! Your push was rejected. Retrieve the latest changes, and merge them into your branch in one step.</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> pull</div></pre></td></tr></table></figure>
 
 <p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/1.pull.jpg" alt="1.pull"></p>
-<h3 id="FIX_CONFLICTS"><strong>FIX CONFLICTS</strong></h3>
+<h2 id="FIX_CONFLICTS"><strong>FIX CONFLICTS</strong></h2>
 <blockquote>
 <p>Git is reporting a conflict with your co-worker’s changes in “readme”. Just discard his changes, and keep your own (the HEAD).</p>
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/2.jpg" alt="2"><br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/3.jpg" alt="3"><br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/4.jpg" alt="4"></p>
 <p><br></p>
 <h1 id="BRANCHING"><strong>BRANCHING</strong></h1>
-<h3 id="PUSH_BRANCH"><strong>PUSH BRANCH</strong></h3>
+<h2 id="PUSH_BRANCH"><strong>PUSH BRANCH</strong></h2>
 <blockquote>
 <p>A new kind of pet is for sale at the store! Maybe this one will catch on with the public. You’ve committed your work to the local <code>hamsters</code> branch; now publish this branch in the <code>origin</code> repo.</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="keyword">push</span> origin hamsters</div></pre></td></tr></table></figure>
 
 <p>Links locak branch to the remote branch(tracking)</p>
-<h3 id="GET_REMOTE_BRANCH"><strong>GET REMOTE BRANCH</strong></h3>
+<h2 id="GET_REMOTE_BRANCH"><strong>GET REMOTE BRANCH</strong></h2>
 <blockquote>
 <p>“git branch -r” does not query the remotes to check for new branches. In order to see a new remote branch you first have to do a fetch or a pull. So retrieve the remote “weasel” branch.</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> fetch</div></pre></td></tr></table></figure>
 
 <p>Pull seems like a good choice, but pull will auto merge branches, you only want to update your local branch information, so use fetch instead</p>
-<h3 id="REMOTE_BRANCHES"><strong>REMOTE BRANCHES</strong></h3>
+<h2 id="REMOTE_BRANCHES"><strong>REMOTE BRANCHES</strong></h2>
 <blockquote>
 <p>Your co-worker said he wants you to look over a new branch on “origin”, but he didn’t tell you its name. Get a list of remote branches.</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git branch -<span class="keyword">r</span> /*<span class="keyword">list</span> <span class="keyword">all</span> remote branches*/</div></pre></td></tr></table></figure>
 
-<h3 id="DELETE_ON_REMOTE"><strong>DELETE ON REMOTE</strong></h3>
+<h2 id="DELETE_ON_REMOTE"><strong>DELETE ON REMOTE</strong></h2>
 <blockquote>
 <p>Guess how the product launch went with the weasels? Better delete the “weasel” branch on “origin”.</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin <span class="symbol">:weasel</span></div></pre></td></tr></table></figure>
 
 <p>Use git push to delete the <strong>remote branch</strong></p>
-<h3 id="BRANCH_STATUS"><strong>BRANCH STATUS</strong></h3>
+<h2 id="BRANCH_STATUS"><strong>BRANCH STATUS</strong></h2>
 <blockquote>
 <p>Wait, did you already pull that branch locally? Check for stale branches that are tracking “origin”.</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote <span class="literal">show</span> origin <span class="comment">/* show the state of your branches*/</span></div></pre></td></tr></table></figure>
 
-<h3 id="CLEAN_BRANCHES"><strong>CLEAN BRANCHES</strong></h3>
+<h2 id="CLEAN_BRANCHES"><strong>CLEAN BRANCHES</strong></h2>
 <blockquote>
 <p>You still have a stale local branch tracking the now-deleted <code>origin/weasel</code>. Clean up your local references.</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote prune origin /<span class="keyword">*</span> remove deleted remote<span class="keyword">*</span>/</div></pre></td></tr></table></figure>
 
-<h3 id="LIST_TAGS"><strong>LIST TAGS</strong></h3>
+<h2 id="LIST_TAGS"><strong>LIST TAGS</strong></h2>
 <blockquote>
 <p>With the weasel threat eliminated, the pet store wants to deploy the site. Let’s see, what was the previous version number? Display the tags to find out.Create a tag accordingly</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="keyword">tag</span>  /*<span class="keyword">list</span> <span class="keyword">all</span> <span class="keyword">tags</span>*/</div></pre></td></tr></table></figure>
 
-<h3 id="CREATE_TAG"><strong>CREATE TAG</strong></h3>
+<h2 id="CREATE_TAG"><strong>CREATE TAG</strong></h2>
 <blockquote>
 <p>Ah, yes, the last release was “v1.3.1”. You’ve added the hamsters, so it would be best to release this as “v1.3.2”. Create a tag accordingly.</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="keyword">tag</span> -<span class="keyword">a</span> v1.<span class="number">3.2</span> -<span class="keyword">m</span> <span class="string">"version 0.03"</span>  /*<span class="built_in">add</span> <span class="keyword">a</span> <span class="keyword">new</span> <span class="keyword">tag</span>*/</div></pre></td></tr></table></figure>
 
-<h3 id="SEND_TAGS"><strong>SEND TAGS</strong></h3>
+<h2 id="SEND_TAGS"><strong>SEND TAGS</strong></h2>
 <blockquote>
 <p>Push your tag to origin.</p>
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push --<span class="keyword">tags</span></div></pre></td></tr></table></figure>
 
-<h3 id="RETRIEVE_TAG"><strong>RETRIEVE TAG</strong></h3>
+<h2 id="RETRIEVE_TAG"><strong>RETRIEVE TAG</strong></h2>
 <blockquote>
 <p>The client is requesting that you roll back to the prior release. (Seriously? What could have gone wrong with the hamsters?) Retrieve the release tagged “v1.3.1”.</p>
 </blockquote>
@@ -383,7 +393,7 @@ git status will list out which files have change">
 
 <p><br></p>
 <h1 id="REBASE_BELONG_TO_US"><strong>REBASE BELONG TO US</strong></h1>
-<h3 id="REBASE"><strong>REBASE</strong></h3>
+<h2 id="REBASE"><strong>REBASE</strong></h2>
 <p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/7.jpg" alt="7"><br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/8.jpg" alt="8"></p>
 <blockquote>
 <p>You’ve made some commits to a feature branch, but you’ve also committed a hotfix on master that would make a merge messy. Check out the <code>kennel</code> branch so you can rebase it on <code>master</code>.</p>
@@ -405,7 +415,7 @@ git status will list out which files have change">
 </blockquote>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="operator"><span class="keyword">merge</span> kennel</span></div></pre></td></tr></table></figure>
 
-<h3 id="REMOTE"><strong>REMOTE</strong></h3>
+<h2 id="REMOTE"><strong>REMOTE</strong></h2>
 <blockquote>
 <p>Your co-worker has pushed changes to the <code>master</code> branch on the <code>origin</code> repo. Retrieve it without merging it so we can replay our work on top of it.</p>
 </blockquote>
@@ -418,7 +428,7 @@ git status will list out which files have change">
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> rebase</div></pre></td></tr></table></figure>
 
 <p>Use <code>git rebase</code> to apply your local commits ahead of those on origin/master.Current branch master is up to date. Success!<br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/6.jpg" alt="6"></p>
-<h3 id="CONFLICT"><strong>CONFLICT</strong></h3>
+<h2 id="CONFLICT"><strong>CONFLICT</strong></h2>
 <p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/9.jpg" alt="9"></p>
 <blockquote>
 <p>Your co-worker has pushed before you yet again. Better fetch the changes…</p>
@@ -479,13 +489,13 @@ git status will list out which files have change">
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git blame <span class="built_in">index</span>.html</div></pre></td></tr></table></figure>
 
 <p>Use <code>git blame</code> to see the annotated source, so you can figure out who made all these changes</p>
-<h3 id="EXCLUDING"><strong>EXCLUDING</strong></h3>
+<h2 id="EXCLUDING"><strong>EXCLUDING</strong></h2>
 <p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/10.jpg" alt="10"><br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/11.jpg" alt="11"></p>
-<h3 id="REMOVING"><strong>REMOVING</strong></h3>
+<h2 id="REMOVING"><strong>REMOVING</strong></h2>
 <p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/12.jpg" alt="12"><br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/13.jpg" alt="13"></p>
-<h3 id="CONFIG"><strong>CONFIG</strong></h3>
+<h2 id="CONFIG"><strong>CONFIG</strong></h2>
 <p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/14.jpg" alt="14"></p>
-<h3 id="ALIASES"><strong>ALIASES</strong></h3>
+<h2 id="ALIASES"><strong>ALIASES</strong></h2>
 <p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/15.jpg" alt="15"><br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/16.jpg" alt="16"></p>
 
       
@@ -563,14 +573,14 @@ git status will list out which files have change">
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2014 TANG Hao
+    		&copy; 2015 TANG Hao
             <a href="mailto:thddaniel92@gmail.com" >发邮件</a>
             
          
             
     	</div>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Code <a href="https://github.com/thddaniel/Myblog" target="_blank">Theme</a> by Tanghao
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Code <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Theme</a> by Litten
       	</div>
     
         <div>

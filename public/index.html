@@ -80,7 +80,7 @@
 			
 			<section class="second-part">
 				<div class="widget tagcloud">
-					<a href="/tags/Open-Courses/" style="font-size: 20.00px;">Open Courses</a><a href="/tags/git/" style="font-size: 15.00px;">git</a><a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/markdown/" style="font-size: 10.00px;">markdown</a><a href="/tags/创业/" style="font-size: 10.00px;">创业</a><a href="/tags/思维/" style="font-size: 15.00px;">思维</a><a href="/tags/理财/" style="font-size: 10.00px;">理财</a><a href="/tags/记忆力/" style="font-size: 15.00px;">记忆力</a>
+					<a href="/tags/LaTex/" style="font-size: 10.00px;">LaTex</a><a href="/tags/Open-Courses/" style="font-size: 20.00px;">Open Courses</a><a href="/tags/git/" style="font-size: 15.00px;">git</a><a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/markdown/" style="font-size: 10.00px;">markdown</a><a href="/tags/sublime-text/" style="font-size: 15.00px;">sublime text</a><a href="/tags/创业/" style="font-size: 10.00px;">创业</a><a href="/tags/思维/" style="font-size: 15.00px;">思维</a><a href="/tags/数据结构/" style="font-size: 10.00px;">数据结构</a><a href="/tags/理财/" style="font-size: 10.00px;">理财</a><a href="/tags/记忆力/" style="font-size: 15.00px;">记忆力</a>
 				</div>
 			</section>
 			
@@ -129,6 +129,305 @@
 </nav>
       
   
+    <article id="post-makefile" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/03/26/makefile/" class="article-date">
+  	<time datetime="2015-03-26T03:30:52.000Z" itemprop="datePublished">Mar 26</time>
+</a>
+      
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/26/makefile/">Makefile basics</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>每次看完文档，过一段时间不用就忘记了。今天做毕业设计需要写Makefile,又重新看了一下<a href="http://www.gnu.org/software/make/manual/make.html" target="_blank" rel="external">GNU make</a>，干脆把常用的提取出来。以后也把一些常用的函数等等写在博客好了，我这记忆力也是没救了。</p>
+<hr>
+<p>后来google发现阮一峰老师总结的很好。文中部分内容来自<a href="http://www.ruanyifeng.com/blog/2015/02/make.html" target="_blank" rel="external">阮一峰Make命令教程</a>,以后发现常用的知识就在这篇补充好了。</p>
+<hr>
+<h1 id="Makefile">Makefile</h1>
+<p>Makefile文件由一系列规则（rules）构成。每条规则的形式如下。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="input"><span class="prompt">&lt;target&gt;</span> <span class="symbol">:</span> &lt;prerequisites&gt; </span></div><div class="line">[tab]  &lt;commands&gt;</div></pre></td></tr></table></figure>
+
+<p>目标（target）是必须的，不能省略。前置条件（prerequisites）和命令（commands）都是可选的，但是必须要有一个。</p>
+<p>在Makefile中，规则的顺序是很重要的，因为，<strong>Makefile中只应该有一个最终目标</strong>，其它的目标都是被这个目标所连带出来的，所以一定要让make知道你的最终目标是什么。
+        
+          <p class="article-more-link">
+            <a href="/2015/03/26/makefile/#more">more >></a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-字符编码" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/03/22/字符编码/" class="article-date">
+  	<time datetime="2015-03-22T07:18:00.000Z" itemprop="datePublished">Mar 22</time>
+</a>
+      
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/22/字符编码/">字符编码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="字符编码">字符编码</h1>
+<p>在计算机内部，所有的信息最终都表示为一个二进制的字符串。每一个二进制位（bit）有0和1两种状态，因此八个二进制位就可以组合出256种状态，这被称为一个<strong>字节（byte）</strong>。而<strong>字符</strong>是语言意义上的符号，范围就不一定了。</p>
+<h2 id="ASCII码">ASCII码</h2>
+<p>上个世纪60年代，美国制定了一套字符编码，对英语字符与二进制位之间的关系，做了统一规定。这被称为ASCII码，一直沿用至今。ASCII码一共规定了128个字符的编码(包括32个不能打印出来的控制符号），只占用了一个字节的后面7位，最前面的1位统一规定为0。<br>
+        
+          <p class="article-more-link">
+            <a href="/2015/03/22/字符编码/#more">more >></a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-sublime text" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/02/24/sublime text/" class="article-date">
+  	<time datetime="2015-02-24T11:18:00.000Z" itemprop="datePublished">Feb 24</time>
+</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime-text/">sublime text</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/24/sublime text/">sublime text 3</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>改字体：Sublime Text -&gt; Preferences -&gt; Settings-User</li>
+<li>从终端打开：sudo ln /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl /bin/subl 以后可直接输入subl</li>
+</ul>
+<hr>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th style="text-align:right">键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>⌘</td>
+<td style="text-align:right">Command key</td>
+</tr>
+<tr>
+<td>⌃</td>
+<td style="text-align:right">Control key</td>
+</tr>
+<tr>
+<td>⌥</td>
+<td style="text-align:right">Option key</td>
+</tr>
+<tr>
+<td>⇧</td>
+<td style="text-align:right">Shift Key</td>
+</tr>
+</tbody>
+</table>
+<p>
+        
+          <p class="article-more-link">
+            <a href="/2015/02/24/sublime text/#more">more >></a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-Latex" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/02/23/Latex/" class="article-date">
+  	<time datetime="2015-02-23T11:18:00.000Z" itemprop="datePublished">Feb 23</time>
+</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LaTex/">LaTex</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime-text/">sublime text</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/02/23/Latex/">Sublime Text with latex &amp; skim</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="安装步骤">安装步骤</h1>
+<ol>
+<li>安装<a href="http://www.sublimetext.com/3" target="_blank" rel="external">Sublime Text 3</a>、<a href="https://tug.org/mactex/" target="_blank" rel="external">MacTex</a>(2.4G)。</li>
+<li>给 Sublime Text 安装<a href="https://packagecontrol.io/installation" target="_blank" rel="external">Package Control</a>。</li>
+<li>在 Sublime Text 窗口中按下 Cammand + Shift + P，键入「install」之后回车，找到「LaTeXTools」这个 Sublime Text Package 并安装。</li>
+<li>安装<a href="http://skim-app.sourceforge.net/" target="_blank" rel="external">Skim</a>，在<code>偏好设置-&gt;同步</code> 修改预设成自定义，指令：/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl。
+        
+          <p class="article-more-link">
+            <a href="/2015/02/23/Latex/#more">more >></a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-List" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/12/05/List/" class="article-date">
+  	<time datetime="2014-12-05T01:18:00.000Z" itemprop="datePublished">Dec 5</time>
+</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构/">数据结构</a></li></ul>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/12/05/List/">数据结构</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>打算重新学下数据结构和算法。<br><strong>时间</strong>：2月底初步完成。<br><strong>目标</strong>：当面临数据结构和算法时，能立马想到特定的行为或者操作以及一些属性。例如，链表,立马想到插入、移除、遍历和计算元素个数等操作，和指针域、数据域等属性。<br><strong>资源</strong>：书籍《算法精解》,《leetcode-C++》 网站：<a href="https://www.hackerrank.com/" target="_blank" rel="external">hackerRank</a><br>
+        
+          <p class="article-more-link">
+            <a href="/2014/12/05/List/#more">more >></a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
     <article id="post-Holistic Learning" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -159,7 +458,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Resource : <a href="http://www.scotthyoung.com/blog/Programs/HolisticLearningEBook.pdf" target="_blank" rel="external">scotthyoung</a></p>
-<h2 id="Holistic_Learning_VS_Rote_Memorization"><strong>Holistic Learning VS Rote Memorization</strong></h2>
+<h1 id="Holistic_Learning_VS_Rote_Memorization"><strong>Holistic Learning VS Rote Memorization</strong></h1>
 <p>Holistic learning is the opposite of rote memorization.  Instead of learning through force, your goal is to create webs of information that link together.<br>
         
           <p class="article-more-link">
@@ -182,305 +481,9 @@
 
 
   
-    <article id="post-Git Real 2" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/11/09/Git Real 2/" class="article-date">
-  	<time datetime="2014-11-09T04:18:00.000Z" itemprop="datePublished">Nov 9</time>
-</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/09/Git Real 2/">Git Real 2</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/git/0.jpg" alt="0"></p>
-<h1 id="INTERACTIVE_REBASE"><strong>INTERACTIVE REBASE</strong></h1>
-<h3 id="REBASE_RECAP"><strong>REBASE RECAP</strong></h3>
-<blockquote>
-<p>So you’ve been working on your feature branch for a couple days and you realize you need to bring commits back in from master. Now you could just merge in the branch but that would create an ugly merge commit. Use rebase to bring those changes into your branch without the merge commit.<br>
-        
-          <p class="article-more-link">
-            <a href="/2014/11/09/Git Real 2/#more">more >></a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-Git Real" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/11/08/Git Real/" class="article-date">
-  	<time datetime="2014-11-08T04:18:00.000Z" itemprop="datePublished">Nov 8</time>
-</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/11/08/Git Real/">Git Real</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="STAGING_&amp;_REMOTES"><strong>STAGING &amp; REMOTES</strong></h1>
-<h3 id="UNSTAGED_DIFFERENCES"><strong>UNSTAGED DIFFERENCES</strong></h3>
-<blockquote>
-<p>A new file has been added to the site. Run the command to see what all has changed since your last commit.</p>
-</blockquote>
-<p><code>git status</code> will list out which files have changed. If we want to see the actual changes:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> diff</div></pre></td></tr></table></figure>
-
-<h3 id="STAGE_NEW_FILE"><strong>STAGE NEW FILE</strong></h3>
-<blockquote>
-<p>There it is: <code>ostrich.html</code>. Stage it to be committed.</p>
-</blockquote>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">add</span> ostrich.html</div></pre></td></tr></table></figure>
-
-<p>
-        
-          <p class="article-more-link">
-            <a href="/2014/11/08/Git Real/#more">more >></a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-How to start a startup" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/10/31/How to start a startup/" class="article-date">
-  	<time datetime="2014-10-31T04:18:00.000Z" itemprop="datePublished">Oct 31</time>
-</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Open-Courses/">Open Courses</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/创业/">创业</a></li></ul>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/31/How to start a startup/">How to start a startup</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>网易公开课：<a href="http://v.163.com/special/opencourse/startup.html" target="_blank" rel="external">如何创业</a> Stanford CS183B</p>
-<p><strong>Outcome</strong> =<code>Idea</code> x <code>Product</code> x <code>Teams</code> x <code>Execution</code> x <code>Luck</code>(random # between 0 and 10,000)</p>
-<p><strong>Four critical parts:</strong></p>
-<h3 id="A_Great_Idea"><strong>A Great Idea</strong></h3>
-<p>It includes the size and growth of the market,the growth strategy for company,the defensibility strategy and so on.</p>
-<ul>
-<li>Even though plans themselves are worthless,to exercise a planning is really valuable.</li>
-<li>You need to build a business that is difficult to replicate.</li>
-<li>Startup should feel like an important mission.</li>
-<li>You want an idea that turns into a monopoly,but you can’t get monopoly in a big market right away.You have to find a small market in which you can get a monopoly, and then quickly expand.<br>
-        
-          <p class="article-more-link">
-            <a href="/2014/10/31/How to start a startup/#more">more >></a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-Learning how to learn" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/10/28/Learning how to learn/" class="article-date">
-  	<time datetime="2014-10-28T14:18:00.000Z" itemprop="datePublished">Oct 28</time>
-</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Open-Courses/">Open Courses</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/思维/">思维</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/记忆力/">记忆力</a></li></ul>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/28/Learning how to learn/">Learning how to learn</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>cousera课:<a href="https://class.coursera.org/learning-002" target="_blank" rel="external">learning how to learn</a>笔记</p>
-<h2 id="Focused_versus_Diffuse_Thinking"><strong>Focused versus Diffuse Thinking</strong></h2>
-<h3 id="专注模式和发散模式"><strong>专注模式和发散模式</strong></h3>
-<p>我们人类有两种最基本的思考模式：</p>
-<ul>
-<li>专注模式(focused)： 解决简单的 熟悉的问题时，很快就能找到熟悉的思路，将问题一一拆分，并逐步解决。</li>
-<li>发散模式(diffuse)：解决一些从未接触过的想法，概念时，不知道怎样开始解决，不知道正确的方向，所以思绪天马行空，是发散的，直到碰到一个障碍又折回来继续思考，直到解决问题。在这种思维模式下，你的思维更广阔，全面。</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Learning%20How%20to%20Learn/1.jpg" alt="思考模式"><br>
-        
-          <p class="article-more-link">
-            <a href="/2014/10/28/Learning how to learn/#more">more >></a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-Managing Money" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/10/27/Managing Money/" class="article-date">
-  	<time datetime="2014-10-27T04:18:00.000Z" itemprop="datePublished">Oct 27</time>
-</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Open-Courses/">Open Courses</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/理财/">理财</a></li></ul>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/27/Managing Money/">Managing Money</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天在cousera上看到这门课<a href="https://www.coursera.org/course/managingmoney" target="_blank" rel="external">Managing Your Time, Money, and Career: MBA Insights for Undergraduates</a><br>走向社会后，如何理财是一门学问。感觉这门课不难，但是挺实用的。顺便还可以学习下英语，练习下听力。以下是笔记。</p>
-<h2 id="What’s_In_Your_Budget?"><strong>What’s In Your Budget?</strong></h2>
-<h3 id="Theme_of_this_class:"><strong>Theme of this class:</strong></h3>
-<ul>
-<li>Having a smart budget plan can prepare us for unexpected emergency</li>
-<li>Planning for emergency is as important as planning for investment</li>
-<li>Diversify income source is the key way to make a good budget plan<br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Managing%20time,money%20and%20career/1.managing%20money.jpg" alt="managing money"><br>
-        
-          <p class="article-more-link">
-            <a href="/2014/10/27/Managing Money/#more">more >></a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -488,14 +491,14 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2014 TANG Hao
+    		&copy; 2015 TANG Hao
             <a href="mailto:thddaniel92@gmail.com" >发邮件</a>
             
          
             
     	</div>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Code <a href="https://github.com/thddaniel/Myblog" target="_blank">Theme</a> by Tanghao
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Code <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Theme</a> by Litten
       	</div>
     
         <div>

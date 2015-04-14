@@ -4,7 +4,6 @@ title: "Markdown笔记"
 date: 2014-10-26 9:18
 comments: true
 tags: 
-	- markdown
     
 ---
 # **斜体和粗体** 

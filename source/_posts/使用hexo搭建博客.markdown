@@ -3,7 +3,6 @@ title: "使用hexo搭建博客"
 date: 2014-10-26 19:18
 comments: true
 tags: 
-	- hexo
 
 ---
 #**Hexo安装**
@@ -100,9 +99,8 @@ npm update
 ```
 npm uninstall <plugin-name>
 ```
-**示例**：
 
-- 添加RSS
+###添加RSS
 
 hexo提供了RSS的生成插件，需要手动安装和设置。步骤如下：
 安装RSS插件到本地：
@@ -119,6 +117,7 @@ plugins:
 
 - 添加sitemap
 
+###添加sitemap
 同样的，我们使用hexo提供的插件，方法与添加RSS类似。
 安装sitemap到本地：
 ```
@@ -129,8 +128,16 @@ npm install hexo-generator-sitemap
 plugins:
 - hexo-generator-sitemap
 ```
+###添加Google Analytics
+
+1. 注册[Google Analytics账号](http://www.google.com/analytics/)。
+2. 添加自己的网站域名。
+3. 把JS代码Copy到Hexo的\themes\yilia\layout\_partial\after_footer文件中。
+4. 保存文件，重新生成、部署Hexo。数据统计不会立即生效，需要等待几个小时。
+
+在mac平台上，可以使用[GAget](https://itunes.apple.com/cn/app/gaget-simple-widget-for-google/id968487158?l=en&mt=12)方便查看。
 <br>
-#**部署到github上**
+#部署到github上
 
 部署到Github前需要配置`_config.yml`文件。
 ```

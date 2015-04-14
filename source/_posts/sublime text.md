@@ -4,7 +4,6 @@ title: "sublime text 3"
 date: 2015-02-24 19:18
 comments: true
 tags: 
-	- sublime text
 	
 ---
 - 改字体：Sublime Text -> Preferences -> Settings-User

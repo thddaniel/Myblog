@@ -4,8 +4,6 @@ title: "Sublime Text with latex & skim"
 date: 2015-2-23 19:18
 comments: true
 tags: 
-	- LaTex
-	- sublime text
 
 ---
 # 安装步骤

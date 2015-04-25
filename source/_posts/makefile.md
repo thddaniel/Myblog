@@ -873,7 +873,16 @@ Makefile:2: there is an warning!
 这里会执行!
 ```
 
-#示例
+
+#内核中的Makefile
+2.6.30.4linux内核，对于Makefile的描述在Documentation/kbuild/makefiles.txt里
+
+	Makefile		the top Makefile. 
+	.config			the kernel configuration file.	arch/$(ARCH)/Makefile	the arch Makefile.	scripts/Makefile.*	common rules etc. for all kbuild Makefiles.	kbuild Makefiles	there are about 500 of these. 
+具体参考[linux源码Makefile的详细分析](http://www.cnblogs.com/amanlikethis/p/3675486.html#lab23),[Linux 内核 Makefile 体系简单分析](http://blog.chinaunix.net/uid-26806098-id-3141136.html)
+
+
+#自己编写Makefile
 模仿linux内核scripts文件夹里的makefile的编写思路。Makefile主要分成3类:
 
 - 顶层目录的Makefile

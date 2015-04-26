@@ -45,7 +45,7 @@ tags:
 
 通常情况各种图片**有层次顺序叠加**配上相应的**动画效果**，能展示出好看的幻灯片。
 例如要实现把app丢进垃圾桶的动态幻灯片，可以使用move动作效果，但是app会遮挡到垃圾桶。所以这里添加了垃圾桶前半部分图片，利用图片的纵深关系实现了最终的效果。
-![纵深效果]()
+![纵深效果](https://raw.githubusercontent.com/thddaniel/Myblog/master/image/keynote/%E7%BA%B5%E6%B7%B1%E6%95%88%E6%9E%9C.png)
 
 <br>
 

@@ -129,11 +129,11 @@
 </nav>
       
   
-    <article id="post-keynote笔记(1)" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-keynote笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/04/14/keynote笔记(1)/" class="article-date">
-  	<time datetime="2015-04-14T08:37:35.000Z" itemprop="datePublished">Apr 14</time>
+      <a href="/2015/04/20/keynote笔记/" class="article-date">
+  	<time datetime="2015-04-20T11:18:00.000Z" itemprop="datePublished">Apr 20</time>
 </a>
       
       
@@ -148,7 +148,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/14/keynote笔记(1)/">keynote笔记</a>
+      <a class="article-title" href="/2015/04/20/keynote笔记/">keynote笔记</a>
     </h1>
   
 
@@ -161,12 +161,68 @@
 <li>制作keynote的时候,<strong>首先要明确这是单纯用来给人看的，还是自己用来配合演讲的。</strong>这完全是两种风格的幻灯片。通常单纯提供个别人看的，文字图表会比较多。作者把想讲的的内容都放进了幻灯片里了。</li>
 <li>要保证<strong>视觉元素的一致性与整个幻灯片的完整性</strong>，要有逻辑性，尤其是当演讲内容很多的时候，不要把幻灯片做的支离破碎。这样可以让观众更好的理解演讲者讲的内容。</li>
 <li>根据不同的场景，不同的观众，选择不同的<strong>字体效果</strong>（大小、形状、颜色(善用取色放大镜)、下划线等等）。幻灯片<strong>背景</strong>要保证与所讲内容主题匹配。比如介绍书籍时，背景可以是个书架，然后书依次显示到书架上。这几点要慎重考虑。</li>
-<li>keynote可以对图片进行简单的裁剪和修饰，有时候图片或者视频更能表达出演讲者所想讲的内容，对观众的视觉冲击力更大，可以采用声画同步。</li>
-</ul>
-
+<li>keynote可以对图片进行简单的裁剪和修饰(Edit Mask with shape&amp; Instant Alpha)，有时候图片或者视频更能表达出演讲者所想讲的内容，对观众的视觉冲击力更大，可以采用声画同步。
         
           <p class="article-more-link">
-            <a href="/2015/04/14/keynote笔记(1)/#more">more >></a>
+            <a href="/2015/04/20/keynote笔记/#more">more >></a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-makefile" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/17/makefile/" class="article-date">
+  	<time datetime="2015-04-17T05:12:16.000Z" itemprop="datePublished">Apr 17</time>
+</a>
+      
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/17/makefile/">Makefile basics</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>每次看完文档，过一段时间不用就忘记了。今天做毕业设计需要写Makefile,又重新看了一下<a href="http://www.gnu.org/software/make/manual/make.html" target="_blank" rel="external">GNU make</a>，干脆把常用的提取出来。以后也把一些常用的函数等等写在博客好了，我这记忆力也是没救了。</p>
+<hr>
+<p>后来google发现阮一峰老师总结的很好。文中部分内容来自<a href="http://www.ruanyifeng.com/blog/2015/02/make.html" target="_blank" rel="external">阮一峰Make命令教程</a>,以后发现常用的知识就在这篇补充好了。</p>
+<hr>
+<h1 id="Makefile">Makefile</h1>
+<p>Makefile文件由一系列规则（rules）构成。每条规则的形式如下。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="input"><span class="prompt">&lt;target&gt;</span> <span class="symbol">:</span> &lt;prerequisites&gt; </span></div><div class="line">[tab]  &lt;commands&gt;</div></pre></td></tr></table></figure>
+
+<p>目标（target）是必须的，不能省略。前置条件（prerequisites）和命令（commands）都是可选的，但是必须要有一个。</p>
+<p>在Makefile中，规则的顺序是很重要的，因为，<strong>Makefile中只应该有一个最终目标</strong>，其它的目标都是被这个目标所连带出来的，所以一定要让make知道你的最终目标是什么。
+        
+          <p class="article-more-link">
+            <a href="/2015/04/17/makefile/#more">more >></a>
           </p>
         
       
@@ -289,64 +345,6 @@
         
           <p class="article-more-link">
             <a href="/2015/04/08/Polite English/#more">more >></a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-makefile" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/03/26/makefile/" class="article-date">
-  	<time datetime="2015-03-26T03:30:52.000Z" itemprop="datePublished">Mar 26</time>
-</a>
-      
-      
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/26/makefile/">Makefile basics</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>每次看完文档，过一段时间不用就忘记了。今天做毕业设计需要写Makefile,又重新看了一下<a href="http://www.gnu.org/software/make/manual/make.html" target="_blank" rel="external">GNU make</a>，干脆把常用的提取出来。以后也把一些常用的函数等等写在博客好了，我这记忆力也是没救了。</p>
-<hr>
-<p>后来google发现阮一峰老师总结的很好。文中部分内容来自<a href="http://www.ruanyifeng.com/blog/2015/02/make.html" target="_blank" rel="external">阮一峰Make命令教程</a>,以后发现常用的知识就在这篇补充好了。</p>
-<hr>
-<h1 id="Makefile">Makefile</h1>
-<p>Makefile文件由一系列规则（rules）构成。每条规则的形式如下。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="input"><span class="prompt">&lt;target&gt;</span> <span class="symbol">:</span> &lt;prerequisites&gt; </span></div><div class="line">[tab]  &lt;commands&gt;</div></pre></td></tr></table></figure>
-
-<p>目标（target）是必须的，不能省略。前置条件（prerequisites）和命令（commands）都是可选的，但是必须要有一个。</p>
-<p>在Makefile中，规则的顺序是很重要的，因为，<strong>Makefile中只应该有一个最终目标</strong>，其它的目标都是被这个目标所连带出来的，所以一定要让make知道你的最终目标是什么。
-        
-          <p class="article-more-link">
-            <a href="/2015/03/26/makefile/#more">more >></a>
           </p>
         
       

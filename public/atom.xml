@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://tanghaoblog.me/"/>
-  <updated>2015-04-14T08:38:04.310Z</updated>
+  <updated>2015-04-26T03:37:21.395Z</updated>
   <id>http://tanghaoblog.me/</id>
   
   <author>
@@ -16,19 +16,18 @@
   
   <entry>
     <title><![CDATA[keynote笔记]]></title>
-    <link href="http://tanghaoblog.me/2015/04/14/keynote%E7%AC%94%E8%AE%B0(1)/"/>
-    <id>http://tanghaoblog.me/2015/04/14/keynote笔记(1)/</id>
-    <published>2015-04-14T08:37:35.000Z</published>
-    <updated>2015-04-14T08:37:35.000Z</updated>
+    <link href="http://tanghaoblog.me/2015/04/20/keynote%E7%AC%94%E8%AE%B0/"/>
+    <id>http://tanghaoblog.me/2015/04/20/keynote笔记/</id>
+    <published>2015-04-20T11:18:00.000Z</published>
+    <updated>2015-04-25T15:00:02.000Z</updated>
     <content type="html"><![CDATA[<ul>
 <li>制作keynote除了一些技巧外，更需要提高自己的<strong>审美观</strong>。这点得慢慢来。</li>
 <li>制作keynote的时候,<strong>首先要明确这是单纯用来给人看的，还是自己用来配合演讲的。</strong>这完全是两种风格的幻灯片。通常单纯提供个别人看的，文字图表会比较多。作者把想讲的的内容都放进了幻灯片里了。</li>
 <li>要保证<strong>视觉元素的一致性与整个幻灯片的完整性</strong>，要有逻辑性，尤其是当演讲内容很多的时候，不要把幻灯片做的支离破碎。这样可以让观众更好的理解演讲者讲的内容。</li>
 <li>根据不同的场景，不同的观众，选择不同的<strong>字体效果</strong>（大小、形状、颜色(善用取色放大镜)、下划线等等）。幻灯片<strong>背景</strong>要保证与所讲内容主题匹配。比如介绍书籍时，背景可以是个书架，然后书依次显示到书架上。这几点要慎重考虑。</li>
-<li>keynote可以对图片进行简单的裁剪和修饰，有时候图片或者视频更能表达出演讲者所想讲的内容，对观众的视觉冲击力更大，可以采用声画同步。</li>
+<li>keynote可以对图片进行简单的裁剪和修饰(Edit Mask with shape&amp; Instant Alpha)，有时候图片或者视频更能表达出演讲者所想讲的内容，对观众的视觉冲击力更大，可以采用声画同步。<a id="more"></a></li>
+<li>Shape图片里不要直接在里面编辑文字，最好新建Text后拖进图片里。</li>
 </ul>
-<a id="more"></a>
-
 <hr>
 <h1 id="Gist">Gist</h1>
 <h2 id="次序">次序</h2>
@@ -50,7 +49,8 @@
 <hr>
 <h2 id="纵深关系">纵深关系</h2>
 <p>每一页幻灯片是有层次的，比如当制作文字背景时，因为背景后添加，所以覆盖在文字上。这时候，选择文字右键Bring to Front，文字就显示在最上层了。同理也可以操作Send to back。</p>
-<p>通常情况各种图片<strong>有层次顺序叠加</strong>配上相应的<strong>动画效果</strong>，能展示出好看的幻灯片。<br><br></p>
+<p>通常情况各种图片<strong>有层次顺序叠加</strong>配上相应的<strong>动画效果</strong>，能展示出好看的幻灯片。<br>例如要实现把app丢进垃圾桶的动态幻灯片，可以使用move动作效果，但是app会遮挡到垃圾桶。所以这里添加了垃圾桶前半部分图片，利用图片的纵深关系实现了最终的效果。<br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/keynote/%E7%BA%B5%E6%B7%B1%E6%95%88%E6%9E%9C.png" alt="纵深效果"></p>
+<p><br></p>
 <hr>
 <h2 id="Magic_Move">Magic Move</h2>
 <p>如果上一页幻灯片和下一页幻灯片，同时有相同的元素存在，比如仅仅文字大小不同，或者图片摆放不同。在这种情况就可以采用神奇移动的效果。这个效果经常使用，会大大增强幻灯片的表现力。</p>
@@ -60,12 +60,13 @@
 <p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/keynote/magicmove2.png" alt="magicmove2"></p>
 <p>同理建立第三张幻灯片，把要呈现的元素复制到第三张的幻灯片中。选中第二张幻灯片，动作效果选择<code>Magic Move</code>。</p>
 <p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/keynote/magicmove3.png" alt="magicmove3"></p>
+<p>神奇移动时间设置不要太慢，通常大概0.7~0.8秒。</p>
 <hr>
 <p>图片视频资源网站：</p>
 <ul>
-<li><a href="www.shutterstock.com">shutterstock</a></li>
-<li><a href="www.dreamstime.com">dreamstime</a></li>
-<li><a href="istockphoto.com">istockphoto</a></li>
+<li><a href="http://www.shutterstock.com" target="_blank" rel="external">shutterstock</a></li>
+<li><a href="http://www.dreamstime.com/" target="_blank" rel="external">dreamstime</a></li>
+<li><a href="http://www.shutterstock.com" target="_blank" rel="external">istockphoto</a></li>
 <li><a href="http://www.iconarchive.com" target="_blank" rel="external">iconarchive</a></li>
 <li><a href="https://www.iconfinder.com" target="_blank" rel="external">iconfinder</a></li>
 </ul>
@@ -76,304 +77,18 @@
 <li>制作keynote的时候,<strong>首先要明确这是单纯用来给人看的，还是自己用来配合演讲的。</strong>这完全是两种风格的幻灯片。通常单纯提供个别人看的，文字图表会比较多。作者把想讲的的内容都放进了幻灯片里了。</li>
 <li>要保证<strong>视觉元素的一致性与整个幻灯片的完整性</strong>，要有逻辑性，尤其是当演讲内容很多的时候，不要把幻灯片做的支离破碎。这样可以让观众更好的理解演讲者讲的内容。</li>
 <li>根据不同的场景，不同的观众，选择不同的<strong>字体效果</strong>（大小、形状、颜色(善用取色放大镜)、下划线等等）。幻灯片<strong>背景</strong>要保证与所讲内容主题匹配。比如介绍书籍时，背景可以是个书架，然后书依次显示到书架上。这几点要慎重考虑。</li>
-<li>keynote可以对图片进行简单的裁剪和修饰，有时候图片或者视频更能表达出演讲者所想讲的内容，对观众的视觉冲击力更大，可以采用声画同步。</li>
-</ul>
-]]>
+<li>keynote可以对图片进行简单的裁剪和修饰(Edit Mask with shape&amp; Instant Alpha)，有时候图片或者视频更能表达出演讲者所想讲的内容，对观众的视觉冲击力更大，可以采用声画同步。]]>
     
     </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Computer Organization]]></title>
-    <link href="http://tanghaoblog.me/2015/04/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/"/>
-    <id>http://tanghaoblog.me/2015/04/13/计算机基本结构/</id>
-    <published>2015-04-13T03:49:31.000Z</published>
-    <updated>2015-04-13T03:49:31.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="计算机基本结构">计算机基本结构</h1>
-<p>中央处理器的体系架构可以分为两类，一类为<code>冯·诺依曼结构</code>，一类为<code>哈佛结构</code>。</p>
-<p>冯·诺依曼结构，是一种将<code>程序指令存储器</code>和<code>数据数据存储器</code>合并在一起的存储结构。</p>
-<p>哈佛结构，是程序指令和数据分开存储，独立的程序总线和数据总线，指令和数据可以有不同的数据宽度。</p>
-<h2 id="冯·诺依曼结构的要点">冯·诺依曼结构的要点</h2>
-<p>明确了计算机的五大组成部分：</p>
-<ol>
-<li>运算器，CA：central arithmetical</li>
-<li>控制器，CC：central control</li>
-<li>存储器，M：memory</li>
-<li>输入设备，I：input</li>
-<li>输出设备，O：output</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E4%BA%94%E5%A4%A7%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86.png" alt="五大组成部分"><br><a id="more"></a><br>存储程序的概念：</p>
-<p>数据和程序均以<strong>二进制</strong>代码形式不加区别地存放在<strong>存储器</strong>中，存放位置由存储器的地址指定。</p>
-<p>计算机在工作时能够自动地从存储器中取出指令加以执行。不需要通过“插线”临时组合电路完成不同任务。</p>
-<h2 id="计算机结构的简化模型（模型机）">计算机结构的简化模型（模型机）</h2>
-<h3 id="存储器">存储器</h3>
-<p><img src="https://github.com/thddaniel/Myblog/raw/master/image/Computer%20Organization/%E6%A8%A1%E5%9E%8B%E6%9C%BA%E7%9A%84%E5%AD%98%E5%82%A8%E5%99%A8.png" alt="模型机的存储器"></p>
-<p>注：该模型机中的“存储器”即指主存（内存）</p>
-<h3 id="控制器">控制器</h3>
-<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E6%A8%A1%E5%9E%8B%E6%9C%BA%E7%9A%84%E6%8E%A7%E5%88%B6%E5%99%A8.png" alt="模型机的控制器"></p>
-<ul>
-<li>IR存放“正在执行或即将执行的指令”</li>
-<li>PC存放“下一条指令的存储单元地址”，具有自动增量计数的功能</li>
-<li>MAR在访存时用于存放“存储单元的地址”</li>
-<li>MDR在访存时用于存放“对存储单元读/写的数据”</li>
-<li>指令译码部件对IR中的指令进行译码，以确定IR中存放的是哪一条指令</li>
-<li>控制电路产生控制信号，在时序脉冲的同步下控制各个部件的动作</li>
-</ul>
-<h3 id="运算器">运算器</h3>
-<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E6%A8%A1%E5%9E%8B%E6%9C%BA%E7%9A%84%E8%BF%90%E7%AE%97%E5%99%A8.png" alt="模型机的运算器"></p>
-<ul>
-<li>R0~Rn-1是n个<strong>通用寄存器</strong>，用于临时存放数据。数据可能来自存储器，也可能来自其它通用寄存器或ALU的输出</li>
-<li>ALU对X、Y中的数据进行运算，将结果送到Z。X、Y、Z作为ALU的数据暂存器，可视为ALU的一部分</li>
-<li>核心部件ALU用于完成算术运算和逻辑运算</li>
-<li>F用于存放运算结果的状态 （零/正负/进位/溢出）</li>
-</ul>
-<h2 id="计算机执行指令的过程">计算机执行指令的过程</h2>
-<ol>
-<li>取指：控制器将指令的地址送往存储器，存储器按给定的地址读出指令内容，送回控制器。</li>
-<li>译码：控制器分析指令的操作性质，控制器向有关部件发出指令所需的控制信号。</li>
-<li>执行：控制器从通用寄存器或存储器取出操作数，控制器命令运算器对操作数进行指令规定的运算。</li>
-<li>回写：将运算结果写入通用寄存器或存储器。</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.png" alt="执行过程"></p>
-<h1 id="指令系统体系结构">指令系统体系结构</h1>
-<p>PC领域: <code>X86</code>是由Intel推出的一种复杂指令集CISC。</p>
-<p>嵌入式领域：</p>
-<ul>
-<li>Advanced RISC Machine公司的ARM</li>
-<li>MIPS公司的MIPS</li>
-<li>IBM和Motorola的PowerPC</li>
-<li>Motorola公司独有的内核68K/COLDFIRE</li>
-</ul>
-<h2 id="x86体系结构">x86体系结构</h2>
-<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/x86.png" alt="x86"></p>
-<p>寄存器模型：</p>
-<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/x86%E5%AF%84%E5%AD%98%E5%99%A8%E6%A8%A1%E5%9E%8B.png" alt="x86寄存器模型"></p>
-<p><strong>8086的主要特点：</strong></p>
-<ol>
-<li>内部的通用寄存器为16位，既能处理16位数据，也能处理8位数据。</li>
-<li>对外有16根数据线和20根地址线，可寻址的内存空间为1MByte（2^20)。</li>
-<li>物理地址的形成采用“段加偏移”的方式。</li>
-</ol>
-<p><strong>通用寄存器：</strong></p>
-<ul>
-<li>AX （Accumulator）： 存放乘除等指令的操作数</li>
-<li>BX （Base）： 存放存储单元的偏移地址</li>
-<li>CX （Count）： 存放计数值</li>
-<li>DX （Data）： 乘法运算产生的部分积，除法运算的部分被除数</li>
-<li>SP （Stack Pointer）：堆栈指针，与SS配合使用，可指向目前的堆栈位置。</li>
-<li>BP （Base Pointer）：基址指针寄存器，可用作SS的一个相对基址位置。</li>
-<li>SI （Source Index）：源变址寄存器可用来存放相对于DS段之源变址指针。</li>
-<li>DI （Destination Index）：目的变址寄存器，可用来存放相对于 ES 段之目的变址指针。</li>
-</ul>
-<p><strong>指令指针寄存器IP（Instruction Pointer）：</strong></p>
-<ul>
-<li>保存一个内存地址，指向当前需要取出的指令。</li>
-<li>当CPU从内存中取出一个指令后，IP会自动增加，指向下一指令的地址（注：实际情况会复杂的多）。</li>
-<li>程序员不能直接对IP进行存取操作。</li>
-<li>转移指令、过程调用/返回指令等会改变IP的内容</li>
-</ul>
-<p>8086对外有20位地址线，寻址范围：2^20=1M字节单元。</p>
-<p><strong>标志位 FLAGS</strong></p>
-<p>标志位分为两大类：</p>
-<ol>
-<li>状态标志，反映CPU的工作状态。例如：执行加法运算时是否产生进位。</li>
-<li>控制标志，对CPU的运行起特定控制作用。例如：以单步方式还是连续方式运行，是否允许响应外部中断请求。</li>
-</ol>
-<p>8086的标志位：</p>
-<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/8086%E7%9A%84%E6%A0%87%E5%BF%97%E4%BD%8D.png" alt="8086的标志位"></p>
-<p><strong>段寄存器（Segment Register）</strong><br>与其它寄存器联合生成存储器地址。</p>
-<ul>
-<li>CS ：代码段寄存器（Code Segment）</li>
-<li>DS ：数据段寄存器（Data Segment）</li>
-<li>ES ：附加段寄存器（Extra Segment）</li>
-<li>SS ：堆栈段寄存器（Stack Segment）</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80.png" alt="物理地址"></p>
-<h2 id="x86指令简介">x86指令简介</h2>
-<h3 id="传送指令">传送指令</h3>
-<p>作用：把数据或地址传送到寄存器或存储器单元中。</p>
-<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4.png" alt="传送指令"></p>
-<p>示例：</p>
-<p>MOV指令,格式：MOV DST, SRC,DST表示目的操作数，SRC表示源操作数。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">MOV</span> <span class="number">EBX</span>, <span class="number">40</span>  //直接给出操作数</div><div class="line"><span class="keyword">MOV</span> <span class="literal">AL</span>, <span class="literal">BL</span> //给出存放操作数的寄存器名称</div><div class="line"><span class="keyword">MOV</span> <span class="number">ECX</span>, [<span class="number">1000H</span>] //给出存放操作数的存储器地址</div><div class="line"><span class="keyword">MOV</span> [<span class="literal">DI</span>], <span class="number">AX</span> //给出存放“存放操作数的存储器地址”的寄存器名称</div><div class="line"><span class="keyword">MOV</span> <span class="preprocessor">WORD</span> <span class="preprocessor">PTR</span>[<span class="number">BX</span>+<span class="literal">SI</span>*<span class="number">2</span>+<span class="number">200H</span>], <span class="number">01H</span> //给出“存放操作数的存储器地址”的计算方法</div><div class="line"></div><div class="line">/*注：<span class="preprocessor">BYTE</span> <span class="preprocessor">PTR</span> ：字节长度标记</div><div class="line"><span class="preprocessor">WORD</span> <span class="preprocessor">PTR</span> ：字长度标记</div><div class="line"><span class="preprocessor">DWORD</span> <span class="preprocessor">PTR</span> ：双字长度标记*/</div></pre></td></tr></table></figure>
-
-<p>不同MOV含义，所占的字节大小不一样。</p>
-<h3 id="运算类指令">运算类指令</h3>
-<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E5%92%8C%E7%A7%BB%E4%BD%8D%E6%8C%87%E4%BB%A4.png" alt="逻辑运算和移位指令"></p>
-<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E6%8C%87%E4%BB%A4.png" alt="算术运算指令"></p>
-<h3 id="转移类指令">转移类指令</h3>
-<p>作用: 改变指令执行顺序。</p>
-<p>说明：</p>
-<ul>
-<li>根据是否有判断条件，分为<strong>无条件转移指令</strong>和<strong>条件转移指令</strong>两大类</li>
-<li>根据转移目标地址的提供方式，可分为<strong>直接转移</strong>和<strong>间接转移</strong>两种方式</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E6%9D%A1%E4%BB%B6%E8%BD%AC%E7%A7%BB%E6%8C%87%E4%BB%A41.png" alt="条件转移指令1"><br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E6%9D%A1%E4%BB%B6%E8%BD%AC%E7%A7%BB%E6%8C%87%E4%BB%A42.png" alt="条件转移指令2"></p>
-<h3 id="控制类指令">控制类指令</h3>
-<p>作用：</p>
-<ul>
-<li>控制CPU的功能</li>
-<li>对标志位进行操作</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E6%8E%A7%E5%88%B6%E7%B1%BB%E6%8C%87%E4%BB%A4.png" alt="控制类指令"></p>
-<p>程序示例：<br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E7%A8%8B%E5%BA%8F%E7%A4%BA%E4%BE%8B.png" alt="程序示例"></p>
-<h2 id="MIPS体系结构">MIPS体系结构</h2>
-<h2 id="MIPS指令简介">MIPS指令简介</h2>
-<h2 id="ARM体系结构">ARM体系结构</h2>
-<h2 id="ARM指令简介">ARM指令简介</h2>
-<h1 id="算术逻辑单元">算术逻辑单元</h1>
-<h1 id="乘法器和除法器">乘法器和除法器</h1>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h1 id="计算机基本结构">计算机基本结构</h1>
-<p>中央处理器的体系架构可以分为两类，一类为<code>冯·诺依曼结构</code>，一类为<code>哈佛结构</code>。</p>
-<p>冯·诺依曼结构，是一种将<code>程序指令存储器</code>和<code>数据数据存储器</code>合并在一起的存储结构。</p>
-<p>哈佛结构，是程序指令和数据分开存储，独立的程序总线和数据总线，指令和数据可以有不同的数据宽度。</p>
-<h2 id="冯·诺依曼结构的要点">冯·诺依曼结构的要点</h2>
-<p>明确了计算机的五大组成部分：</p>
-<ol>
-<li>运算器，CA：central arithmetical</li>
-<li>控制器，CC：central control</li>
-<li>存储器，M：memory</li>
-<li>输入设备，I：input</li>
-<li>输出设备，O：output</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E4%BA%94%E5%A4%A7%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86.png" alt="五大组成部分"><br>]]>
-    
-    </summary>
-    
-      <category term="计算机原理" scheme="http://tanghaoblog.me/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/"/>
-    
-      <category term="Open Courses" scheme="http://tanghaoblog.me/tags/Open-Courses/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Polite English]]></title>
-    <link href="http://tanghaoblog.me/2015/04/08/Polite%20English/"/>
-    <id>http://tanghaoblog.me/2015/04/08/Polite English/</id>
-    <published>2015-04-08T06:01:33.000Z</published>
-    <updated>2015-04-08T06:01:33.000Z</updated>
-    <content type="html"><![CDATA[<p>Politeness is “having or showing behaviour that is respectful and considerate of other people.”</p>
-<p>Politeness is better than logic.You can often persuade when you cannot convince.And I think what he meant by that is that if you’re polite, people will listen and take your arguments, ideas, opinions seriously. They  may even change their own behaviour and do what you’d like them to do!</p>
-<ol>
-<li>Don’t impose.</li>
-<li>Give options.</li>
-<li>Make the other person feel good.</li>
-</ol>
-<a id="more"></a>
-
-<h1 id="Principle_Of_Polite_English">Principle Of Polite English</h1>
-<h2 id="When_giving_your_opinion,_show_some_uncertainty">When giving your opinion, show some uncertainty</h2>
-<p>Uncertainty phrases:</p>
-<ul>
-<li>I think</li>
-<li>I believe</li>
-<li>I guess</li>
-<li>I suppose</li>
-<li>I expect</li>
-</ul>
-<p>Phrase can come at the beginning or the end.</p>
-<p>e.g. “<strong>I think</strong> she works in a bank”,”She works in a bank, <strong>I think</strong>.”</p>
-<h2 id="Use_question_tags_and_indirect_questions-">Use question tags and indirect questions.</h2>
-<p><code>Question tags</code>:  e.g. “She works in a bank, <strong>doesn’t she</strong>?”</p>
-<p>Rising Intonation:</p>
-<ul>
-<li>Asking for confirmation </li>
-<li>Suggest uncertainty</li>
-</ul>
-<p>Falling Intonation:</p>
-<ul>
-<li>Inviting agreement</li>
-<li>Suggest certainty</li>
-</ul>
-<p><code>Direct questions</code>: sometimes sound too pushy. e.g. “Where does she work?”</p>
-<p><code>Indirect Questions</code>: e.g. “I was wondering if you knew where she worked?” or “Do you mind if I asked you where she worked?”</p>
-<p><strong>Summary: Use question tags with a rising intonation. Use indirect questions, but don’t overuse them.</strong></p>
-<h2 id="Credit_the_other_person_with_some_knowledge_and_intelligence-">Credit the other person with some knowledge and intelligence.</h2>
-<p>e.g. </p>
-<p>“<strong>Of course</strong>, she works in a bank, <strong>you know</strong>.” </p>
-<p>“<strong>Of course</strong>, <strong>as you know</strong>, she works in a bank.” </p>
-<p>“<strong>As I’m sure you know</strong>, she works in a bank.”</p>
-<h2 id="Sensitive_correction_is_vital-">Sensitive correction is vital.</h2>
-<p><strong>Say sorry then correct.</strong></p>
-<p>e.g. “I’m sorry, but she works in a school, not a bank.”</p>
-<p><strong>Give the other person the option of correcting their slip.</strong></p>
-<p>e.g. “In a bank? Did you say she works in a bank?” or “In a bank? I thought she worked in a hospital.”</p>
-<h2 id="Show_the_other_person_that_you_are_reluctant_to_disagree_with_them-">Show the other person that you are reluctant to disagree with them.</h2>
-<p><strong>Softening the disagreement and provide a reason</strong> </p>
-<p>e.g. “I don’t want to disagree, but I think we should take the train not the bus.I think it’s faster and slightly cheaper.”</p>
-<ul>
-<li>I don’t want to complain but….</li>
-<li>I don’t want to be difficult but….</li>
-<li>I hope you don’t mind my saying so, but….</li>
-<li>I’m sorry,but…</li>
-<li>I’m afraid that…</li>
-<li>I’d like to agree with you but….</li>
-<li>Perhaps, it would be better to…</li>
-<li>It’s your choice but….</li>
-<li>I may be wrong but….</li>
-</ul>
-<h2 id="Avoid_direct_commands-">Avoid direct commands.</h2>
-<p>e.g.</p>
-<p>“Could you help me with my suitcase, please?”</p>
-<p>“Would you be able to help me with my suitcase?”</p>
-<p>“I wonder if you could help me with my suitcase?”</p>
-<p>“Do you think you could (possibly) help me with my suitcase?”</p>
-<p>“You wouldn’t help me with my suitcase, would you?”</p>
-<p>“Is there any chance…”</p>
-<p><strong>Give them a hint</strong> : “My goodness. this suitcase is so heavy! I’m going to break my back lifting it!”</p>
-<h1 id="Common_situation">Common situation</h1>
-<h2 id="Common_Polite_Phrases">Common Polite Phrases</h2>
-<p>“Thanks for your help.” “You’re welcome.”</p>
-<p>“Can I take a seat?” “Go ahead. Be my guest.”</p>
-<p>“Thanks for having me.” “My pleasure.”</p>
-<p>“I’m get the bill.” “That’s very kind of you.”</p>
-<p>“Happy birthday. Here’s a little something for you.” “Oh, you shouldn’t have”</p>
-<h2 id="Complaining_Politely">Complaining Politely</h2>
-<p>“There seems to be a problem with my order. I think I asked for chicken not steak.”</p>
-<p>“Sorry to bother you but I think I asked for chicken not steak.”</p>
-<p><strong>For serious complaints it’s usually best to use direct language but try to avoid swearing!</strong></p>
-<h2 id="Direct_Offers">Direct Offers</h2>
-<p>“Let me buy you a drink.”</p>
-<p>“Let me help you.”</p>
-<p>“You must let me pay for this.”</p>
-<p>“Promise me you’ll come to the party.”</p>
-<p>“You will come to dinner, won’t you?”</p>
-<p><strong>Strong offers can be declined or refused, but we usually explain why.</strong></p>
-<p>“That’s OK. I can manage by myself.”</p>
-<p>“I’d love to come but I’m busy on Friday.”</p>
-<h2 id="Indirect_Offers">Indirect Offers</h2>
-<p><strong>Weak offers/invitations are more difficult to accept or reject directly.</strong></p>
-<p>“Are you busy next week?”</p>
-<p>“Are you a fan of opera?”</p>
-<p>“You are not free next week, are you?”</p>
-<p>Reference:</p>
-<p><a href="https://www.udemy.com/master-polite-english" target="_blank" rel="external">Udemy—Polite English</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Politeness is “having or showing behaviour that is respectful and considerate of other people.”</p>
-<p>Politeness is better than logic.You can often persuade when you cannot convince.And I think what he meant by that is that if you’re polite, people will listen and take your arguments, ideas, opinions seriously. They  may even change their own behaviour and do what you’d like them to do!</p>
-<ol>
-<li>Don’t impose.</li>
-<li>Give options.</li>
-<li>Make the other person feel good.</li>
-</ol>
-]]>
-    
-    </summary>
-    
-      <category term="Open Courses" scheme="http://tanghaoblog.me/tags/Open-Courses/"/>
     
   </entry>
   
   <entry>
     <title><![CDATA[Makefile basics]]></title>
-    <link href="http://tanghaoblog.me/2015/03/26/makefile/"/>
-    <id>http://tanghaoblog.me/2015/03/26/makefile/</id>
-    <published>2015-03-26T03:30:52.000Z</published>
-    <updated>2015-03-26T03:30:52.000Z</updated>
+    <link href="http://tanghaoblog.me/2015/04/17/makefile/"/>
+    <id>http://tanghaoblog.me/2015/04/17/makefile/</id>
+    <published>2015-04-17T05:12:16.000Z</published>
+    <updated>2015-04-17T05:12:16.000Z</updated>
     <content type="html"><![CDATA[<p>每次看完文档，过一段时间不用就忘记了。今天做毕业设计需要写Makefile,又重新看了一下<a href="http://www.gnu.org/software/make/manual/make.html" target="_blank" rel="external">GNU make</a>，干脆把常用的提取出来。以后也把一些常用的函数等等写在博客好了，我这记忆力也是没救了。</p>
 <hr>
 <p>后来google发现阮一峰老师总结的很好。文中部分内容来自<a href="http://www.ruanyifeng.com/blog/2015/02/make.html" target="_blank" rel="external">阮一峰Make命令教程</a>,以后发现常用的知识就在这篇补充好了。</p>
@@ -722,7 +437,15 @@
 <p>功能: 输出警告信息, Makefile继续运行</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Makefile 内容</span></div><div class="line"><span class="symbol">all:</span></div><div class="line">    <span class="variable">$(</span>warning there is an warning!)</div><div class="line">    <span class="variable">@echo</span> <span class="string">"这里会执行!"</span></div><div class="line"></div><div class="line"><span class="comment"># bash 中执行 make</span></div><div class="line"><span class="variable">$ </span>make</div><div class="line"><span class="constant">Makefile</span><span class="symbol">:</span><span class="number">2</span><span class="symbol">:</span> there is an warning!</div><div class="line">这里会执行!</div></pre></td></tr></table></figure>
 
-<h1 id="示例">示例</h1>
+<h1 id="内核中的Makefile">内核中的Makefile</h1>
+<p>2.6.30.4linux内核，对于Makefile的描述在Documentation/kbuild/makefiles.txt里</p>
+<pre><code>Makefile        <span class="operator">the</span> top Makefile. 
+.config            <span class="operator">the</span> kernel configuration <span class="built_in">file</span>.
+arch/$(ARCH)/Makefile    <span class="operator">the</span> arch Makefile.
+scripts/Makefile.*    common rules etc. <span class="keyword">for</span> all kbuild Makefiles.
+kbuild Makefiles    there are about <span class="number">500</span> <span class="operator">of</span> these. 
+</code></pre><p>具体参考<a href="http://www.cnblogs.com/amanlikethis/p/3675486.html#lab23" target="_blank" rel="external">linux源码Makefile的详细分析</a>,<a href="http://blog.chinaunix.net/uid-26806098-id-3141136.html" target="_blank" rel="external">Linux 内核 Makefile 体系简单分析</a></p>
+<h1 id="自己编写Makefile">自己编写Makefile</h1>
 <p>模仿linux内核scripts文件夹里的makefile的编写思路。Makefile主要分成3类:</p>
 <ul>
 <li>顶层目录的Makefile</li>
@@ -762,6 +485,290 @@
 <p>在Makefile中，规则的顺序是很重要的，因为，<strong>Makefile中只应该有一个最终目标</strong>，其它的目标都是被这个目标所连带出来的，所以一定要让make知道你的最终目标是什么。]]>
     
     </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Computer Organization]]></title>
+    <link href="http://tanghaoblog.me/2015/04/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84/"/>
+    <id>http://tanghaoblog.me/2015/04/13/计算机基本结构/</id>
+    <published>2015-04-13T03:49:31.000Z</published>
+    <updated>2015-04-13T03:49:31.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="计算机基本结构">计算机基本结构</h1>
+<p>中央处理器的体系架构可以分为两类，一类为<code>冯·诺依曼结构</code>，一类为<code>哈佛结构</code>。</p>
+<p>冯·诺依曼结构，是一种将<code>程序指令存储器</code>和<code>数据数据存储器</code>合并在一起的存储结构。</p>
+<p>哈佛结构，是程序指令和数据分开存储，独立的程序总线和数据总线，指令和数据可以有不同的数据宽度。</p>
+<h2 id="冯·诺依曼结构的要点">冯·诺依曼结构的要点</h2>
+<p>明确了计算机的五大组成部分：</p>
+<ol>
+<li>运算器，CA：central arithmetical</li>
+<li>控制器，CC：central control</li>
+<li>存储器，M：memory</li>
+<li>输入设备，I：input</li>
+<li>输出设备，O：output</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E4%BA%94%E5%A4%A7%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86.png" alt="五大组成部分"><br><a id="more"></a><br>存储程序的概念：</p>
+<p>数据和程序均以<strong>二进制</strong>代码形式不加区别地存放在<strong>存储器</strong>中，存放位置由存储器的地址指定。</p>
+<p>计算机在工作时能够自动地从存储器中取出指令加以执行。不需要通过“插线”临时组合电路完成不同任务。</p>
+<h2 id="计算机结构的简化模型（模型机）">计算机结构的简化模型（模型机）</h2>
+<h3 id="存储器">存储器</h3>
+<p><img src="https://github.com/thddaniel/Myblog/raw/master/image/Computer%20Organization/%E6%A8%A1%E5%9E%8B%E6%9C%BA%E7%9A%84%E5%AD%98%E5%82%A8%E5%99%A8.png" alt="模型机的存储器"></p>
+<p>注：该模型机中的“存储器”即指主存（内存）</p>
+<h3 id="控制器">控制器</h3>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E6%A8%A1%E5%9E%8B%E6%9C%BA%E7%9A%84%E6%8E%A7%E5%88%B6%E5%99%A8.png" alt="模型机的控制器"></p>
+<ul>
+<li>IR存放“正在执行或即将执行的指令”</li>
+<li>PC存放“下一条指令的存储单元地址”，具有自动增量计数的功能</li>
+<li>MAR在访存时用于存放“存储单元的地址”</li>
+<li>MDR在访存时用于存放“对存储单元读/写的数据”</li>
+<li>指令译码部件对IR中的指令进行译码，以确定IR中存放的是哪一条指令</li>
+<li>控制电路产生控制信号，在时序脉冲的同步下控制各个部件的动作</li>
+</ul>
+<h3 id="运算器">运算器</h3>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E6%A8%A1%E5%9E%8B%E6%9C%BA%E7%9A%84%E8%BF%90%E7%AE%97%E5%99%A8.png" alt="模型机的运算器"></p>
+<ul>
+<li>R0~Rn-1是n个<strong>通用寄存器</strong>，用于临时存放数据。数据可能来自存储器，也可能来自其它通用寄存器或ALU的输出</li>
+<li>ALU对X、Y中的数据进行运算，将结果送到Z。X、Y、Z作为ALU的数据暂存器，可视为ALU的一部分</li>
+<li>核心部件ALU用于完成算术运算和逻辑运算</li>
+<li>F用于存放运算结果的状态 （零/正负/进位/溢出）</li>
+</ul>
+<h2 id="计算机执行指令的过程">计算机执行指令的过程</h2>
+<ol>
+<li>取指：控制器将指令的地址送往存储器，存储器按给定的地址读出指令内容，送回控制器。</li>
+<li>译码：控制器分析指令的操作性质，控制器向有关部件发出指令所需的控制信号。</li>
+<li>执行：控制器从通用寄存器或存储器取出操作数，控制器命令运算器对操作数进行指令规定的运算。</li>
+<li>回写：将运算结果写入通用寄存器或存储器。</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B.png" alt="执行过程"></p>
+<h1 id="指令系统体系结构">指令系统体系结构</h1>
+<p>PC领域: <code>X86</code>是由Intel推出的一种复杂指令集CISC。</p>
+<p>嵌入式领域：</p>
+<ul>
+<li>Advanced RISC Machine公司的ARM</li>
+<li>MIPS公司的MIPS</li>
+<li>IBM和Motorola的PowerPC</li>
+<li>Motorola公司独有的内核68K/COLDFIRE</li>
+</ul>
+<h2 id="x86体系结构">x86体系结构</h2>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/x86.png" alt="x86"></p>
+<p>寄存器模型：</p>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/x86%E5%AF%84%E5%AD%98%E5%99%A8%E6%A8%A1%E5%9E%8B.png" alt="x86寄存器模型"></p>
+<p><strong>8086的主要特点：</strong></p>
+<ol>
+<li>内部的通用寄存器为16位，既能处理16位数据，也能处理8位数据。</li>
+<li>对外有16根数据线和20根地址线，可寻址的内存空间为1MByte（2^20)。</li>
+<li>物理地址的形成采用“段加偏移”的方式。</li>
+</ol>
+<p><strong>通用寄存器：</strong></p>
+<ul>
+<li>AX （Accumulator）： 存放乘除等指令的操作数</li>
+<li>BX （Base）： 存放存储单元的偏移地址</li>
+<li>CX （Count）： 存放计数值</li>
+<li>DX （Data）： 乘法运算产生的部分积，除法运算的部分被除数</li>
+<li>SP （Stack Pointer）：堆栈指针，与SS配合使用，可指向目前的堆栈位置。</li>
+<li>BP （Base Pointer）：基址指针寄存器，可用作SS的一个相对基址位置。</li>
+<li>SI （Source Index）：源变址寄存器可用来存放相对于DS段之源变址指针。</li>
+<li>DI （Destination Index）：目的变址寄存器，可用来存放相对于 ES 段之目的变址指针。</li>
+</ul>
+<p><strong>指令指针寄存器IP（Instruction Pointer）：</strong></p>
+<ul>
+<li>保存一个内存地址，指向当前需要取出的指令。</li>
+<li>当CPU从内存中取出一个指令后，IP会自动增加，指向下一指令的地址（注：实际情况会复杂的多）。</li>
+<li>程序员不能直接对IP进行存取操作。</li>
+<li>转移指令、过程调用/返回指令等会改变IP的内容</li>
+</ul>
+<p>8086对外有20位地址线，寻址范围：2^20=1M字节单元。</p>
+<p><strong>标志位 FLAGS</strong></p>
+<p>标志位分为两大类：</p>
+<ol>
+<li>状态标志，反映CPU的工作状态。例如：执行加法运算时是否产生进位。</li>
+<li>控制标志，对CPU的运行起特定控制作用。例如：以单步方式还是连续方式运行，是否允许响应外部中断请求。</li>
+</ol>
+<p>8086的标志位：</p>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/8086%E7%9A%84%E6%A0%87%E5%BF%97%E4%BD%8D.png" alt="8086的标志位"></p>
+<p><strong>段寄存器（Segment Register）</strong><br>与其它寄存器联合生成存储器地址。</p>
+<ul>
+<li>CS ：代码段寄存器（Code Segment）</li>
+<li>DS ：数据段寄存器（Data Segment）</li>
+<li>ES ：附加段寄存器（Extra Segment）</li>
+<li>SS ：堆栈段寄存器（Stack Segment）</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E7%89%A9%E7%90%86%E5%9C%B0%E5%9D%80.png" alt="物理地址"></p>
+<h2 id="x86指令简介">x86指令简介</h2>
+<h3 id="传送指令">传送指令</h3>
+<p>作用：把数据或地址传送到寄存器或存储器单元中。</p>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E4%BC%A0%E9%80%81%E6%8C%87%E4%BB%A4.png" alt="传送指令"></p>
+<p>示例：</p>
+<p>MOV指令,格式：MOV DST, SRC,DST表示目的操作数，SRC表示源操作数。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">MOV</span> <span class="number">EBX</span>, <span class="number">40</span>  //直接给出操作数</div><div class="line"><span class="keyword">MOV</span> <span class="literal">AL</span>, <span class="literal">BL</span> //给出存放操作数的寄存器名称</div><div class="line"><span class="keyword">MOV</span> <span class="number">ECX</span>, [<span class="number">1000H</span>] //给出存放操作数的存储器地址</div><div class="line"><span class="keyword">MOV</span> [<span class="literal">DI</span>], <span class="number">AX</span> //给出存放“存放操作数的存储器地址”的寄存器名称</div><div class="line"><span class="keyword">MOV</span> <span class="preprocessor">WORD</span> <span class="preprocessor">PTR</span>[<span class="number">BX</span>+<span class="literal">SI</span>*<span class="number">2</span>+<span class="number">200H</span>], <span class="number">01H</span> //给出“存放操作数的存储器地址”的计算方法</div><div class="line"></div><div class="line">/*注：<span class="preprocessor">BYTE</span> <span class="preprocessor">PTR</span> ：字节长度标记</div><div class="line"><span class="preprocessor">WORD</span> <span class="preprocessor">PTR</span> ：字长度标记</div><div class="line"><span class="preprocessor">DWORD</span> <span class="preprocessor">PTR</span> ：双字长度标记*/</div></pre></td></tr></table></figure>
+
+<p>不同MOV含义，所占的字节大小不一样。</p>
+<h3 id="运算类指令">运算类指令</h3>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E5%92%8C%E7%A7%BB%E4%BD%8D%E6%8C%87%E4%BB%A4.png" alt="逻辑运算和移位指令"></p>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97%E6%8C%87%E4%BB%A4.png" alt="算术运算指令"></p>
+<h3 id="转移类指令">转移类指令</h3>
+<p>作用: 改变指令执行顺序。</p>
+<p>说明：</p>
+<ul>
+<li>根据是否有判断条件，分为<strong>无条件转移指令</strong>和<strong>条件转移指令</strong>两大类</li>
+<li>根据转移目标地址的提供方式，可分为<strong>直接转移</strong>和<strong>间接转移</strong>两种方式</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E6%9D%A1%E4%BB%B6%E8%BD%AC%E7%A7%BB%E6%8C%87%E4%BB%A41.png" alt="条件转移指令1"><br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E6%9D%A1%E4%BB%B6%E8%BD%AC%E7%A7%BB%E6%8C%87%E4%BB%A42.png" alt="条件转移指令2"></p>
+<h3 id="控制类指令">控制类指令</h3>
+<p>作用：</p>
+<ul>
+<li>控制CPU的功能</li>
+<li>对标志位进行操作</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E6%8E%A7%E5%88%B6%E7%B1%BB%E6%8C%87%E4%BB%A4.png" alt="控制类指令"></p>
+<p>程序示例：<br><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E7%A8%8B%E5%BA%8F%E7%A4%BA%E4%BE%8B.png" alt="程序示例"></p>
+<h2 id="MIPS体系结构">MIPS体系结构</h2>
+<h2 id="MIPS指令简介">MIPS指令简介</h2>
+<h2 id="ARM体系结构">ARM体系结构</h2>
+<h2 id="ARM指令简介">ARM指令简介</h2>
+<h1 id="算术逻辑单元">算术逻辑单元</h1>
+<h1 id="乘法器和除法器">乘法器和除法器</h1>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="计算机基本结构">计算机基本结构</h1>
+<p>中央处理器的体系架构可以分为两类，一类为<code>冯·诺依曼结构</code>，一类为<code>哈佛结构</code>。</p>
+<p>冯·诺依曼结构，是一种将<code>程序指令存储器</code>和<code>数据数据存储器</code>合并在一起的存储结构。</p>
+<p>哈佛结构，是程序指令和数据分开存储，独立的程序总线和数据总线，指令和数据可以有不同的数据宽度。</p>
+<h2 id="冯·诺依曼结构的要点">冯·诺依曼结构的要点</h2>
+<p>明确了计算机的五大组成部分：</p>
+<ol>
+<li>运算器，CA：central arithmetical</li>
+<li>控制器，CC：central control</li>
+<li>存储器，M：memory</li>
+<li>输入设备，I：input</li>
+<li>输出设备，O：output</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/thddaniel/Myblog/master/image/Computer%20Organization/%E4%BA%94%E5%A4%A7%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86.png" alt="五大组成部分"><br>]]>
+    
+    </summary>
+    
+      <category term="计算机原理" scheme="http://tanghaoblog.me/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/"/>
+    
+      <category term="Open Courses" scheme="http://tanghaoblog.me/tags/Open-Courses/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Polite English]]></title>
+    <link href="http://tanghaoblog.me/2015/04/08/Polite%20English/"/>
+    <id>http://tanghaoblog.me/2015/04/08/Polite English/</id>
+    <published>2015-04-08T06:01:33.000Z</published>
+    <updated>2015-04-08T06:01:33.000Z</updated>
+    <content type="html"><![CDATA[<p>Politeness is “having or showing behaviour that is respectful and considerate of other people.”</p>
+<p>Politeness is better than logic.You can often persuade when you cannot convince.And I think what he meant by that is that if you’re polite, people will listen and take your arguments, ideas, opinions seriously. They  may even change their own behaviour and do what you’d like them to do!</p>
+<ol>
+<li>Don’t impose.</li>
+<li>Give options.</li>
+<li>Make the other person feel good.</li>
+</ol>
+<a id="more"></a>
+
+<h1 id="Principle_Of_Polite_English">Principle Of Polite English</h1>
+<h2 id="When_giving_your_opinion,_show_some_uncertainty">When giving your opinion, show some uncertainty</h2>
+<p>Uncertainty phrases:</p>
+<ul>
+<li>I think</li>
+<li>I believe</li>
+<li>I guess</li>
+<li>I suppose</li>
+<li>I expect</li>
+</ul>
+<p>Phrase can come at the beginning or the end.</p>
+<p>e.g. “<strong>I think</strong> she works in a bank”,”She works in a bank, <strong>I think</strong>.”</p>
+<h2 id="Use_question_tags_and_indirect_questions-">Use question tags and indirect questions.</h2>
+<p><code>Question tags</code>:  e.g. “She works in a bank, <strong>doesn’t she</strong>?”</p>
+<p>Rising Intonation:</p>
+<ul>
+<li>Asking for confirmation </li>
+<li>Suggest uncertainty</li>
+</ul>
+<p>Falling Intonation:</p>
+<ul>
+<li>Inviting agreement</li>
+<li>Suggest certainty</li>
+</ul>
+<p><code>Direct questions</code>: sometimes sound too pushy. e.g. “Where does she work?”</p>
+<p><code>Indirect Questions</code>: e.g. “I was wondering if you knew where she worked?” or “Do you mind if I asked you where she worked?”</p>
+<p><strong>Summary: Use question tags with a rising intonation. Use indirect questions, but don’t overuse them.</strong></p>
+<h2 id="Credit_the_other_person_with_some_knowledge_and_intelligence-">Credit the other person with some knowledge and intelligence.</h2>
+<p>e.g. </p>
+<p>“<strong>Of course</strong>, she works in a bank, <strong>you know</strong>.” </p>
+<p>“<strong>Of course</strong>, <strong>as you know</strong>, she works in a bank.” </p>
+<p>“<strong>As I’m sure you know</strong>, she works in a bank.”</p>
+<h2 id="Sensitive_correction_is_vital-">Sensitive correction is vital.</h2>
+<p><strong>Say sorry then correct.</strong></p>
+<p>e.g. “I’m sorry, but she works in a school, not a bank.”</p>
+<p><strong>Give the other person the option of correcting their slip.</strong></p>
+<p>e.g. “In a bank? Did you say she works in a bank?” or “In a bank? I thought she worked in a hospital.”</p>
+<h2 id="Show_the_other_person_that_you_are_reluctant_to_disagree_with_them-">Show the other person that you are reluctant to disagree with them.</h2>
+<p><strong>Softening the disagreement and provide a reason</strong> </p>
+<p>e.g. “I don’t want to disagree, but I think we should take the train not the bus.I think it’s faster and slightly cheaper.”</p>
+<ul>
+<li>I don’t want to complain but….</li>
+<li>I don’t want to be difficult but….</li>
+<li>I hope you don’t mind my saying so, but….</li>
+<li>I’m sorry,but…</li>
+<li>I’m afraid that…</li>
+<li>I’d like to agree with you but….</li>
+<li>Perhaps, it would be better to…</li>
+<li>It’s your choice but….</li>
+<li>I may be wrong but….</li>
+</ul>
+<h2 id="Avoid_direct_commands-">Avoid direct commands.</h2>
+<p>e.g.</p>
+<p>“Could you help me with my suitcase, please?”</p>
+<p>“Would you be able to help me with my suitcase?”</p>
+<p>“I wonder if you could help me with my suitcase?”</p>
+<p>“Do you think you could (possibly) help me with my suitcase?”</p>
+<p>“You wouldn’t help me with my suitcase, would you?”</p>
+<p>“Is there any chance…”</p>
+<p><strong>Give them a hint</strong> : “My goodness. this suitcase is so heavy! I’m going to break my back lifting it!”</p>
+<h1 id="Common_situation">Common situation</h1>
+<h2 id="Common_Polite_Phrases">Common Polite Phrases</h2>
+<p>“Thanks for your help.” “You’re welcome.”</p>
+<p>“Can I take a seat?” “Go ahead. Be my guest.”</p>
+<p>“Thanks for having me.” “My pleasure.”</p>
+<p>“I’m get the bill.” “That’s very kind of you.”</p>
+<p>“Happy birthday. Here’s a little something for you.” “Oh, you shouldn’t have”</p>
+<h2 id="Complaining_Politely">Complaining Politely</h2>
+<p>“There seems to be a problem with my order. I think I asked for chicken not steak.”</p>
+<p>“Sorry to bother you but I think I asked for chicken not steak.”</p>
+<p><strong>For serious complaints it’s usually best to use direct language but try to avoid swearing!</strong></p>
+<h2 id="Direct_Offers">Direct Offers</h2>
+<p>“Let me buy you a drink.”</p>
+<p>“Let me help you.”</p>
+<p>“You must let me pay for this.”</p>
+<p>“Promise me you’ll come to the party.”</p>
+<p>“You will come to dinner, won’t you?”</p>
+<p><strong>Strong offers can be declined or refused, but we usually explain why.</strong></p>
+<p>“That’s OK. I can manage by myself.”</p>
+<p>“I’d love to come but I’m busy on Friday.”</p>
+<h2 id="Indirect_Offers">Indirect Offers</h2>
+<p><strong>Weak offers/invitations are more difficult to accept or reject directly.</strong></p>
+<p>“Are you busy next week?”</p>
+<p>“Are you a fan of opera?”</p>
+<p>“You are not free next week, are you?”</p>
+<p>Reference:</p>
+<p><a href="https://www.udemy.com/master-polite-english" target="_blank" rel="external">Udemy—Polite English</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Politeness is “having or showing behaviour that is respectful and considerate of other people.”</p>
+<p>Politeness is better than logic.You can often persuade when you cannot convince.And I think what he meant by that is that if you’re polite, people will listen and take your arguments, ideas, opinions seriously. They  may even change their own behaviour and do what you’d like them to do!</p>
+<ol>
+<li>Don’t impose.</li>
+<li>Give options.</li>
+<li>Make the other person feel good.</li>
+</ol>
+]]>
+    
+    </summary>
+    
+      <category term="Open Courses" scheme="http://tanghaoblog.me/tags/Open-Courses/"/>
     
   </entry>
   
@@ -2205,9 +2212,12 @@
     <link href="http://tanghaoblog.me/2014/10/26/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>http://tanghaoblog.me/2014/10/26/使用hexo搭建博客/</id>
     <published>2014-10-26T11:18:00.000Z</published>
-    <updated>2015-04-11T11:54:51.000Z</updated>
+    <updated>2015-04-26T03:34:14.000Z</updated>
     <content type="html"><![CDATA[<h1 id="Hexo安装"><strong>Hexo安装</strong></h1>
 <p>Hexo的作者是<a href="https://twitter.com/tommy351" target="_blank" rel="external">tommy351</a>，根据官方介绍，Hexo是一个简单、快速、强大的博客发布工具，支持Markdown格式。Hexo是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。<br>参考<a href="http://hexo.io/docs/index.html" target="_blank" rel="external">官方文档</a></p>
+<hr>
+<p>2015.04.26 更新</p>
+<p>最近出了3.0新版本，目前有些插件和主题并不兼容。所以暂时不更新，继续用2.8.3版本。若要更新可参考<a href="https://github.com/hexojs/hexo/wiki/Migrating-from-2.x-to-3.0" target="_blank" rel="external">Migrating from 2.x to 3.0</a></p>
 <h2 id="安装Node-js"><strong>安装Node.js</strong></h2>
 <p>在 Windows 环境下安装 Node.js非常简单，仅须<a href="http://nodejs.org/" target="_blank" rel="external">下载</a>安装文件并执行即可完成安装。</p>
 <h2 id="安装Hexo"><strong>安装Hexo</strong></h2>
@@ -2267,7 +2277,7 @@
 <p>卸载插件：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">uninstall</span> &lt;<span class="keyword">plugin</span>-name&gt;</span></div></pre></td></tr></table></figure>
 
-<h3 id="添加RSS">添加RSS</h3>
+<h3 id="添加RSS"><strong>添加RSS</strong></h3>
 <p>hexo提供了RSS的生成插件，需要手动安装和设置。步骤如下：<br>安装RSS插件到本地：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span> hexo-generator-feed</span></div></pre></td></tr></table></figure>
 
@@ -2275,17 +2285,14 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plugin<span class="variable">s:</span></div><div class="line">- hexo-generator-feed</div></pre></td></tr></table></figure>
 
 <p>在站点添加链接：<br>在themes/light/_config.yml中，编辑 rss: /atom.xml</p>
-<ul>
-<li>添加sitemap</li>
-</ul>
-<h3 id="添加sitemap">添加sitemap</h3>
+<h3 id="添加sitemap"><strong>添加sitemap</strong></h3>
 <p>同样的，我们使用hexo提供的插件，方法与添加RSS类似。<br>安装sitemap到本地：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span> hexo-generator-sitemap</span></div></pre></td></tr></table></figure>
 
 <p>开启sitemap功能：编辑<code>hexo/_config.yml</code>，添加如下代码：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">plugin<span class="variable">s:</span></div><div class="line">- hexo-generator-sitemap</div></pre></td></tr></table></figure>
 
-<h3 id="添加Google_Analytics">添加Google Analytics</h3>
+<h3 id="添加Google_Analytics"><strong>添加Google Analytics</strong></h3>
 <ol>
 <li>注册<a href="http://www.google.com/analytics/" target="_blank" rel="external">Google Analytics账号</a>。</li>
 <li>添加自己的网站域名。</li>
@@ -2293,22 +2300,60 @@
 <li>保存文件，重新生成、部署Hexo。数据统计不会立即生效，需要等待几个小时。</li>
 </ol>
 <p>在mac平台上，可以使用<a href="https://itunes.apple.com/cn/app/gaget-simple-widget-for-google/id968487158?l=en&amp;mt=12" target="_blank" rel="external">GAget</a>方便查看。<br><br></p>
-<h1 id="部署到github上">部署到github上</h1>
+<h1 id="部署到github上"><strong>部署到github上</strong></h1>
 <p>部署到Github前需要配置<code>_config.yml</code>文件。</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: github</div><div class="line">  repository: git@github.com:thddaniel/thddaniel.github.<span class="built_in">io</span>.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
 
 <p>执行下列指令即可完成部署。</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="title">hexo</span> clean</div><div class="line">hexo generate <span class="comment">#生成静态页面至public目录</span></div><div class="line">hexo deploy  <span class="comment">#将.deploy目录部署到GitHub</span></div></pre></td></tr></table></figure>
 
-<p>每次修改本地文件后，需要<code>hexo generate</code>才能保存。<br>有的时候当你修改页面或更改配置后发现并没有立即生效，可以执行<code>hexo clean</code></p>
+<p>每次修改本地文件后，需要<code>hexo generate</code>才能保存。<br>有的时候当你修改页面或更改配置后发现并没有立即生效，可以执行<code>hexo clean</code>，通常直接执行<code>hexo g &amp;&amp; hexo d</code>。</p>
 <p>Github的版本库通常建议同时附上README.md说明文件，但是hexo默认情况下会把所有md文件解析成html文件，所以即使你在线生成了README.md，它也会在你下一次部署时被删去。怎么解决呢？</p>
 <p>在执行hexo deploy前把在本地写好的README.md文件复制到.deploy文件夹中，再去执行hexo deploy。<br>注：之前修改过branch: gh-pages，但是一直显示404.不填默认为master<br><br></p>
+<h1 id="部署到gitCafe上"><strong>部署到gitCafe上</strong></h1>
+<p>目前baidu无法扒取github的数据了，托管在github的朋友们会碰到抓取失败的问题。现在采取把博客同步到github和gitcafe的方案，通过DNSPod自定义线路类型，使电信的走电信的，网通的走网通的，国内的走Gitcafe，国外的走Github,速度大增。首先注册<a href="https://gitcafe.com/signup" target="_blank" rel="external">gitcafe</a>。</p>
+<p>因为使用github已经有了一套公秘钥，我希望能够在 GitCafe 上使用另一套独立的公秘钥，使得多套公秘钥可以同时存在与工作。</p>
+<ol>
+<li>生成新的 SSH 秘钥</li>
+</ol>
+<p>假设已经有了一套名为 id_rsa 的公秘钥，将要生成的公秘钥名称为 gitcafe，也可以使用任何你喜欢的名字。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"thddaniel92@gmail.com"</span> <span class="operator">-f</span> ~/.ssh/gitcafe</div></pre></td></tr></table></figure>
+
+<p>生成过程中会出现一些信息，按屏幕提示操作，并记得输入 passphrase 口令。</p>
+<p>这将在 ~/.ssh/ 目录下生成 <code>gitcafe</code> 和 <code>gitcafe.pub</code> 文件，记住千万不要把私钥文件 <code>gitcafe</code> 透露给任何人。</p>
+<ol>
+<li>在 SSH 用户配置文件 ~/.ssh/config 中指定对应服务所使用的公秘钥名称，如果没有 config 文件的话就新建一个，并输入以下内容：</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Host gitcafe.<span class="keyword">com</span> www.gitcafe.<span class="keyword">com</span></div><div class="line">  IdentityFile ~/.ssh/gitcafe</div></pre></td></tr></table></figure>
+
+<ol>
+<li><p>进入 GitCafe —&gt;账户设置—&gt;SSH 公钥管理设置项，点击添加新公钥 按钮，在 Title 文本框中输入任意字符，在 Key 文本框粘贴刚才复制的公钥字符串<code>gitcafe.pub</code>，按保存按钮完成操作。</p>
+</li>
+<li><p>最后测试配置文件是否正常工作</p>
+</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">ssh</span> -T git<span class="variable">@gitcafe</span>.com</div></pre></td></tr></table></figure>
+
+<p>如果是第一次连接的话，会出现警告，请检查一下显示的指纹是否一致：84:9e:c9:8e:7f:36:28:08:7e:13:bf:43:12:74:11:4e。输入 yes 按回车就可以了。</p>
+<ol>
+<li><p>创建公开项目。项目名要和用户名一致，然后自定义好域名。</p>
+</li>
+<li><p>修改hexo下的_config.yml</p>
+</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="class"><span class="keyword">type</span>: <span class="title">github</span></span></div><div class="line">  repository: git@github.com:thddaniel/thddaniel.github.io.git</div><div class="line">  <span class="class"><span class="keyword">type</span>: <span class="title">github</span></span></div><div class="line">  repository: git@gitcafe.com:tanghao/tanghao.git</div></pre></td></tr></table></figure>
+
 <h1 id="写文章"><strong>写文章</strong></h1>
+<p>markdown语法参考<a href="http://tanghaoblog.me/2014/10/26/Markdown笔记/" target="_blank" rel="external">Markdown笔记</a></p>
 <ul>
 <li><strong>开头加信息</strong></li>
 </ul>
-<p>示例：</p>
+<p>标准示例：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">---</span></div><div class="line">layout: post</div><div class="line">title: "使用hexo搭建博客"</div><div class="line">date: 2014-10-26 19:18</div><div class="line">comments: true</div><div class="line">tags: </div><div class="line"><span class="code">	- hexo</span></div><div class="line"><span class="header">description：</span></div><div class="line">---</div></pre></td></tr></table></figure>
+
+<p>如果你是不想hexo g时被模板改变你的html的话，可在在文件头加layout: false</p>
+<p>例如新建一个404页面，添加 source/404.html</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">layout: false</div><div class="line">---</div><div class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"UTF-8"</span> /&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>公益404<span class="tag">&lt;/<span class="title">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">h1</span>&gt;</span>404 Page Not Found<span class="tag">&lt;/<span class="title">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">br</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"http://www.qq.com/404/search_children.js"</span>     <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="title">br</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></div></pre></td></tr></table></figure>
 
 <ul>
 <li><strong>关于摘要</strong></li>
@@ -2327,10 +2372,20 @@
 <embed src="http://www.xiami.com/widget/0_168498_235_346_FF8719_494949/albumPlayer.swf" type="application/x-shockwave-flash" width="235" height="346" wmode="transparent">
 
 <p><strong>视频：</strong><br>嵌入视频的方法和音乐类似，视频网站每个视频页面都会有一个『分享』或『转帖』按钮，点击可以查看代码。</p>
+<p><br><br><br></p>
+<hr>
+<p><strong>参考文献</strong></p>
+<ul>
+<li><a href="http://ibruce.info/2013/11/22/hexo-your-blog/?utm_source=tuicool" target="_blank" rel="external">不如-hexo你的博客</a></li>
+<li><a href="http://www.zhaokongnuan.com/2015/03/01/github-gitcafe/" target="_blank" rel="external">hexo博客同步到github和gitcafe</a></li>
+</ul>
 ]]></content>
     <summary type="html">
     <![CDATA[<h1 id="Hexo安装"><strong>Hexo安装</strong></h1>
 <p>Hexo的作者是<a href="https://twitter.com/tommy351" target="_blank" rel="external">tommy351</a>，根据官方介绍，Hexo是一个简单、快速、强大的博客发布工具，支持Markdown格式。Hexo是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。<br>参考<a href="http://hexo.io/docs/index.html" target="_blank" rel="external">官方文档</a></p>
+<hr>
+<p>2015.04.26 更新</p>
+<p>最近出了3.0新版本，目前有些插件和主题并不兼容。所以暂时不更新，继续用2.8.3版本。若要更新可参考<a href="https://github.com/hexojs/hexo/wiki/Migrating-from-2.x-to-3.0" target="_blank" rel="external">Migrating from 2.x to 3.0</a></p>
 <h2 id="安装Node-js"><strong>安装Node.js</strong></h2>
 <p>在 Windows 环境下安装 Node.js非常简单，仅须<a href="http://nodejs.org/" target="_blank" rel="external">下载</a>安装文件并执行即可完成安装。</p>
 <h2 id="安装Hexo"><strong>安装Hexo</strong></h2>

@@ -9,6 +9,11 @@ tags:
 Hexo的作者是[tommy351](https://twitter.com/tommy351)，根据官方介绍，Hexo是一个简单、快速、强大的博客发布工具，支持Markdown格式。Hexo是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。
 参考[官方文档](http://hexo.io/docs/index.html)
 
+-----
+2015.04.26 更新
+
+最近出了3.0新版本，目前有些插件和主题并不兼容。所以暂时不更新，继续用2.8.3版本。若要更新可参考[Migrating from 2.x to 3.0](https://github.com/hexojs/hexo/wiki/Migrating-from-2.x-to-3.0)
+
 ##**安装Node.js**
 在 Windows 环境下安装 Node.js非常简单，仅须[下载](http://nodejs.org/)安装文件并执行即可完成安装。
 
@@ -100,7 +105,7 @@ npm update
 npm uninstall <plugin-name>
 ```
 
-###添加RSS
+###**添加RSS**
 
 hexo提供了RSS的生成插件，需要手动安装和设置。步骤如下：
 安装RSS插件到本地：
@@ -115,9 +120,9 @@ plugins:
 在站点添加链接：
 在themes/light/_config.yml中，编辑 rss: /atom.xml
 
-- 添加sitemap
 
-###添加sitemap
+
+###**添加sitemap**
 同样的，我们使用hexo提供的插件，方法与添加RSS类似。
 安装sitemap到本地：
 ```
@@ -128,7 +133,7 @@ npm install hexo-generator-sitemap
 plugins:
 - hexo-generator-sitemap
 ```
-###添加Google Analytics
+###**添加Google Analytics**
 
 1. 注册[Google Analytics账号](http://www.google.com/analytics/)。
 2. 添加自己的网站域名。
@@ -137,7 +142,7 @@ plugins:
 
 在mac平台上，可以使用[GAget](https://itunes.apple.com/cn/app/gaget-simple-widget-for-google/id968487158?l=en&mt=12)方便查看。
 <br>
-#部署到github上
+#**部署到github上**
 
 部署到Github前需要配置`_config.yml`文件。
 ```
@@ -153,14 +158,59 @@ hexo generate #生成静态页面至public目录
 hexo deploy  #将.deploy目录部署到GitHub
 ```
 每次修改本地文件后，需要`hexo generate`才能保存。
-有的时候当你修改页面或更改配置后发现并没有立即生效，可以执行`hexo clean`
+有的时候当你修改页面或更改配置后发现并没有立即生效，可以执行`hexo clean`，通常直接执行`hexo g && hexo d`。
 
 Github的版本库通常建议同时附上README.md说明文件，但是hexo默认情况下会把所有md文件解析成html文件，所以即使你在线生成了README.md，它也会在你下一次部署时被删去。怎么解决呢？
 
 在执行hexo deploy前把在本地写好的README.md文件复制到.deploy文件夹中，再去执行hexo deploy。
 注：之前修改过branch: gh-pages，但是一直显示404.不填默认为master 
 <br>
+
+#**部署到gitCafe上**
+目前baidu无法扒取github的数据了，托管在github的朋友们会碰到抓取失败的问题。现在采取把博客同步到github和gitcafe的方案，通过DNSPod自定义线路类型，使电信的走电信的，网通的走网通的，国内的走Gitcafe，国外的走Github,速度大增。首先注册[gitcafe](https://gitcafe.com/signup)。
+
+因为使用github已经有了一套公秘钥，我希望能够在 GitCafe 上使用另一套独立的公秘钥，使得多套公秘钥可以同时存在与工作。
+
+1. 生成新的 SSH 秘钥
+
+假设已经有了一套名为 id_rsa 的公秘钥，将要生成的公秘钥名称为 gitcafe，也可以使用任何你喜欢的名字。
+```
+ssh-keygen -t rsa -C "thddaniel92@gmail.com" -f ~/.ssh/gitcafe
+```
+生成过程中会出现一些信息，按屏幕提示操作，并记得输入 passphrase 口令。
+
+这将在 ~/.ssh/ 目录下生成 `gitcafe` 和 `gitcafe.pub` 文件，记住千万不要把私钥文件 `gitcafe` 透露给任何人。
+
+
+2. 在 SSH 用户配置文件 ~/.ssh/config 中指定对应服务所使用的公秘钥名称，如果没有 config 文件的话就新建一个，并输入以下内容：
+```
+Host gitcafe.com www.gitcafe.com
+  IdentityFile ~/.ssh/gitcafe
+```
+
+3. 进入 GitCafe -->账户设置-->SSH 公钥管理设置项，点击添加新公钥 按钮，在 Title 文本框中输入任意字符，在 Key 文本框粘贴刚才复制的公钥字符串`gitcafe.pub`，按保存按钮完成操作。
+
+4. 最后测试配置文件是否正常工作
+```
+ssh -T git@gitcafe.com
+```
+如果是第一次连接的话，会出现警告，请检查一下显示的指纹是否一致：84:9e:c9:8e:7f:36:28:08:7e:13:bf:43:12:74:11:4e。输入 yes 按回车就可以了。
+
+5. 创建公开项目。项目名要和用户名一致，然后自定义好域名。
+
+6. 修改hexo下的_config.yml
+```
+deploy:
+  type: github
+  repository: git@github.com:thddaniel/thddaniel.github.io.git
+  type: github
+  repository: git@gitcafe.com:tanghao/tanghao.git  
+```
+
+
 #**写文章**
+
+markdown语法参考[Markdown笔记](http://tanghaoblog.me/2014/10/26/Markdown笔记/)
 
 - **开头加信息**
 
@@ -179,12 +229,10 @@ description：
 
 如果你是不想hexo g时被模板改变你的html的话，可在在文件头加layout: false
 
-例如新建一个404页面
+例如新建一个404页面，添加 source/404.html
 
 ```
 layout: false
-title: "404"
-date: 2015-02-05 20:03:48
 ---
 <html>
 <head>
@@ -224,3 +272,13 @@ date: 2015-02-05 20:03:48
 
 **视频：**
 嵌入视频的方法和音乐类似，视频网站每个视频页面都会有一个『分享』或『转帖』按钮，点击可以查看代码。
+
+
+<br>
+<br>
+
+--------
+
+**参考文献**
+- [不如-hexo你的博客](http://ibruce.info/2013/11/22/hexo-your-blog/?utm_source=tuicool)
+- [hexo博客同步到github和gitcafe](http://www.zhaokongnuan.com/2015/03/01/github-gitcafe/)

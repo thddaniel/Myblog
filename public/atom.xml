@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://tanghaoblog.me/"/>
-  <updated>2015-04-26T03:37:21.395Z</updated>
+  <updated>2015-04-26T12:00:35.397Z</updated>
   <id>http://tanghaoblog.me/</id>
   
   <author>
@@ -2212,7 +2212,7 @@ kbuild Makefiles    there are about <span class="number">500</span> <span class=
     <link href="http://tanghaoblog.me/2014/10/26/%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/"/>
     <id>http://tanghaoblog.me/2014/10/26/使用hexo搭建博客/</id>
     <published>2014-10-26T11:18:00.000Z</published>
-    <updated>2015-04-26T03:34:14.000Z</updated>
+    <updated>2015-04-26T11:42:29.000Z</updated>
     <content type="html"><![CDATA[<h1 id="Hexo安装"><strong>Hexo安装</strong></h1>
 <p>Hexo的作者是<a href="https://twitter.com/tommy351" target="_blank" rel="external">tommy351</a>，根据官方介绍，Hexo是一个简单、快速、强大的博客发布工具，支持Markdown格式。Hexo是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。<br>参考<a href="http://hexo.io/docs/index.html" target="_blank" rel="external">官方文档</a></p>
 <hr>
@@ -2311,7 +2311,7 @@ kbuild Makefiles    there are about <span class="number">500</span> <span class=
 <p>Github的版本库通常建议同时附上README.md说明文件，但是hexo默认情况下会把所有md文件解析成html文件，所以即使你在线生成了README.md，它也会在你下一次部署时被删去。怎么解决呢？</p>
 <p>在执行hexo deploy前把在本地写好的README.md文件复制到.deploy文件夹中，再去执行hexo deploy。<br>注：之前修改过branch: gh-pages，但是一直显示404.不填默认为master<br><br></p>
 <h1 id="部署到gitCafe上"><strong>部署到gitCafe上</strong></h1>
-<p>目前baidu无法扒取github的数据了，托管在github的朋友们会碰到抓取失败的问题。现在采取把博客同步到github和gitcafe的方案，通过DNSPod自定义线路类型，使电信的走电信的，网通的走网通的，国内的走Gitcafe，国外的走Github,速度大增。首先注册<a href="https://gitcafe.com/signup" target="_blank" rel="external">gitcafe</a>。</p>
+<p>目前baidu无法扒取github的数据了，托管在github的朋友们会碰到抓取失败的问题。现在采取把博客同步到github和gitcafe的方案，通过DNSPod自定义线路类型，使电信的走电信的，网通的走网通的，国内的走Gitcafe，国外的走Github,速度大增。首先注册<a href="https://gitcafe.com/signup" target="_blank" rel="external">gitcafe</a>。必须注意git全局变量中的user.name与user.email在两个网站的注册信息中必须都是一样的。</p>
 <p>因为使用github已经有了一套公秘钥，我希望能够在 GitCafe 上使用另一套独立的公秘钥，使得多套公秘钥可以同时存在与工作。</p>
 <ol>
 <li>生成新的 SSH 秘钥</li>
@@ -2336,13 +2336,42 @@ kbuild Makefiles    there are about <span class="number">500</span> <span class=
 
 <p>如果是第一次连接的话，会出现警告，请检查一下显示的指纹是否一致：84:9e:c9:8e:7f:36:28:08:7e:13:bf:43:12:74:11:4e。输入 yes 按回车就可以了。</p>
 <ol>
-<li><p>创建公开项目。项目名要和用户名一致，然后自定义好域名。</p>
-</li>
-<li><p>修改hexo下的_config.yml</p>
-</li>
+<li>创建公开项目。如果你创建的项目名与用户名相同，GitCafe会自动识别成这是一个Page项目。</li>
 </ol>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="class"><span class="keyword">type</span>: <span class="title">github</span></span></div><div class="line">  repository: git@github.com:thddaniel/thddaniel.github.io.git</div><div class="line">  <span class="class"><span class="keyword">type</span>: <span class="title">github</span></span></div><div class="line">  repository: git@gitcafe.com:tanghao/tanghao.git</div></pre></td></tr></table></figure>
+<ul>
+<li>进入你的hexo博客目录下面的’.deploy’目录，创建gitcafe-pages分支，并切换到该分支</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> checkout -b gitcafe-pages</div></pre></td></tr></table></figure>
 
+<ul>
+<li>添加到gitcafe的远程仓库</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="title">git</span> remote add origin <span class="string">'git<span class="variable">@gitcafe</span>.com:tanghao/tanghao.git'</span></div></pre></td></tr></table></figure>
+
+<ul>
+<li>push到gitcafe仓库</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="keyword">push</span> -u origin gitcafe-pages</div></pre></td></tr></table></figure>
+
+<p>在完成上述操作后，即可访问 tanghao.gitcafe.io ,来查看页面效果了！</p>
+<ol>
+<li>要使Hexo支持同时发布到多个git仓库中。需要修hexo根目录下的改_config.yml</li>
+</ol>
+<p>原来的配置:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="label">deploy:</span></div><div class="line"><span class="label">type:</span> github</div><div class="line"><span class="label">repo:</span> github: https://github.com/&lt;username&gt;/&lt;username&gt;.github.io.git</div><div class="line"><span class="label">branch:</span> master</div></pre></td></tr></table></figure>
+
+<p>现在安装 </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="operator"><span class="keyword">install</span> hexo-deployer-git <span class="comment">--save</span></span></div></pre></td></tr></table></figure>
+
+<ol>
+<li>写个复合命令别名添加到<code>~/.bash_profile</code></li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alias upblog='<span class="keyword">cd</span> ~/Documents/hexo/ && hexo g && <span class="keyword">cd</span> ~/Documents/hexo/.deploy/ && git checkout gitcafe-pages && git push -u origin gitcafe-pages && git checkout master && <span class="keyword">cd</span> .. && hexo d'</div></pre></td></tr></table></figure>
+
+<p>输入命令<code>source .bash_profile</code>即可使用<code>upblog</code>命令。  </p>
+<p>note:</p>
+<p>In OSX the terminal you get is a login session so reads <code>.bash_profile</code> etc.</p>
+<p>On other Unices xterm runs a non login shell by default so they read <code>.bashrc</code>.</p>
 <h1 id="写文章"><strong>写文章</strong></h1>
 <p>markdown语法参考<a href="http://tanghaoblog.me/2014/10/26/Markdown笔记/" target="_blank" rel="external">Markdown笔记</a></p>
 <ul>
@@ -2378,6 +2407,8 @@ kbuild Makefiles    there are about <span class="number">500</span> <span class=
 <ul>
 <li><a href="http://ibruce.info/2013/11/22/hexo-your-blog/?utm_source=tuicool" target="_blank" rel="external">不如-hexo你的博客</a></li>
 <li><a href="http://www.zhaokongnuan.com/2015/03/01/github-gitcafe/" target="_blank" rel="external">hexo博客同步到github和gitcafe</a></li>
+<li><a href="http://blog.maxwi.com/2014/03/19/hexo-github-to-gitcafe/" target="_blank" rel="external">如何将托管在github上的hexo博客转到gitcafe</a></li>
+<li><a href="https://gitcafe.com/GitCafe/Help/wiki/Pages-相关帮助" target="_blank" rel="external">如何创建Page</a></li>
 </ul>
 ]]></content>
     <summary type="html">

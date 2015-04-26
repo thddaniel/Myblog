@@ -167,7 +167,7 @@ Github的版本库通常建议同时附上README.md说明文件，但是hexo默�
 <br>
 
 #**部署到gitCafe上**
-目前baidu无法扒取github的数据了，托管在github的朋友们会碰到抓取失败的问题。现在采取把博客同步到github和gitcafe的方案，通过DNSPod自定义线路类型，使电信的走电信的，网通的走网通的，国内的走Gitcafe，国外的走Github,速度大增。首先注册[gitcafe](https://gitcafe.com/signup)。
+目前baidu无法扒取github的数据了，托管在github的朋友们会碰到抓取失败的问题。现在采取把博客同步到github和gitcafe的方案，通过DNSPod自定义线路类型，使电信的走电信的，网通的走网通的，国内的走Gitcafe，国外的走Github,速度大增。首先注册[gitcafe](https://gitcafe.com/signup)。必须注意git全局变量中的user.name与user.email在两个网站的注册信息中必须都是一样的。
 
 因为使用github已经有了一套公秘钥，我希望能够在 GitCafe 上使用另一套独立的公秘钥，使得多套公秘钥可以同时存在与工作。
 
@@ -196,16 +196,52 @@ ssh -T git@gitcafe.com
 ```
 如果是第一次连接的话，会出现警告，请检查一下显示的指纹是否一致：84:9e:c9:8e:7f:36:28:08:7e:13:bf:43:12:74:11:4e。输入 yes 按回车就可以了。
 
-5. 创建公开项目。项目名要和用户名一致，然后自定义好域名。
+5. 创建公开项目。如果你创建的项目名与用户名相同，GitCafe会自动识别成这是一个Page项目。
 
-6. 修改hexo下的_config.yml
+- 进入你的hexo博客目录下面的’.deploy’目录，创建gitcafe-pages分支，并切换到该分支
+```
+git checkout -b gitcafe-pages
+```
+- 添加到gitcafe的远程仓库
+```
+git remote add origin 'git@gitcafe.com:tanghao/tanghao.git'
+```
+- push到gitcafe仓库
+```
+git push -u origin gitcafe-pages
+```
+在完成上述操作后，即可访问 tanghao.gitcafe.io ,来查看页面效果了！
+
+6. 要使Hexo支持同时发布到多个git仓库中。需要修hexo根目录下的改_config.yml
+
+原来的配置:
 ```
 deploy:
-  type: github
-  repository: git@github.com:thddaniel/thddaniel.github.io.git
-  type: github
-  repository: git@gitcafe.com:tanghao/tanghao.git  
+type: github
+repo: github: https://github.com/<username>/<username>.github.io.git
+branch: master
 ```
+现在安装 
+```
+npm install hexo-deployer-git --save
+```
+
+
+6. 写个复合命令别名添加到`~/.bash_profile`
+
+```
+alias upblog='cd ~/Documents/hexo/ && hexo g && cd ~/Documents/hexo/.deploy/ && git checkout gitcafe-pages && git push -u origin gitcafe-pages && git checkout master && cd .. && hexo d'
+
+```
+输入命令`source .bash_profile`即可使用`upblog`命令。  
+
+note:
+
+In OSX the terminal you get is a login session so reads `.bash_profile` etc.
+
+On other Unices xterm runs a non login shell by default so they read `.bashrc`.
+
+
 
 
 #**写文章**
@@ -282,3 +318,5 @@ layout: false
 **参考文献**
 - [不如-hexo你的博客](http://ibruce.info/2013/11/22/hexo-your-blog/?utm_source=tuicool)
 - [hexo博客同步到github和gitcafe](http://www.zhaokongnuan.com/2015/03/01/github-gitcafe/)
+- [如何将托管在github上的hexo博客转到gitcafe](http://blog.maxwi.com/2014/03/19/hexo-github-to-gitcafe/)
+- [如何创建Page](https://gitcafe.com/GitCafe/Help/wiki/Pages-相关帮助)

@@ -87,16 +87,16 @@ exclude_generator:
 plugins:
 - hexo-generator-feed
 - hexo-generator-sitemap
+- hexo-deployer-git
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-deploy:
-  type: github
-  repository: git@github.com:thddaniel/thddaniel.github.io.git
-  type: github
-  repository: git@gitcafe.com:tanghao/tanghao.git 
-  branch: gitcafe-pages 
+   type: git
+   root: /Users/tanghao/Documents/hexo/
+   repo: 
+      github: https://github.com/thddaniel/thddaniel.github.io,master
+      gitcafe: https://gitcafe.com/tanghao/tanghao.git,gitcafe-pages
 
 sitemap:
     path: sitemap.xml

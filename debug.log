@@ -1,0 +1,26 @@
+date: "2015-04-26 20:05:48.165"
+argv: node /usr/local/bin/hexo d
+os: Darwin 14.3.0 darwin x64
+versions:
+  http_parser: "1.0"
+  node: 0.10.34
+  v8: 3.14.5.9
+  ares: 1.9.0-DEV
+  uv: 0.10.30
+  zlib: 1.2.8
+  modules: "11"
+  openssl: 1.0.1j
+  hexo: 2.8.3
+---
+[debug] 20:05:47.611 Config file loaded from /Users/tanghao/Documents/hexo/_config.yml[debug] 20:05:47.614 Version info checked successfully[debug] 20:05:47.640 Loading database.[debug] 20:05:47.696 Processed: page.md (2ms)[debug] 20:05:47.696 Processed: draft.md (1ms)[debug] 20:05:47.696 Processed: photo.md (1ms)[debug] 20:05:47.696 Processed: post.md (1ms)[debug] 20:05:47.898 Plugin loaded successfully: hexo-deployer-git[debug] 20:05:47.908 Plugin loaded successfully: hexo-generator-feed[debug] 20:05:47.916 Plugin loaded successfully: hexo-generator-sitemap[debug] 20:05:47.938 Plugin loaded successfully: hexo-renderer-ejs[debug] 20:05:47.954 Plugin loaded successfully: hexo-renderer-marked[debug] 20:05:48.154 Plugin loaded successfully: hexo-renderer-stylus[debug] 20:05:48.157 Script load successfully: fancybox.js[info] 20:05:48.157 Start deploying: git[error] 20:05:48.159 TypeError: Arguments to path.join must be strings
+TypeError: Arguments to path.join must be strings
+    at path.js:360:15
+    at Array.filter (native)
+    at Object.exports.join (path.js:358:36)
+    at Object.module.exports [as git] (/Users/tanghao/Documents/hexo/node_modules/hexo-deployer-git/lib/deployer.js:18:26)
+    at /usr/local/lib/node_modules/hexo/lib/plugins/console/deploy.js:76:22
+    at iterate (/usr/local/lib/node_modules/hexo/node_modules/async/lib/async.js:149:13)
+    at Object.async.eachSeries (/usr/local/lib/node_modules/hexo/node_modules/async/lib/async.js:165:9)
+    at /usr/local/lib/node_modules/hexo/lib/plugins/console/deploy.js:66:11
+    at /usr/local/lib/node_modules/hexo/lib/plugins/console/deploy.js:32:27
+    at Object.cb [as oncomplete] (evalmachine.<anonymous>:169:19)

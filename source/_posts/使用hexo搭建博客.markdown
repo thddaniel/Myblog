@@ -5,14 +5,21 @@ comments: true
 tags: 
 
 ---
+
+----------------------------2015.03.16 更新----------------------------------
+
+最近出了3.0新版本，目前有些插件和主题并不兼容。所以暂时不更新，继续用2.8.3版本。若要更新可参考[Migrating from 2.x to 3.0](https://github.com/hexojs/hexo/wiki/Migrating-from-2.x-to-3.0)
+
+----------------------------2015.04.26 更新----------------------------------
+
+更新博客托管一份至GitCafe上。因为要用到新的插件，首先删除/usr/local/bin/hexo,按照上面文档升级hexo3.0。
+
+-----
+
 #**Hexo安装**
 Hexo的作者是[tommy351](https://twitter.com/tommy351)，根据官方介绍，Hexo是一个简单、快速、强大的博客发布工具，支持Markdown格式。Hexo是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。
 参考[官方文档](http://hexo.io/docs/index.html)
 
------
-2015.04.26 更新
-
-最近出了3.0新版本，目前有些插件和主题并不兼容。所以暂时不更新，继续用2.8.3版本。若要更新可参考[Migrating from 2.x to 3.0](https://github.com/hexojs/hexo/wiki/Migrating-from-2.x-to-3.0)
 
 ##**安装Node.js**
 在 Windows 环境下安装 Node.js非常简单，仅须[下载](http://nodejs.org/)安装文件并执行即可完成安装。
@@ -87,19 +94,22 @@ $ git clone <repository> themes/<theme-name>
 ```
 
 - 插件
+
 ``` 
-npm install <plugin-name> --save
-``` 
+ npm install <plugin-name> --save
+```
 
 启用插件：在根目录\ _config.yml文件添加：
 ```
 plugins:
 - <plugin-name>  #插件名
 ```
+
 升级插件：
 ```
 npm update
 ```
+
 卸载插件：
 ```
 npm uninstall <plugin-name>
@@ -171,7 +181,7 @@ Github的版本库通常建议同时附上README.md说明文件，但是hexo默�
 
 因为使用github已经有了一套公秘钥，我希望能够在 GitCafe 上使用另一套独立的公秘钥，使得多套公秘钥可以同时存在与工作。
 
-1. 生成新的 SSH 秘钥
+1.生成新的 SSH 秘钥
 
 假设已经有了一套名为 id_rsa 的公秘钥，将要生成的公秘钥名称为 gitcafe，也可以使用任何你喜欢的名字。
 ```
@@ -182,21 +192,21 @@ ssh-keygen -t rsa -C "thddaniel92@gmail.com" -f ~/.ssh/gitcafe
 这将在 ~/.ssh/ 目录下生成 `gitcafe` 和 `gitcafe.pub` 文件，记住千万不要把私钥文件 `gitcafe` 透露给任何人。
 
 
-2. 在 SSH 用户配置文件 ~/.ssh/config 中指定对应服务所使用的公秘钥名称，如果没有 config 文件的话就新建一个，并输入以下内容：
+2.在 SSH 用户配置文件 ~/.ssh/config 中指定对应服务所使用的公秘钥名称，如果没有 config 文件的话就新建一个，并输入以下内容：
 ```
 Host gitcafe.com www.gitcafe.com
   IdentityFile ~/.ssh/gitcafe
 ```
 
-3. 进入 GitCafe -->账户设置-->SSH 公钥管理设置项，点击添加新公钥 按钮，在 Title 文本框中输入任意字符，在 Key 文本框粘贴刚才复制的公钥字符串`gitcafe.pub`，按保存按钮完成操作。
+3.进入 GitCafe -->账户设置-->SSH 公钥管理设置项，点击添加新公钥 按钮，在 Title 文本框中输入任意字符，在 Key 文本框粘贴刚才复制的公钥字符串`gitcafe.pub`，按保存按钮完成操作。
 
-4. 最后测试配置文件是否正常工作
+4.最后测试配置文件是否正常工作
 ```
 ssh -T git@gitcafe.com
 ```
 如果是第一次连接的话，会出现警告，请检查一下显示的指纹是否一致：84:9e:c9:8e:7f:36:28:08:7e:13:bf:43:12:74:11:4e。输入 yes 按回车就可以了。
 
-5. 创建公开项目。如果你创建的项目名与用户名相同，GitCafe会自动识别成这是一个Page项目。
+5.创建公开项目。如果你创建的项目名与用户名相同，GitCafe会自动识别成这是一个Page项目。
 
 - 进入你的hexo博客目录下面的’.deploy’目录，创建gitcafe-pages分支，并切换到该分支
 ```
@@ -212,25 +222,34 @@ git push -u origin gitcafe-pages
 ```
 在完成上述操作后，即可访问 tanghao.gitcafe.io ,来查看页面效果了！
 
-6. 要使Hexo支持同时发布到多个git仓库中。需要修hexo根目录下的改_config.yml
+6.要使Hexo支持同时发布到多个git仓库中。 
 
-原来的配置:
+先安装 [hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git),支持hexo 3.0版本。
+```
+npm install hexo-deployer-git --save
+```
+
+需要修hexo根目录下的改_config.yml，原来的配置:
 ```
 deploy:
 type: github
 repo: github: https://github.com/<username>/<username>.github.io.git
 branch: master
 ```
-现在安装 
+现在改成
 ```
-npm install hexo-deployer-git --save
+deploy:
+   type: git
+   repo: 
+      github: https://github.com/thddaniel/thddaniel.github.io,master
+      gitcafe: https://gitcafe.com/tanghao/tanghao.git,gitcafe-pages
 ```
 
 
-6. 写个复合命令别名添加到`~/.bash_profile`
+7.写个复合命令别名添加到`~/.bash_profile`
 
 ```
-alias upblog='cd ~/Documents/hexo/ && hexo g && cd ~/Documents/hexo/.deploy/ && git checkout gitcafe-pages && git push -u origin gitcafe-pages && git checkout master && cd .. && hexo d'
+alias upblog='cd ~/Documents/hexo/ && hexo g && hexo d'
 
 ```
 输入命令`source .bash_profile`即可使用`upblog`命令。  
@@ -241,7 +260,15 @@ In OSX the terminal you get is a login session so reads `.bash_profile` etc.
 
 On other Unices xterm runs a non login shell by default so they read `.bashrc`.
 
+8.绑定域名。
 
+Gitcafe则可以绑定多个域名，在博客项目页面下项目管理->Pages服务->添加自定义域名添加自己的域名。
+
+我使用[namecheap](https://www.namecheap.com/)管理域名。在`All Host Records`添加URL指向。
+
+9.Dnspod做定向DNS解析
+
+在[Dnspod国际版](https://www.dnspod.com)中选择自己的域名，添加两条A记录，国内路线使用GitCafe（A地址：207.226.141.135 CName:gitcafe.io）国外走Github线路（A地址192.30.252.153及192.30.252.154）
 
 
 #**写文章**
@@ -285,6 +312,7 @@ layout: false
 </html>
 ```
 
+
 - **关于摘要**
 
 在文档中插入`<!--more-->`就可以将文章分隔，more以上的部分会已摘要的形式显示，当查看全文时more以下的部分才会显示出来。也可以在Markdown文件中定义description。
@@ -320,3 +348,6 @@ layout: false
 - [hexo博客同步到github和gitcafe](http://www.zhaokongnuan.com/2015/03/01/github-gitcafe/)
 - [如何将托管在github上的hexo博客转到gitcafe](http://blog.maxwi.com/2014/03/19/hexo-github-to-gitcafe/)
 - [如何创建Page](https://gitcafe.com/GitCafe/Help/wiki/Pages-相关帮助)
+
+
+

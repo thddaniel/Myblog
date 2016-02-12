@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Makefile basics"
+date: 2015-4-16 20:18
 comments: true
 tags: 
 
@@ -31,8 +32,8 @@ Makefile文件由一系列规则（rules）构成。每条规则的形式如下�
 一个目标（target）就构成一条规则。目标通常是文件名，指明Make命令所要构建的对象。目标可以是一个文件名，也可以是多个文件名，之间用空格分隔。
 
 ```
-test:a.c b.c a.h	gcc -o test a.c b.c
-``` 
+test:a.c b.c a.h	gcc -o test a.c b.c 
+```
 
 除了文件名，目标还可以是某个操作的名字，这称为"伪目标"（phony target）。
 
@@ -207,9 +208,9 @@ VPATH %.h ./header
 # 示例3 - 清除示例2中设置的规则
 VPATH %.h
 
-# 示例4 - 清除所有VPATH的设置
+# 示例4 - 清除所有VPATH的设置 
 VPATH
-``` 
+```
                            
 
 ##模式匹配

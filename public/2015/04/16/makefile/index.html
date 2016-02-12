@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Makefile basics | 唐昊的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="每次看完文档，过一段时间不用就忘记了。今天做毕业设计需要写Makefile,又重新看了一下GNU make，干脆把常用的提取出来。以后也把一些常用的函数等等写在博客好了，我这记忆力也是没救了。
+
+后来google发现阮一峰老师总结的很好。文中部分内容来自阮一峰Make命令教程,以后发现常用的知识就在这篇补充好了。
+
+MakefileMakefile文件由一系列规则（rules）构成。每条规则的形式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Makefile basics">
+<meta property="og:url" content="http://yoursite.com/2015/04/16/makefile/index.html">
+<meta property="og:site_name" content="唐昊的博客">
+<meta property="og:description" content="每次看完文档，过一段时间不用就忘记了。今天做毕业设计需要写Makefile,又重新看了一下GNU make，干脆把常用的提取出来。以后也把一些常用的函数等等写在博客好了，我这记忆力也是没救了。
+
+后来google发现阮一峰老师总结的很好。文中部分内容来自阮一峰Make命令教程,以后发现常用的知识就在这篇补充好了。
+
+MakefileMakefile文件由一系列规则（rules）构成。每条规则的形式">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Makefile basics">
+<meta name="twitter:description" content="每次看完文档，过一段时间不用就忘记了。今天做毕业设计需要写Makefile,又重新看了一下GNU make，干脆把常用的提取出来。以后也把一些常用的函数等等写在博客好了，我这记忆力也是没救了。
+
+后来google发现阮一峰老师总结的很好。文中部分内容来自阮一峰Make命令教程,以后发现常用的知识就在这篇补充好了。
+
+MakefileMakefile文件由一系列规则（rules）构成。每条规则的形式">
+  
+    <link rel="alternative" href="/atom.xml" title="唐昊的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://raw.githubusercontent.com/thddaniel/thddaniel.github.io/master/img/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<div class="profilepic">
+			<img src="https://raw.githubusercontent.com/thddaniel/thddaniel.github.io/master/img/anonymous.jpg">
+		</div>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Tang Hao</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="onoffswitch">
+			    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+			    <label class="onoffswitch-label" for="myonoffswitch">
+			        <span class="onoffswitch-inner"></span>
+			        <span class="onoffswitch-switch"></span>
+			    </label>
+			</div>
+		
+
+		<div class="switch-area">
+			<section class="first-part">
+				<nav class="header-menu">
+					<ul>
+					
+						<li><a href="/">主页</a></li>
+			        
+						<li><a href="/archives">所有文章</a></li>
+			        
+						<li><a href="/instagram">相册</a></li>
+			        
+					</ul>
+				</nav>
+				<nav class="header-nav">
+					<div class="social">
+						
+							<a class="github" target="_blank" href="https://github.com/thddaniel" title="github">github</a>
+				        
+							<a class="quora" target="_blank" href="http://www.quora.com/Daniel-Hao-2" title="quora">quora</a>
+				        
+							<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+				        
+							<a class="email" target="_blank" href="mailto:thddaniel92@gmail.com" title="email">email</a>
+				        
+					</div>
+				</nav>
+			</section>
+			
+			
+			<section class="second-part">
+				<div class="widget tagcloud">
+					<a href="/tags/Open-Courses/" style="font-size: 20px;">Open Courses</a><a href="/tags/git/" style="font-size: 15px;">git</a><a href="/tags/创业/" style="font-size: 10px;">创业</a><a href="/tags/思维/" style="font-size: 15px;">思维</a><a href="/tags/数据结构/" style="font-size: 10px;">数据结构</a><a href="/tags/理财/" style="font-size: 10px;">理财</a><a href="/tags/计算机原理/" style="font-size: 10px;">计算机原理</a><a href="/tags/记忆力/" style="font-size: 15px;">记忆力</a>
+				</div>
+			</section>
+			
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay"></div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img src="https://raw.githubusercontent.com/thddaniel/thddaniel.github.io/master/img/anonymous.jpg">
+			</div>
+
+			<hgroup>
+			  <h1 class="header-author"><a href="/">Tang Hao</a></h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/instagram">相册</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/thddaniel" title="github">github</a>
+			        
+						<a class="quora" target="_blank" href="http://www.quora.com/Daniel-Hao-2" title="quora">quora</a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+			        
+						<a class="email" target="_blank" href="mailto:thddaniel92@gmail.com" title="email">email</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <article id="post-makefile" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/04/16/makefile/" class="article-date">
+  	<time datetime="2015-04-16T19:18:00.000Z" itemprop="datePublished">2015-04-16</time>
+</a>
+      
+      
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Makefile basics
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+              
+              <!-- 文章目录开始 -->
+                
+                  <div id="toc" class="toc-article">
+                      <strong class="toc-title">目录Contents</strong>
+                  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Makefile"><span class="toc-number">1.</span> <span class="toc-text">Makefile</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#目标（target）"><span class="toc-number">1.1.</span> <span class="toc-text">目标（target）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#前置条件（prerequisites）"><span class="toc-number">1.2.</span> <span class="toc-text">前置条件（prerequisites）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令（commands）"><span class="toc-number">1.3.</span> <span class="toc-text">命令（commands）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#常用语法"><span class="toc-number">2.</span> <span class="toc-text">常用语法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#注释"><span class="toc-number">2.1.</span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#回声（echoing）"><span class="toc-number">2.2.</span> <span class="toc-text">回声（echoing）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#通配符"><span class="toc-number">2.3.</span> <span class="toc-text">通配符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#路径搜索"><span class="toc-number">2.4.</span> <span class="toc-text">路径搜索</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模式匹配"><span class="toc-number">2.5.</span> <span class="toc-text">模式匹配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#变量和赋值符"><span class="toc-number">2.6.</span> <span class="toc-text">变量和赋值符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内置变量（Implicit_Variables）"><span class="toc-number">2.7.</span> <span class="toc-text">内置变量（Implicit Variables）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自动变量（Automatic_Variables）"><span class="toc-number">2.8.</span> <span class="toc-text">自动变量（Automatic Variables）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#$@"><span class="toc-number">2.8.1.</span> <span class="toc-text">$@</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#$<"><span class="toc-number">2.8.2.</span> <span class="toc-text">$<</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#$?"><span class="toc-number">2.8.3.</span> <span class="toc-text">$?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#$^"><span class="toc-number">2.8.4.</span> <span class="toc-text">$^</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#$*"><span class="toc-number">2.8.5.</span> <span class="toc-text">$*</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#$(@D)_和_$(@F)"><span class="toc-number">2.8.6.</span> <span class="toc-text">$(@D) 和 $(@F)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#$(<D)_和_$(<F)"><span class="toc-number">2.8.7.</span> <span class="toc-text">$(<D) 和 $(<F)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#判断和循环"><span class="toc-number">2.9.</span> <span class="toc-text">判断和循环</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数"><span class="toc-number">2.10.</span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#shell_函数"><span class="toc-number">2.10.1.</span> <span class="toc-text">shell 函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串函数"><span class="toc-number">2.10.2.</span> <span class="toc-text">字符串函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件名函数"><span class="toc-number">2.10.3.</span> <span class="toc-text">文件名函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#foreach函数"><span class="toc-number">2.10.4.</span> <span class="toc-text">foreach函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#if"><span class="toc-number">2.10.5.</span> <span class="toc-text">if</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#call_-_创建新的参数化函数"><span class="toc-number">2.10.6.</span> <span class="toc-text">call - 创建新的参数化函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#origin_-_判断变量的来源"><span class="toc-number">2.10.7.</span> <span class="toc-text">origin - 判断变量的来源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#make_控制函数"><span class="toc-number">2.10.8.</span> <span class="toc-text">make 控制函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#内核中的Makefile"><span class="toc-number">3.</span> <span class="toc-text">内核中的Makefile</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#自己编写Makefile"><span class="toc-number">4.</span> <span class="toc-text">自己编写Makefile</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#各级子目录的Makefile"><span class="toc-number">4.1.</span> <span class="toc-text">各级子目录的Makefile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#顶层目录的Makefile"><span class="toc-number">4.2.</span> <span class="toc-text">顶层目录的Makefile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#怎么使用这套Makefile"><span class="toc-number">4.3.</span> <span class="toc-text">怎么使用这套Makefile</span></a></li></ol></li></ol>
+                  </div>
+                
+             <!-- 文章目录结束 -->
+ 
+        
+        <p>每次看完文档，过一段时间不用就忘记了。今天做毕业设计需要写Makefile,又重新看了一下<a href="http://www.gnu.org/software/make/manual/make.html" target="_blank" rel="external">GNU make</a>，干脆把常用的提取出来。以后也把一些常用的函数等等写在博客好了，我这记忆力也是没救了。</p>
+<hr>
+<p>后来google发现阮一峰老师总结的很好。文中部分内容来自<a href="http://www.ruanyifeng.com/blog/2015/02/make.html" target="_blank" rel="external">阮一峰Make命令教程</a>,以后发现常用的知识就在这篇补充好了。</p>
+<hr>
+<h1 id="Makefile">Makefile</h1><p>Makefile文件由一系列规则（rules）构成。每条规则的形式如下。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">target</span>&gt;</span> : <span class="tag">&lt;<span class="title">prerequisites</span>&gt;</span> </span><br><span class="line">[tab]  <span class="tag">&lt;<span class="title">commands</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>目标（target）是必须的，不能省略。前置条件（prerequisites）和命令（commands）都是可选的，但是必须要有一个。</p>
+<p>在Makefile中，规则的顺序是很重要的，因为，<strong>Makefile中只应该有一个最终目标</strong>，其它的目标都是被这个目标所连带出来的，所以一定要让make知道你的最终目标是什么。<a id="more"></a></p>
+<h2 id="目标（target）">目标（target）</h2><p>一个目标（target）就构成一条规则。目标通常是文件名，指明Make命令所要构建的对象。目标可以是一个文件名，也可以是多个文件名，之间用空格分隔。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test:<span class="tag">a</span><span class="class">.c</span> <span class="tag">b</span><span class="class">.c</span> <span class="tag">a</span><span class="class">.h</span>	gcc -o test <span class="tag">a</span><span class="class">.c</span> <span class="tag">b</span>.c</span><br></pre></td></tr></table></figure>
+<p>除了文件名，目标还可以是某个操作的名字，这称为”伪目标”（phony target）。</p>
+<ul>
+<li><code>all</code>    所有目标的目标，其功能一般是编译所有的目标</li>
+<li><code>clean</code>    删除所有被make创建的文件</li>
+<li><code>install</code>    安装已编译好的程序，其实就是把目标可执行文件拷贝到指定的目录中去</li>
+<li><code>print</code>    列出改变过的源文件</li>
+<li><code>tar</code>    把源程序打包备份. 也就是一个tar文件</li>
+<li><code>dist</code>    创建一个压缩文件, 一般是把tar文件压成Z文件. 或是gz文件</li>
+<li><code>TAGS</code>    更新所有的目标, 以备完整地重编译使用</li>
+<li><code>check</code> 或 <code>test</code>    一般用来测试makefile的流程</li>
+</ul>
+<p>下面代码的目标是clean，它不是文件名，而是一个操作的名字，属于”伪目标 “，作用是删除对象文件。但是，如果当前目录中，正好有一个文件叫做clean，那么这个命令不会执行。因为Make发现clean文件已经存在，就认为没有必要重新构建了，就不会执行指定的rm命令。</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">clean:</span></span><br><span class="line">      rm *.o</span><br></pre></td></tr></table></figure>
+<p>为了避免这种情况，可以明确声明clean是”伪目标”，写法如下。声明clean是”伪目标”之后，make就不会去检查是否存在一个叫做clean的文件，而是每次运行都执行对应的命令。像.PHONY这样的内置目标名还有不少，可以查看<a href="http://www.gnu.org/software/make/manual/html_node/Special-Targets.html#Special-Targets" target="_blank" rel="external">手册</a>。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class">.PHONY</span>: clean</span><br><span class="line">clean:</span><br><span class="line">        rm *<span class="class">.o</span> temp</span><br></pre></td></tr></table></figure>
+<p>如果Make命令运行时没有指定目标，默认会执行Makefile文件的第一个目标。</p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">utorial</span>:</span><br><span class="line">	@# <span class="attribute">todo</span>: have this actually run some kind of tutorial wizard?</span><br><span class="line">	<span class="variable">@echo</span> <span class="string">"Please read the 'Makefile' file to go through this tutorial"</span></span><br></pre></td></tr></table></figure>
+<p>执行make命令相当于make tutorial。</p>
+<h2 id="前置条件（prerequisites）">前置条件（prerequisites）</h2><p>前置条件通常是一组文件名，之间用空格分隔。它指定了”目标”是否重新构建的判断标准：只要有一个前置文件不存在，或者有过更新（前置文件的last-modification时间戳比目标的时间戳新），”目标”就需要重新构建。</p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">result</span>.txt: source.txt</span><br><span class="line">    cp source.txt <span class="literal">result</span>.txt</span><br></pre></td></tr></table></figure>
+<p>上面代码中，构建 result.txt 的前置条件是 source.txt 。如果当前目录中，source.txt 已经存在，那么make result.txt可以正常运行，否则必须再写一条规则，来生成 source.txt 。</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">source</span>.tx<span class="variable">t:</span></span><br><span class="line">    <span class="keyword">echo</span> <span class="string">"this is the source"</span> &gt; <span class="keyword">source</span>.txt</span><br></pre></td></tr></table></figure>
+<p>上面代码中，source.txt后面没有前置条件，就意味着它跟其他文件都无关，只要这个文件还不存在，每次调用make source.txt，它都会生成。</p>
+<h2 id="命令（commands）">命令（commands）</h2><p>命令（commands）表示如何更新目标文件，由一行或多行的Shell命令组成。它是构建”目标”的具体指令，它的运行结果通常就是生成目标文件。<br>每行命令之前必须有一个tab键。如果想用其他键，可以用内置变量.RECIPEPREFIX声明。</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.RECIPEPREFIX = &gt;</span><br><span class="line"><span class="keyword">al</span><span class="variable">l:</span></span><br><span class="line">&gt; <span class="keyword">echo</span> Hello, world</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，每行命令在一个单独的shell中执行。这些Shell之间没有继承关系。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var-lost:</span><br><span class="line">    <span class="built_in">export</span> foo=bar</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"foo=[$<span class="variable">$foo</span>]"</span></span><br></pre></td></tr></table></figure>
+<p>上面代码执行后（make var-lost），取不到foo的值。因为两行命令在两个不同的进程执行。一个解决办法是将两行命令写在一行，中间用分号分隔。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var-kept:</span><br><span class="line">    <span class="built_in">export</span> foo=bar; <span class="built_in">echo</span> <span class="string">"foo=[$<span class="variable">$foo</span>]"</span></span><br></pre></td></tr></table></figure>
+<p>另一个解决办法是在换行符前加反斜杠转义。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var-kept:</span><br><span class="line">    <span class="built_in">export</span> foo=bar; \</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"foo=[$<span class="variable">$foo</span>]"</span></span><br></pre></td></tr></table></figure>
+<p>最后一个方法是加上.ONESHELL:命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.ONESHELL:</span><br><span class="line">var-kept:</span><br><span class="line">    <span class="built_in">export</span> foo=bar; </span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"foo=[$<span class="variable">$foo</span>]"</span></span><br></pre></td></tr></table></figure>
+<p>If you want to export specific variables to a <strong>sub-make</strong>, use the export directive, like this: <code>export variable</code> …</p>
+<p>If you want to prevent a variable from being exported, use the unexport directive, like this: <code>unexport variable</code> …</p>
+<h1 id="常用语法">常用语法</h1><h2 id="注释">注释</h2><p>井号（#）在Makefile中表示注释。如果要使用或者输出”#”字符, 需要进行转义, “#“</p>
+<h2 id="回声（echoing）">回声（echoing）</h2><p>正常情况下，<strong>make会打印每条命令</strong>，然后再执行，这就叫做回声（echoing）。</p>
+<ul>
+<li>不用前缀   : 输出执行的命令以及命令执行的结果, 出错的话停止执行</li>
+<li>前缀 <code>@</code>  : 只输出命令执行的结果, 出错的话停止执行</li>
+<li>前缀 <code>-</code>   : 命令执行有错的话, 忽略错误, 继续执行</li>
+</ul>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">test:</span></span><br><span class="line">    <span class="preprocessor"># 这是测试</span></span><br></pre></td></tr></table></figure>
+<p>执行上面的规则，会得到下面的结果。</p>
+<p>$ make test</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># 这是测试</span></span><br></pre></td></tr></table></figure>
+<p>在命令的前面加上@，就可以关闭回声。</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">test:</span></span><br><span class="line">    @<span class="preprocessor"># 这是测试</span></span><br></pre></td></tr></table></figure>
+<p>现在再执行make test，就不会有任何输出。<br>由于在构建过程中，需要了解当前在执行哪条命令，<strong>所以通常只在注释和纯显示的echo命令前面加上@。</strong></p>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">test</span>:</span><br><span class="line">    @# 这是测试</span><br><span class="line">    <span class="variable">@echo</span> TODO</span><br></pre></td></tr></table></figure>
+<h2 id="通配符">通配符</h2><p>通配符（wildcard）用来指定一组符合条件的文件名。Makefile 的通配符与 Bash 一致，主要有星号（*）、问号（？）和 […] 。</p>
+<ul>
+<li><code>*</code>      表示任意一个或多个字符</li>
+<li><code>?</code>      表示任意一个字符</li>
+<li><code>[...]</code>  ex. [abcd] 表示a,b,c,d中任意一个字符, [^abcd]表示除a,b,c,d以外的字符, [0-9]表示 0~9中任意一个数字</li>
+<li><code>~</code>      表示用户的home目录</li>
+</ul>
+<p>比如， *.o 表示所有后缀名为o的文件。</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">clean:</span></span><br><span class="line">        rm -f *.o</span><br></pre></td></tr></table></figure>
+<h2 id="路径搜索">路径搜索</h2><p>当一个Makefile中涉及到大量源文件时(这些源文件和Makefile极有可能不在同一个目录中),</p>
+<p>这时, 最好将源文件的路径明确在Makefile中, 便于编译时查找. Makefile中有个特殊的变量 VPATH 就是完成这个功能的.</p>
+<p>指定了 VPATH 之后, 如果当前目录中没有找到相应文件或依赖的文件, Makefile 回到 VPATH 指定的路径中再去查找..</p>
+<p>VPATH 使用方法:</p>
+<ul>
+<li><code>vpath &lt;directories&gt;</code>             当前目录中找不到文件时, 就从<code>directories</code>中搜索</li>
+<li><code>vpath &lt;pattern&gt; &lt;directories&gt;</code>   符合<code>pattern</code>格式的文件, 就从<code>directories</code>中搜索</li>
+<li><code>vpath &lt;pattern&gt;</code>                 清除符合<code>pattern</code>格式的文件搜索路径 </li>
+<li><code>vpath</code>                           清除所有已经设置好的文件路径 </li>
+</ul>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># 示例1 - 当前目录中找不到文件时, 按顺序从 src目录 ../parent-dir目录中查找文件</span></span><br><span class="line">VPATH src:../parent-dir   </span><br><span class="line"></span><br><span class="line"><span class="preprocessor"># 示例2 - .h结尾的文件都从 ./header 目录中查找</span></span><br><span class="line">VPATH %.h ./header</span><br><span class="line"></span><br><span class="line"><span class="preprocessor"># 示例3 - 清除示例2中设置的规则</span></span><br><span class="line">VPATH %.h</span><br><span class="line"></span><br><span class="line"><span class="preprocessor"># 示例4 - 清除所有VPATH的设置 </span></span><br><span class="line">VPATH</span><br></pre></td></tr></table></figure>
+<h2 id="模式匹配">模式匹配</h2><p>Make命令允许对文件名，进行类似正则运算的匹配，主要用到的匹配符是%。比如，假定当前目录下有 f1.c 和 f2.c 两个源码文件，需要将它们编译为对应的对象文件。</p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">%</span>.o: <span class="preprocessor">%</span>.c</span><br></pre></td></tr></table></figure>
+<p>等同于下面的写法。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f1<span class="class">.o</span>: f1<span class="class">.c</span></span><br><span class="line">f2<span class="class">.o</span>: f2.c</span><br></pre></td></tr></table></figure>
+<p><strong>使用匹配符%，可以将大量同类型的文件，只用一条规则就完成构建。</strong></p>
+<h2 id="变量和赋值符">变量和赋值符</h2><p>Makefile 允许使用等号自定义变量。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">txt = Hello World</span><br><span class="line"><span class="built_in">test</span>:</span><br><span class="line">    @<span class="built_in">echo</span> $(txt)</span><br></pre></td></tr></table></figure>
+<p>上面代码中，变量 txt 等于 Hello World。调用时，变量需要放在 <code>$( )</code> 之中。<br>调用Shell变量，需要在美元符号前，再加一个美元符号，这是因为Make命令会对美元符号转义。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">test</span>:</span><br><span class="line">    @<span class="built_in">echo</span> $<span class="variable">$HOME</span></span><br></pre></td></tr></table></figure>
+<p>有时，变量的值可能指向另一个变量。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">v1</span> = <span class="variable">$(v2)</span></span><br></pre></td></tr></table></figure>
+<p>上面代码中，变量 v1 的值是另一个变量 v2。这时会产生一个问题，v1 的值到底在定义时扩展（静态扩展），还是在运行时扩展（动态扩展）？如果 v2 的值是动态的，这两种扩展方式的结果可能会差异很大。</p>
+<p>为了解决类似问题，Makefile一共提供了四个赋值运算符 （=、:=、？=、+=），它们的区别请看<a href="http://stackoverflow.com/questions/448910/makefile-variable-assignment" target="_blank" rel="external">StackOverflow</a>。其中 = 和 := 的区别在于, := 只能使用前面定义好的变量, = 可以使用后面定义的变量</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Makefile内容</span></span><br><span class="line"><span class="constant">OBJS2 </span>= <span class="variable">$(</span><span class="constant">OBJS1)</span> programC.o</span><br><span class="line"><span class="constant">OBJS1 </span>= programA.o programB.o</span><br><span class="line"></span><br><span class="line"><span class="symbol">all:</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span><span class="constant">OBJS2)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># bash中执行 make, 可以看出虽然 OBJS1 是在 OBJS2 之后定义的, 但在 OBJS2中可以提前使用</span></span><br><span class="line"><span class="variable">$ </span>make</span><br><span class="line">programA.o programB.o programC.o</span><br><span class="line">---------------------------------------</span><br><span class="line"><span class="comment"># Makefile内容</span></span><br><span class="line"><span class="constant">OBJS2 </span><span class="symbol">:</span>= <span class="variable">$(</span><span class="constant">OBJS1)</span> programC.o</span><br><span class="line"><span class="constant">OBJS1 </span><span class="symbol">:</span>= programA.o programB.o</span><br><span class="line"></span><br><span class="line"><span class="symbol">all:</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span><span class="constant">OBJS2)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># bash中执行 make, 可以看出 OBJS2 中的 $(OBJS1) 为空</span></span><br><span class="line"><span class="variable">$ </span>make</span><br><span class="line">programC.o</span><br></pre></td></tr></table></figure>
+<h2 id="内置变量（Implicit_Variables）">内置变量（Implicit Variables）</h2><p>Make命令提供一系列内置变量，比如，$(CC) 指向当前使用的编译器，$(MAKE) 指向当前使用的Make工具。这主要是为了跨平台的兼容性，详细的内置变量清单见<a href="https://www.gnu.org/software/make/manual/html_node/Implicit-Variables.html" target="_blank" rel="external">手册</a>。</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">output</span><span class="keyword">:</span></span><br><span class="line">    $(CC) <span class="keyword">-</span>o <span class="keyword">output</span> <span class="keyword">input</span><span class="typename">.c</span></span><br></pre></td></tr></table></figure>
+<h2 id="自动变量（Automatic_Variables）">自动变量（Automatic Variables）</h2><p>Make命令还提供一些自动变量，它们的值与当前规则有关。主要有以下几个。</p>
+<h3 id="$@">$@</h3><p><code>$@</code>指代当前目标，就是Make命令当前构建的那个目标。比如，make foo的 <code>$@</code> 就指代foo。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">a</span><span class="class">.txt</span> <span class="tag">b</span><span class="class">.txt</span>: </span><br><span class="line">    touch $@</span><br></pre></td></tr></table></figure>
+<p>等同于下面的写法。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">a</span><span class="class">.txt</span>:</span><br><span class="line">    touch <span class="tag">a</span><span class="class">.txt</span></span><br><span class="line"><span class="tag">b</span><span class="class">.txt</span>:</span><br><span class="line">    touch <span class="tag">b</span>.txt</span><br></pre></td></tr></table></figure>
+<h3 id="$&lt;">$&lt;</h3><p><code>$&lt;</code>指代第一个前置条件。比如，规则为 t: p1 p2，那么$&lt; 就指代p1。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">a</span><span class="class">.txt</span>: <span class="tag">b</span><span class="class">.txt</span> c<span class="class">.txt</span></span><br><span class="line">    cp $&lt; $@</span><br></pre></td></tr></table></figure>
+<p>等同于下面的写法。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">a</span><span class="class">.txt</span>: <span class="tag">b</span><span class="class">.txt</span> c<span class="class">.txt</span></span><br><span class="line">    cp <span class="tag">b</span><span class="class">.txt</span> <span class="tag">a</span>.txt</span><br></pre></td></tr></table></figure>
+<h3 id="$?">$?</h3><p> <code>$?</code> 指代比目标更新的所有前置条件，之间以空格分隔。比如，规则为 t: p1 p2，其中 p2 的时间戳比 t 新，$?就指代p2。</p>
+<h3 id="$^">$^</h3><p><code>$^</code> 指代所有前置条件，之间以空格分隔。比如，规则为 t: p1 p2，那么 $^ 就指代 p1 p2 。</p>
+<h3 id="$*">$*</h3><p><code>$*</code> 指代匹配符 % 匹配的部分， 比如% 匹配 f1.txt 中的f1 ，<code>$*</code> 就表示 f1。</p>
+<h3 id="$(@D)_和_$(@F)">$(@D) 和 $(@F)</h3><p><code>$(@D)</code> 和 <code>$(@F)</code> 分别指向 $@ 的目录名和文件名。比如，<code>$@</code>是 src/input.c，那么<code>$(@D)</code> 的值为 src ，<code>$(@F)</code> 的值为 input.c。</p>
+<h3 id="$(&lt;D)_和_$(&lt;F)">$(&lt;D) 和 $(&lt;F)</h3><p><code>$(&lt;D)</code> 和 <code>$(&lt;F)</code> 分别指向 <code>$&lt;</code> 的目录名和文件名。<br>所有的自动变量清单，请看<a href="https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html" target="_blank" rel="external">手册</a>。下面是自动变量的一个例子。</p>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dest/<span class="variable">%.</span>txt: src/<span class="variable">%.</span>txt</span><br><span class="line">    <span class="variable">@[</span> -d dest ] || mkdir dest</span><br><span class="line">    cp <span class="variable">$&lt;</span> <span class="variable">$@</span></span><br></pre></td></tr></table></figure>
+<p>上面代码将 src 目录下的 txt 文件，拷贝到 dest 目录下。首先判断 dest 目录是否存在，如果不存在就新建，然后，<code>$&lt;</code> 指代前置文件（src/%.txt）， <code>$@</code> 指代目标文件（dest/%.txt）。</p>
+<h2 id="判断和循环">判断和循环</h2><p>Makefile使用 Bash 语法，完成判断和循环。条件判断的关键字主要有 ifeq ifneq ifdef ifndef</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ife<span class="string">q (<span class="variable">$(</span>CC)</span>,gcc)</span><br><span class="line">  libs=<span class="variable">$(</span>libs_for_gcc)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  libs=<span class="variable">$(</span>normal_libs)</span><br><span class="line">endif</span><br></pre></td></tr></table></figure>
+<p>上面代码判断当前编译器是否 gcc ，然后指定不同的库文件。</p>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">LIST</span> = <span class="keyword">one</span> <span class="keyword">two</span> three</span><br><span class="line">all:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> $(<span class="keyword">LIST</span>); <span class="keyword">do</span> \</span><br><span class="line">        echo $<span class="label">$i</span>; \</span><br><span class="line">    done</span><br><span class="line"></span><br><span class="line">#等同于</span><br><span class="line"></span><br><span class="line">all:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="keyword">one</span> <span class="keyword">two</span> three; <span class="keyword">do</span> \</span><br><span class="line">        echo <span class="label">$i</span>; \</span><br><span class="line">    done</span><br></pre></td></tr></table></figure>
+<p>上面代码的运行结果。</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">one</span></span><br><span class="line"><span class="constant">two</span></span><br><span class="line"><span class="constant">three</span></span><br></pre></td></tr></table></figure>
+<h2 id="函数">函数</h2><p>Makefile 还可以使用函数，格式如下。</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="function"><span class="keyword">function</span> <span class="title">arguments</span>)</span></span><br><span class="line"><span class="comment"># 或者</span></span><br><span class="line">$&#123;<span class="function"><span class="keyword">function</span> <span class="title">arguments</span>&#125;</span></span><br></pre></td></tr></table></figure>
+<p>Makefile提供了许多<a href="http://www.gnu.org/software/make/manual/html_node/Functions.html" target="_blank" rel="external">内置函数</a>，可供调用。下面是几个常用的内置函数。</p>
+<h3 id="shell_函数">shell 函数</h3><p>shell 函数用来执行 shell 命令 语法：<code>$(shell &lt;shell command&gt;)</code></p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">srcfiles</span> := <span class="variable">$(shell echo src/&#123;00..99&#125;.txt)</span></span><br></pre></td></tr></table></figure>
+<h3 id="字符串函数">字符串函数</h3><p>（1）strip函数<br>功能: 去掉 <code>string</code> 字符串中开头和结尾的空字符</p>
+<p>返回: 被去掉空格的字符串值</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Makefile 内容</span></span><br><span class="line"><span class="constant">VAL </span><span class="symbol">:</span>= <span class="string">"       aa  bb  cc "</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">all:</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="string">"去除空格前: "</span> <span class="variable">$(</span><span class="constant">VAL)</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="string">"去除空格后: "</span> <span class="variable">$(</span>strip <span class="variable">$(</span><span class="constant">VAL)</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># bash 中执行 make</span></span><br><span class="line"><span class="variable">$ </span>make</span><br><span class="line">去除空格前<span class="symbol">:</span>         aa  bb  cc </span><br><span class="line">去除空格后<span class="symbol">:</span>   aa bb cc</span><br></pre></td></tr></table></figure>
+<p>（2）wildcard 函数<br>它的用法是：<code>$(wildcard PATTERN...)</code>。在Makefile中，它被展开为已经存在的、使用空格分开的、匹配此模式的所有文件列表。如果不存在任何符合此模式的文件，函数会忽略模式字符并返回空。</p>
+<p>获取src目录下所有<code>.txt</code>结尾的文件<br><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">srcfiles</span> := <span class="variable">$(wildcard src/*.txt)</span></span><br></pre></td></tr></table></figure></p>
+<p>（3）subst 函数<br>subst 函数用来文本替换，格式如下。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(subst <span class="keyword">from</span>,<span class="keyword">to</span>,<span class="type">text</span>)</span><br></pre></td></tr></table></figure>
+<p>下面的例子将字符串”feet on the street”替换成”fEEt on the strEEt”。</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(subst ee,EE,feet <span class="function_start"><span class="keyword">on</span></span> <span class="keyword">the</span> street)</span><br></pre></td></tr></table></figure>
+<p>下面是一个稍微复杂的例子。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="constant">comma</span>:= ,</span><br><span class="line"><span class="constant">empty</span>:=</span><br><span class="line"><span class="comment"># space变量用两个空变量作为标识符，当中是一个空格</span></span><br><span class="line"><span class="constant">space</span>:= <span class="variable">$(empty)</span> <span class="variable">$(empty)</span></span><br><span class="line"><span class="constant">foo</span>:= a b c</span><br><span class="line"><span class="constant">bar</span>:= <span class="variable">$(subst $(space)</span>,<span class="variable">$(comma)</span>,<span class="variable">$(foo)</span>)</span><br><span class="line"><span class="comment"># bar is now `a,b,c'.</span></span><br></pre></td></tr></table></figure>
+<p>（4）patsubst函数<br>patsubst 函数用于模式匹配的替换，格式如下。</p>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(</span>patsubst pattern,replacement,<span class="keyword">text</span>)</span><br></pre></td></tr></table></figure>
+<p>下面的例子将文件名”x.c.c bar.c”，替换成”x.c.o bar.o”。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(patsubst %.<span class="built_in">c</span>,%.o,x.<span class="built_in">c</span>.<span class="built_in">c</span> bar.<span class="built_in">c</span>)</span><br></pre></td></tr></table></figure>
+<p>（5）替换后缀名<br>替换后缀名函数的写法是：变量名 + 冒号 + 后缀名替换规则。它实际上patsubst函数的一种简写形式。</p>
+<figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">min</span>: <span class="variable">$(</span>OUTPUT:.js=.<span class="keyword">min</span>.js)</span><br></pre></td></tr></table></figure>
+<p>上面代码的意思是，将变量OUTPUT中的后缀名 .js 全部替换成 .min.js 。</p>
+<p>（6）查找字符串函数: <code>$(findstring &lt;find&gt;,&lt;in&gt;)</code></p>
+<p>功能: 在字符串 <code>in</code> 中查找 <code>find</code> 字符串</p>
+<p>返回: 如果找到, 返回 <code>find</code> 字符串,  否则返回空字符串</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Makefile 内容</span></span><br><span class="line"><span class="constant">VAL </span><span class="symbol">:</span>= <span class="string">"       aa  bb  cc "</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">all:</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>findstring aa,<span class="variable">$(</span><span class="constant">VAL)</span>)</span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>findstring ab,<span class="variable">$(</span><span class="constant">VAL)</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># bash 中执行 make</span></span><br><span class="line"><span class="variable">$ </span>make</span><br><span class="line">aa</span><br></pre></td></tr></table></figure>
+<p>（7）过滤函数: <code>$(filter &lt;pattern...&gt;,&lt;text&gt;)</code></p>
+<p>功能: 以 <code>pattern</code> 模式过滤字符串 <code>text</code>, <em>保留</em> 符合模式 <code>pattern</code> 的单词, 可以有多个模式</p>
+<p>返回: 符合模式 <code>pattern</code> 的字符串</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Makefile 内容</span><br><span class="line"><span class="built_in">all</span>:</span><br><span class="line">    @echo $(filter %.o %.a,<span class="function"><span class="keyword">program</span>.<span class="title">c</span></span> <span class="function"><span class="keyword">program</span>.<span class="title">o</span></span> <span class="function"><span class="keyword">program</span>.<span class="title">a</span></span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># bash 中执行 make</span><br><span class="line">$ make</span><br><span class="line"><span class="function"><span class="keyword">program</span>.<span class="title">o</span></span> <span class="function"><span class="keyword">program</span>.<span class="title">a</span></span></span><br></pre></td></tr></table></figure>
+<p>（8）反过滤函数: <code>$(filter-out &lt;pattern...&gt;,&lt;text&gt;)</code></p>
+<p>功能: 以 <code>pattern</code> 模式过滤字符串 <code>text</code>, <em>去除</em> 符合模式 <code>pattern</code> 的单词, 可以有多个模式</p>
+<p>返回: 不符合模式 <code>pattern</code> 的字符串</p>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Makefile 内容</span><br><span class="line"><span class="built_in">all</span>:</span><br><span class="line">    @echo $(filter-<span class="type">out</span> %.o %.a,<span class="function"><span class="keyword">program</span>.<span class="title">c</span></span> <span class="function"><span class="keyword">program</span>.<span class="title">o</span></span> <span class="function"><span class="keyword">program</span>.<span class="title">a</span></span>)</span><br><span class="line"></span><br><span class="line"># bash 中执行 make</span><br><span class="line">$ make</span><br><span class="line"><span class="function"><span class="keyword">program</span>.<span class="title">c</span></span></span><br></pre></td></tr></table></figure>
+<p>（9）排序函数: <code>$(sort &lt;list&gt;)</code><br>功能: 给字符串 <code>list</code> 中的单词排序 (升序)</p>
+<p>返回: 排序后的字符串</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Makefile 内容</span><br><span class="line"><span class="keyword">al</span><span class="variable">l:</span></span><br><span class="line">    @echo $(<span class="built_in">sort</span> bac <span class="keyword">abc</span> acb cab)</span><br><span class="line"></span><br><span class="line"># bash 中执行 <span class="keyword">make</span></span><br><span class="line">$ <span class="keyword">make</span></span><br><span class="line"><span class="keyword">abc</span> acb bac cab</span><br></pre></td></tr></table></figure>
+<p>（10）取单词函数: <code>$(word &lt;n&gt;,&lt;text&gt;)</code><br>功能: 取字符串 <code>text</code> 中的 第<code>n</code>个单词 (n从1开始)</p>
+<p>返回: <code>text</code> 中的第<code>n</code>个单词, 如果<code>n</code> 比 <code>text</code> 中单词个数要大, 则返回空字符串</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Makefile 内容</span></span><br><span class="line"><span class="symbol">all:</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>word <span class="number">1</span>,aa bb cc dd)</span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>word <span class="number">5</span>,aa bb cc dd)</span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>word <span class="number">4</span>,aa bb cc dd)</span><br><span class="line"></span><br><span class="line"><span class="comment"># bash 中执行 make</span></span><br><span class="line"><span class="variable">$ </span>make</span><br><span class="line">aa</span><br><span class="line"></span><br><span class="line">dd</span><br></pre></td></tr></table></figure>
+<p>（11）取单词串函数: <code>$(wordlist &lt;s&gt;,&lt;e&gt;,&lt;text&gt;)</code></p>
+<p>功能: 从字符串<code>text</code>中取从<code>s</code>开始到<code>e</code>的单词串. <code>s</code>和<code>e</code>是一个数字.</p>
+<p>返回: 从<code>s</code>到<code>e</code>的字符串</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Makefile 内容</span></span><br><span class="line"><span class="symbol">all:</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>wordlist <span class="number">1</span>,<span class="number">3</span>,aa bb cc dd)</span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>word <span class="number">5</span>,<span class="number">6</span>,aa bb cc dd)</span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>word <span class="number">2</span>,<span class="number">5</span>,aa bb cc dd)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># bash 中执行 make</span></span><br><span class="line"><span class="variable">$ </span>make</span><br><span class="line">aa bb cc</span><br><span class="line"></span><br><span class="line">bb</span><br></pre></td></tr></table></figure>
+<p>（12）单词个数统计函数: <code>$(words &lt;text&gt;)</code></p>
+<p>功能: 统计字符串 <code>text</code> 中单词的个数</p>
+<p>返回: 单词个数</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Makefile 内容</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">all:</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>words aa bb cc dd)</span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>words aabbccdd)</span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>words )</span><br><span class="line"></span><br><span class="line"><span class="comment"># bash 中执行 make</span></span><br><span class="line"><span class="variable">$ </span>make</span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>（13）首单词函数: <code>$(firstword &lt;text&gt;)</code></p>
+<p>功能: 取字符串 <code>text</code> 中的第一个单词</p>
+<p>返回: 字符串 <code>text</code> 中的第一个单词</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Makefile 内容</span></span><br><span class="line"><span class="symbol">all:</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>firstword aa bb cc dd)</span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>firstword aabbccdd)</span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>firstword )</span><br><span class="line"></span><br><span class="line"><span class="comment"># bash 中执行 make</span></span><br><span class="line"><span class="variable">$ </span>make</span><br><span class="line">aa</span><br><span class="line">aabbccdd</span><br></pre></td></tr></table></figure>
+<h3 id="文件名函数">文件名函数</h3><p>（1）取目录函数: <code>$(dir &lt;names...&gt;)</code></p>
+<p>功能: 从文件名序列 `names&gt; 中取出目录部分</p>
+<p>返回: 文件名序列 `names&gt; 中的目录部分</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Makefile 内容</span><br><span class="line"><span class="string">all:</span></span><br><span class="line">    <span class="annotation">@echo</span> $(dir <span class="regexp">/home/</span>a.c .<span class="regexp">/bb.c ../</span>c.c d.c)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># bash 中执行 make</span><br><span class="line">$ make</span><br><span class="line"><span class="regexp">/home/</span> .<span class="regexp">/ ../</span> ./</span><br></pre></td></tr></table></figure>
+<p>（2）取文件函数: <code>$(notdir &lt;names...&gt;)</code></p>
+<p>功能: 从文件名序列 <code>names</code> 中取出非目录部分</p>
+<p>返回: 文件名序列 <code>names</code> 中的非目录部分</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># <span class="type">Makefile</span> 内容</span><br><span class="line">all:</span><br><span class="line">    @echo $(notdir /home/a.<span class="built_in">c</span> ./bb.<span class="built_in">c</span> ../<span class="built_in">c</span>.<span class="built_in">c</span> d.<span class="built_in">c</span>)</span><br><span class="line"></span><br><span class="line"># bash 中执行 make</span><br><span class="line">$ make</span><br><span class="line">a.<span class="built_in">c</span> bb.<span class="built_in">c</span> <span class="built_in">c</span>.<span class="built_in">c</span> d.<span class="built_in">c</span></span><br></pre></td></tr></table></figure>
+<p>（3）取后缀函数: <code>$(suffix &lt;names...&gt;)</code></p>
+<p>功能: 从文件名序列 <code>names</code> 中取出各个文件名的后缀</p>
+<p>返回: 文件名序列 <code>names</code> 中各个文件名的后缀, 没有后缀则返回空字符串</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Makefile 内容</span></span><br><span class="line"><span class="symbol">all:</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>suffix /home/a.c ./b.o ../c.a d)</span><br><span class="line"></span><br><span class="line"><span class="comment"># bash 中执行 make</span></span><br><span class="line"><span class="variable">$ </span>make</span><br><span class="line">.c .o .a</span><br></pre></td></tr></table></figure>
+<p>（4）取前缀函数: <code>$(basename &lt;names...&gt;)</code></p>
+<p>功能: 从文件名序列 <code>names</code> 中取出各个文件名的前缀</p>
+<p>返回: 文件名序列 <code>names</code> 中各个文件名的前缀, 没有前缀则返回空字符串</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Makefile 内容</span><br><span class="line"><span class="string">all:</span></span><br><span class="line">    <span class="annotation">@echo</span> $(basename <span class="regexp">/home/</span>a.c .<span class="regexp">/b.o ../</span>c.a <span class="regexp">/home/</span>.d .e)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># bash 中执行 make</span><br><span class="line">$ make</span><br><span class="line"><span class="regexp">/home/</span>a .<span class="regexp">/b ../</span>c <span class="regexp">/home/</span></span><br></pre></td></tr></table></figure>
+<p>（5）加后缀函数: <code>$(addsuffix &lt;suffix&gt;,&lt;names...&gt;)</code></p>
+<p>功能: 把后缀 <code>suffix</code> 加到 <code>names</code> 中的每个单词后面</p>
+<p>返回: 加过后缀的文件名序列</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># <span class="type">Makefile</span> 内容</span><br><span class="line">all:</span><br><span class="line">    @echo $(addsuffix .<span class="built_in">c</span>,/home/a b ./<span class="built_in">c</span>.o ../d.<span class="built_in">c</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># bash 中执行 make</span><br><span class="line">$ make</span><br><span class="line">/home/a.<span class="built_in">c</span> b.<span class="built_in">c</span> ./<span class="built_in">c</span>.o.<span class="built_in">c</span> ../d.<span class="built_in">c</span>.<span class="built_in">c</span></span><br></pre></td></tr></table></figure>
+<p>（6）加前缀函数: <code>$(addprefix &lt;prefix&gt;,&lt;names...&gt;)</code></p>
+<p>功能: 把前缀 <code>prefix</code> 加到 <code>names</code> 中的每个单词前面</p>
+<p>返回: 加过前缀的文件名序列</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Makefile 内容</span></span><br><span class="line">all:</span><br><span class="line">    @<span class="built_in">echo</span> $(addprefix <span class="built_in">test</span>_,/home/a.c b.c ./d.c)</span><br><span class="line"></span><br><span class="line"><span class="comment"># bash 中执行 make</span></span><br><span class="line">$ make</span><br><span class="line"><span class="built_in">test</span>_/home/a.c <span class="built_in">test</span>_b.c <span class="built_in">test</span>_./d.c</span><br></pre></td></tr></table></figure>
+<p>（7）连接函数: <code>$(join &lt;list1&gt;,&lt;list2&gt;)</code></p>
+<p>功能: <code>list2</code> 中对应的单词加到 <code>list1</code> 后面</p>
+<p>返回: 连接后的字符串</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Makefile 内容</span></span><br><span class="line"><span class="symbol">all:</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>join a b c d,<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span>)</span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>join a b c d,<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span>)</span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>join a b c d e,<span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># bash 中执行 make</span></span><br><span class="line"><span class="variable">$ </span>make</span><br><span class="line">a1 b2 c3 d4</span><br><span class="line">a1 b2 c3 d4 <span class="number">5</span></span><br><span class="line">a1 b2 c3 d4 e</span><br></pre></td></tr></table></figure>
+<h3 id="foreach函数">foreach函数</h3><p>语法: <code>$(foreach &lt;var&gt;,&lt;list&gt;,&lt;text&gt;)</code></p>
+<p>示例:</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Makefile 内容</span></span><br><span class="line">targets <span class="symbol">:</span>= a b c d</span><br><span class="line">objects <span class="symbol">:</span>= <span class="variable">$(</span>foreach i,<span class="variable">$(</span>targets),<span class="variable">$(</span>i).o)</span><br><span class="line"></span><br><span class="line"><span class="symbol">all:</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>targets)</span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>objects)</span><br><span class="line"></span><br><span class="line"><span class="comment"># bash 中执行 make</span></span><br><span class="line"><span class="variable">$ </span>make</span><br><span class="line">a b c d</span><br><span class="line">a.o b.o c.o d.o</span><br></pre></td></tr></table></figure>
+<h3 id="if">if</h3><p>这里的if是个函数, 和前面的条件判断不一样, 前面的条件判断属于Makefile的关键字</p>
+<p>语法:</p>
+<p><code>$(if &lt;condition&gt;,&lt;then-part&gt;)</code></p>
+<p><code>$(if &lt;condition&gt;,&lt;then-part&gt;,&lt;else-part&gt;)</code></p>
+<p>示例:</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Makefile 内容</span></span><br><span class="line">val <span class="symbol">:</span>= a</span><br><span class="line">objects <span class="symbol">:</span>= <span class="variable">$(</span><span class="keyword">if</span> <span class="variable">$(</span>val),<span class="variable">$(</span>val).o,nothing)</span><br><span class="line">no-objects <span class="symbol">:</span>= <span class="variable">$(</span><span class="keyword">if</span> <span class="variable">$(</span>no-val),<span class="variable">$(</span>val).o,nothing)</span><br><span class="line"></span><br><span class="line"><span class="symbol">all:</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>objects)</span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>no-objects)</span><br><span class="line"></span><br><span class="line"><span class="comment"># bash 中执行 make</span></span><br><span class="line"><span class="variable">$ </span>make</span><br><span class="line">a.o</span><br><span class="line">nothing</span><br></pre></td></tr></table></figure>
+<h3 id="call_-_创建新的参数化函数">call - 创建新的参数化函数</h3><p>语法:</p>
+<p><code>$(call &lt;expression&gt;,&lt;parm1&gt;,&lt;parm2&gt;,&lt;parm3&gt;...)</code></p>
+<p>示例:</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Makefile 内容</span><br><span class="line"><span class="built_in">log</span> = <span class="string">"====debug===="</span> $(<span class="number">1</span>) <span class="string">"====end===="</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">al</span><span class="variable">l:</span></span><br><span class="line">    @echo $(<span class="built_in">call</span> <span class="built_in">log</span>,<span class="string">"正在 Make"</span>)</span><br><span class="line"></span><br><span class="line"># bash 中执行 <span class="keyword">make</span></span><br><span class="line">$ <span class="keyword">make</span></span><br><span class="line">====<span class="keyword">debug</span>==== 正在 Make ====end====</span><br></pre></td></tr></table></figure>
+<h3 id="origin_-_判断变量的来源">origin - 判断变量的来源</h3><p>语法:</p>
+<p><code>$(origin &lt;variable&gt;)</code></p>
+<p>返回值有如下类型:</p>
+<ul>
+<li><code>undefined</code>    <code>variable</code> 没有定义过</li>
+<li><code>default</code>    <code>variable</code> 是个默认的定义, 比如 CC 变量</li>
+<li><code>environment</code>    <code>variable</code> 是个环境变量, 并且 make时没有使用 -e 参数</li>
+<li><code>file</code>    <code>variable</code> 定义在Makefile中</li>
+<li><code>command line</code>    <code>variable</code> 定义在命令行中</li>
+<li><code>override</code>    <code>variable</code> 被 override 重新定义过</li>
+<li><code>automatic</code>    <code>variable</code> 是自动化变量</li>
+</ul>
+<p>示例:</p>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Makefile 内容</span></span><br><span class="line">val-<span class="keyword">in</span>-file <span class="symbol">:</span>= test-file</span><br><span class="line">override val-override <span class="symbol">:</span>= test-override</span><br><span class="line"></span><br><span class="line"><span class="symbol">all:</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>origin <span class="keyword">not</span>-define)    <span class="comment"># not-define 没有定义</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>origin <span class="constant">CC)</span>            <span class="comment"># CC 是Makefile默认定义的变量</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>origin <span class="constant">PATH)</span>         <span class="comment"># PATH 是 bash 环境变量</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>origin val-<span class="keyword">in</span>-file)    <span class="comment"># 此Makefile中定义的变量</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>origin val-<span class="keyword">in</span>-cmd)    <span class="comment"># 这个变量会加在 make 的参数中</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>origin val-override) <span class="comment"># 此Makefile中定义的override变量</span></span><br><span class="line">    <span class="variable">@echo</span> <span class="variable">$(</span>origin @)             <span class="comment"># 自动变量, 具体前面的介绍</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># bash 中执行 make</span></span><br><span class="line"><span class="variable">$ </span>make val-<span class="keyword">in</span>-cmd=val-cmd</span><br><span class="line">undefined</span><br><span class="line">default</span><br><span class="line">environment</span><br><span class="line">file</span><br><span class="line">command line</span><br><span class="line">override</span><br><span class="line">automatic</span><br></pre></td></tr></table></figure>
+<h3 id="make_控制函数">make 控制函数</h3><p>产生一个致命错误: <code>$(error &lt;text ...&gt;)</code></p>
+<p>功能: 输出错误信息, 停止Makefile的运行</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor"># Makefile 内容</span></span><br><span class="line">all:</span><br><span class="line">    $(<span class="keyword">error</span> there <span class="keyword">is</span> an <span class="keyword">error</span>!)</span><br><span class="line">    @echo <span class="string">"这里不会执行!"</span></span><br><span class="line"></span><br><span class="line"><span class="preprocessor"># bash 中执行 make</span></span><br><span class="line">$ make</span><br><span class="line">Makefile:<span class="number">2</span>: *** there <span class="keyword">is</span> an <span class="keyword">error</span>!.  <span class="keyword">Stop</span>.</span><br></pre></td></tr></table></figure>
+<p>输出警告: <code>$(warning &lt;text ...&gt;)</code></p>
+<p>功能: 输出警告信息, Makefile继续运行</p>
+<figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Makefile 内容</span></span><br><span class="line"><span class="attribute">all</span>:</span><br><span class="line">    $(warning there <span class="keyword">is</span> an warning!)</span><br><span class="line">    <span class="property">@echo</span> <span class="string">"这里会执行!"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># bash 中执行 make</span></span><br><span class="line">$ make</span><br><span class="line"><span class="attribute">Makefile</span>:<span class="number">2</span>: there <span class="keyword">is</span> an warning!</span><br><span class="line">这里会执行!</span><br></pre></td></tr></table></figure>
+<h1 id="内核中的Makefile">内核中的Makefile</h1><p>2.6.30.4linux内核，对于Makefile的描述在Documentation/kbuild/makefiles.txt里</p>
+<pre><code>Makefile        <span class="operator">the</span> top Makefile. 
+.config            <span class="operator">the</span> kernel configuration <span class="built_in">file</span>.
+arch/$(ARCH)/Makefile    <span class="operator">the</span> arch Makefile.
+scripts/Makefile.*    common rules etc. <span class="keyword">for</span> all kbuild Makefiles.
+kbuild Makefiles    there are about <span class="number">500</span> <span class="operator">of</span> these. 
+</code></pre><p>具体参考<a href="http://www.cnblogs.com/amanlikethis/p/3675486.html#lab23" target="_blank" rel="external">linux源码Makefile的详细分析</a>,<a href="http://blog.chinaunix.net/uid-26806098-id-3141136.html" target="_blank" rel="external">Linux 内核 Makefile 体系简单分析</a></p>
+<h1 id="自己编写Makefile">自己编写Makefile</h1><p>模仿linux内核scripts文件夹里的makefile的编写思路。Makefile主要分成3类:</p>
+<ul>
+<li>顶层目录的Makefile</li>
+<li>顶层目录的Makefile.build </li>
+<li>各级子目录的Makefile</li>
+</ul>
+<h2 id="各级子目录的Makefile">各级子目录的Makefile</h2><p>它最简单，形式如下：</p>
+<pre><code>obj-y += file<span class="class">.o</span>
+obj-y += subdir/
+</code></pre><p>“obj-y += file.o”表示把当前目录下的file.c编进程序里。</p>
+<p>“obj-y += subdir/“表示要进入subdir这个子目录下去寻找文件来编进程序里，是哪些文件由subdir目录下的Makefile决定。<strong>注意: “subdir/“中的斜杠”/“不可省略</strong></p>
+<h2 id="顶层目录的Makefile">顶层目录的Makefile</h2><p>它除了定义obj-y来指定根目录下要编进程序去的<strong>文件、子目录</strong>外，主要是定义<strong>工具链、编译参数、链接参数</strong>──就是文件中用export导出的各变量。</p>
+<pre><code>CROSS_COMPILE = arm-linux-
+AS        = <span class="variable">$(</span>CROSS_COMPILE)as
+LD        = <span class="variable">$(</span>CROSS_COMPILE)ld
+CC        = <span class="variable">$(</span>CROSS_COMPILE)gcc
+CPP        = <span class="variable">$(</span>CC) -E
+AR        = <span class="variable">$(</span>CROSS_COMPILE)ar
+NM        = <span class="variable">$(</span>CROSS_COMPILE)nm
+
+STRIP        = <span class="variable">$(</span>CROSS_COMPILE)<span class="keyword">strip</span>
+OBJCOPY        = <span class="variable">$(</span>CROSS_COMPILE)objcopy
+OBJDUMP        = <span class="variable">$(</span>CROSS_COMPILE)objdump
+
+export AS LD CC CPP AR NM
+export STRIP OBJCOPY OBJDUMP
+
+CFLAGS := -Wall -Werror -O2 -g
+CFLAGS += -I <span class="variable">$(</span>shell <span class="keyword">pwd</span>)/include
+
+LDFLAGS := -lm -lfreetype -lts -lpthread -ljpeg
+
+export CFLAGS LDFLAGS
+
+TOPDIR := <span class="variable">$(</span>shell <span class="keyword">pwd</span>)
+export TOPDIR
+
+TARGET := digitpic
+&lt;!--￼<span class="number">64</span>--&gt;
+
+PHONY := __build
+__build:
+
+
+obj-y :=
+subdir-y :=
+
+include Makefile
+
+# obj-y := a.o b.o c/ d/
+# <span class="variable">$(</span><span class="keyword">filter</span> <span class="variable">%/</span>, <span class="variable">$(</span>obj-y))   : c/ d/
+# __subdir-y  : c d
+# subdir-y    : c d
+__subdir-y    := <span class="variable">$(</span>patsubst <span class="variable">%/</span>,<span class="variable">%,</span><span class="variable">$(</span><span class="keyword">filter</span> <span class="variable">%/</span>, <span class="variable">$(</span>obj-y)))
+subdir-y    += <span class="variable">$(</span>__subdir-y)
+
+# c/built-<span class="keyword">in</span>.o d/built-<span class="keyword">in</span>.o
+subdir_objs := <span class="variable">$(</span>foreach f,<span class="variable">$(</span>subdir-y),<span class="variable">$(</span>f)/built-<span class="keyword">in</span>.o)
+
+# a.o b.o
+cur_objs := <span class="variable">$(</span><span class="keyword">filter</span>-out <span class="variable">%/</span>, <span class="variable">$(</span>obj-y))
+dep_files := <span class="variable">$(</span>foreach f,<span class="variable">$(</span>cur_objs),.<span class="variable">$(</span>f).d)
+dep_files := <span class="variable">$(</span>wildcard <span class="variable">$(</span>dep_files))
+
+ifneq (<span class="variable">$(</span>dep_files),)
+  include <span class="variable">$(</span>dep_files)
+endif
+
+
+PHONY += <span class="variable">$(</span>subdir-y)
+
+
+__build : <span class="variable">$(</span>subdir-y) built-<span class="keyword">in</span>.o
+
+<span class="variable">$(</span>subdir-y):
+    make -C <span class="variable">$@</span> -f <span class="variable">$(</span>TOPDIR)/Makefile.build
+
+built-<span class="keyword">in</span>.o : <span class="variable">$(</span>cur_objs) <span class="variable">$(</span>subdir_objs)
+    <span class="variable">$(</span>LD) -r -o <span class="variable">$@</span> <span class="variable">$^</span>
+
+dep_file = .<span class="variable">$@</span>.d
+
+<span class="variable">%.</span>o : <span class="variable">%.</span>c
+    <span class="variable">$(</span>CC) <span class="variable">$(</span>CFLAGS) -Wp,-MD,<span class="variable">$(</span>dep_file) -c -o <span class="variable">$@</span> <span class="variable">$&lt;</span>
+
+.PHONY : <span class="variable">$(</span>PHONY)
+</code></pre><h2 id="怎么使用这套Makefile">怎么使用这套Makefile</h2><ol>
+<li>把顶层Makefile, Makefile.build放入程序的顶层目录</li>
+<li>修改顶层Makefile（工具链、编译选项、链接选项、obj-y决定顶层目录下哪些文件、哪些子目录被编进程序、修改TARGET，这是用来指定编译出来的程序的名字）</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/04/20/keynote笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">&lt;</strong>
+      <div class="article-nav-title">
+        
+          keynote笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/04/08/Polite English/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Polite English</div>
+      <strong class="article-nav-caption">&gt;</strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="makefile" data-title="Makefile basics" data-url="http://yoursite.com/2015/04/16/makefile/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 Tang Hao
+            <a href="mailto:thddaniel92@gmail.com" >发邮件</a>
+            
+         
+            
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Code <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Theme</a> by Litten
+      	</div>
+    
+        <div>
+        <form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+         搜索:<input type="search" name="q" id="search" autocomplete="off" autocorrect="off" autocapitalize="off" maxlength="18" placeholder="关键字" />
+         <input type="hidden" name="q" value="site:yoursite.com">
+        </form>
+        </div>
+        
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <script src="/js/main.js" type="text/javascript"></script> 
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61735277-1', 'auto');
+  ga('send', 'pageview');
+
+</script> 
+
+
+  </div>
+</body>
+</html>

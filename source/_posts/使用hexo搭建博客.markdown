@@ -1,6 +1,6 @@
 ---
 title: "使用hexo搭建博客"
-date: 2014-10-26 19:18
+date: 2014-10-26 19:19
 comments: true
 tags: 
 

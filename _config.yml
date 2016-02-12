@@ -13,7 +13,7 @@ email: thddaniel92@gmail.com
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://tanghaoblog.me
+##url: http://tanghaoblog.me
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -79,6 +79,8 @@ plugins:
 - hexo-generator-feed
 - hexo-generator-sitemap
 - hexo-deployer-git
+- hexo-generator-baidu-sitemap
+
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
@@ -88,8 +90,11 @@ deploy:
       github: https://github.com/thddaniel/thddaniel.github.io,master
       gitcafe: https://gitcafe.com/tanghao/tanghao.git,gitcafe-pages
       
-sitemap:
-    path: sitemap.xml
+# sitemap:
+#   path: sitemap.xml
+    
+baidusitemap:
+    path: baidusitemap.xml
 
 feed:
     type: atom

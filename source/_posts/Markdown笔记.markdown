@@ -33,8 +33,8 @@ tags:
 
 使用 \[描述](链接地址) 为文字增加外链接。
 ```
-这是去往 [本人博客](www.tanghaoblog.me) 的链接。
-```  
+这是去往 [本人博客](www.tanghaoblog.me) 的链接。 
+```
 这是去往 [本人博客](http://thddaniel.github.com) 的链接。
 
 # **无序列表**

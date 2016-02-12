@@ -78,3 +78,6 @@ tags:
 - [istockphoto](http://www.shutterstock.com)
 - [iconarchive](http://www.iconarchive.com)
 - [iconfinder](https://www.iconfinder.com)
+- [unsplash](https://unsplash.com/)人物、生活、自然类素材较多，素材尺寸大多在5k 像素。基本上每天更新一张。
+- [Realistic Shots](http://realisticshots.com/)素材尺寸大多在2.5k 像素。
+- [Free Nature Stock](http://freenaturestock.com/)主打自然类素材，素材尺寸大多在5k 像素。
